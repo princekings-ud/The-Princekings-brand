@@ -177,10 +177,7 @@
     transition: background .22s, color .22s, box-shadow .22s;
   }
 
-  .nav-cta:hover {
-    background: var(--red); color: #000;
-    box-shadow: 0 0 22px var(--red-glow);
-  }
+  .hamburger { display: none; }
 
   /* ── HERO ── */
   .hero {
@@ -1092,15 +1089,229 @@
   .d2 { transition-delay: 0.2s; }
   .d3 { transition-delay: 0.3s; }
 
-  /* ── RESPONSIVE ── */
-  @media (max-width: 860px) {
-    nav { padding: 0 6%; }
-    nav .nav-links { display: none; }
-    .hero { padding: 120px 6% 80px; }
-    .svc-grid, .diff-grid, .work-grid, .testi-grid { grid-template-columns: 1fr; }
-    .svc-card.featured { grid-column: span 1; }
+  /* ── RESPONSIVE — FULL OPTIMIZATION ── */
+
+  /* Tablet — 1024px */
+  @media (max-width: 1024px) {
+    nav { padding: 0 5%; }
+    .nav-links { gap: 24px; }
+    .hero { padding: 130px 6% 90px; }
+    .hero-h1 { font-size: clamp(46px, 7vw, 80px); }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .svc-card.featured { grid-column: span 2; }
+    .diff-grid { grid-template-columns: repeat(2, 1fr); }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
     .wk-card.tall { grid-row: auto; }
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .modal-box { grid-template-columns: 1fr; max-width: 600px; }
+    .modal-images { grid-column: 1; grid-row: 1; padding: 20px 20px 10px; }
+    .modal-content { grid-column: 1; grid-row: 2; padding: 10px 20px 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+
+  /* Mobile — 768px */
+  @media (max-width: 768px) {
+    /* ── CURSOR OFF on touch ── */
+    body { cursor: auto; }
+    #cur, #cur-ring { display: none; }
+    a, button { cursor: pointer; }
+
+    /* ── NAV MOBILE ── */
+    nav { padding: 0 5%; height: 60px; }
+    nav.scrolled { height: 54px; }
+    .nav-links { display: none; }
+    .nav-brand { font-size: 0.78rem; }
+
+    /* Hamburger button */
+    .hamburger {
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      gap: 5px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--white); border-radius: 2px;
+      transition: transform .3s, opacity .3s, width .3s;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+      background: var(--bg2);
+      border-top: 0.5px solid var(--border);
+      z-index: 799;
+      flex-direction: column;
+      padding: 28px 5%;
+      overflow-y: auto;
+      gap: 0;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      display: block; padding: 16px 0;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--muted); text-decoration: none;
+      border-bottom: 0.5px solid var(--border);
+      transition: color .2s;
+    }
+
+    .mobile-nav a:hover, .mobile-nav a:active { color: var(--white); }
+
+    .mobile-nav .mob-section-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--red); padding: 20px 0 8px;
+      border-bottom: none;
+      display: block;
+    }
+
+    .mobile-nav .mob-cta {
+      margin-top: 24px;
+      display: block; text-align: center;
+      padding: 14px 20px;
+      background: var(--red); color: #000;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.08em; border-radius: 2px;
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    /* ── HERO MOBILE ── */
+    .hero {
+      min-height: 100svh;
+      padding: 100px 5% 80px;
+      justify-content: flex-start;
+      padding-top: 110px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.6rem; padding: 7px 14px;
+      margin-bottom: 32px;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-h1 {
+      font-size: clamp(42px, 13vw, 64px);
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: 0.92rem;
+      margin-bottom: 36px;
+      padding: 0 4px;
+    }
+
+    .hero-btns {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .btn-primary, .btn-outline {
+      width: 100%;
+      justify-content: center;
+      padding: 15px 20px;
+      font-size: 0.85rem;
+    }
+
+    .hero-score-pill {
+      margin-top: 40px;
+      padding: 10px 16px 10px 11px;
+      gap: 10px;
+      max-width: 100%;
+    }
+
+    .pill-text { font-size: 0.75rem; }
+
+    /* ── TICKER MOBILE ── */
+    .tick-item { font-size: 0.62rem; padding: 0 18px; gap: 14px; }
+
+    /* ── TRUTH MOBILE ── */
+    .truth { padding: 80px 5%; }
+    .truth-h2 { font-size: clamp(28px, 8vw, 42px); }
+    .truth-p { font-size: 0.88rem; margin-bottom: 48px; }
+    .divider { margin-bottom: 48px; }
+    .truth-stats { grid-template-columns: 1fr; gap: 1px; }
+    .t-stat { padding: 28px 20px; }
+    .t-stat-n { font-size: 40px; }
+
+    /* ── SERVICES MOBILE ── */
+    .services { padding: 80px 5%; }
+    .sec-head { margin-bottom: 40px; }
+    .sec-h2 { font-size: clamp(28px, 8vw, 40px); }
+    .svc-grid { grid-template-columns: 1fr; gap: 8px; }
+    .svc-card.featured { grid-column: span 1; }
+    .svc-card { padding: 28px 22px; }
+    .svc-name { font-size: 1rem; }
+
+    /* ── DIFF MOBILE ── */
+    .diff { padding: 80px 5%; }
+    .diff-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 40px; }
+    .diff-h2 { font-size: clamp(28px, 8vw, 40px); }
+    .dp { padding: 22px 18px; }
+
+    /* ── WORK MOBILE ── */
+    .work { padding: 80px 5%; }
+    .work-grid { grid-template-columns: 1fr; gap: 8px; }
+    .wk-card.tall { grid-row: auto; }
+    .wk-card.tall .wk-img { height: auto; aspect-ratio: 4/3; }
+
+    /* ── MODAL MOBILE ── */
+    .proj-modal { padding: 0; align-items: flex-end; }
+    .modal-box {
+      grid-template-columns: 1fr;
+      max-height: 92svh;
+      border-radius: 12px 12px 0 0;
+      width: 100%;
+    }
+    .modal-images { grid-column: 1; grid-row: 1; padding: 16px 16px 8px; }
+    .modal-img-main { min-height: 180px; }
+    .modal-img-strip { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .modal-content { grid-column: 1; grid-row: 2; padding: 12px 16px 24px; gap: 12px; }
+    .modal-title { font-size: 1.1rem; }
+    .modal-desc { font-size: 0.8rem; }
+    .modal-close { top: 12px; right: 12px; }
+    .modal-btn { width: 100%; justify-content: center; }
+
+    /* ── TESTI MOBILE ── */
+    .testi { padding: 80px 5%; }
+    .testi-grid { grid-template-columns: 1fr; gap: 8px; }
+
+    /* ── CTA MOBILE ── */
+    .cta { padding: 80px 5%; }
+    .cta-h2 { font-size: clamp(32px, 9vw, 48px); }
+    .cta-sub { font-size: 0.9rem; margin-bottom: 36px; }
+    .cta-btns { flex-direction: column; width: 100%; }
+    .cta-btns .btn-primary,
+    .cta-btns .btn-outline { width: 100%; justify-content: center; padding: 15px 20px; }
+
+    /* ── FOOTER MOBILE ── */
+    footer { padding: 52px 5% 28px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .f-about p { max-width: 100%; }
+    .f-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  /* Small mobile — 380px */
+  @media (max-width: 380px) {
+    .hero-h1 { font-size: clamp(36px, 12vw, 48px); }
+    .hero-eyebrow { font-size: 0.56rem; padding: 6px 12px; }
+    .pill-text { display: none; }
+    .pill-badge { font-size: 0.6rem; }
+    .nav-brand { font-size: 0.7rem; letter-spacing: -0.08em; }
   }
 </style>
 </head>
@@ -1133,7 +1344,26 @@
     <li><a href="https://score.theprincekingsbrand.com">Brand Score</a></li>
     <li><a href="https://wa.me/2348147065225" class="nav-cta">Start a Project</a></li>
   </ul>
+
+  <!-- Hamburger — shown on mobile only -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav" id="mobile-nav">
+  <span class="mob-section-label">Services</span>
+  <a href="https://brand.theprincekingsbrand.com">Brand Identity Design</a>
+  <a href="https://social.theprincekingsbrand.com">Social Media Management</a>
+  <a href="https://magazine.theprincekingsbrand.com">Magazine &amp; Publications</a>
+  <a href="https://print.theprincekingsbrand.com">Print &amp; Packaging</a>
+  <span class="mob-section-label">Company</span>
+  <a href="#work">Our Work</a>
+  <a href="#about">About</a>
+  <a href="https://score.theprincekingsbrand.com">Brand Scorecard</a>
+  <a href="https://wa.me/2348147065225" class="mob-cta">Start a Project &rarr;</a>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1563,27 +1793,32 @@
 </footer>
 
 <script>
-  // Custom cursor
+  // Custom cursor — desktop only
   const cur = document.getElementById('cur');
   const ring = document.getElementById('cur-ring');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-  (function tick() {
-    cur.style.left = mx + 'px'; cur.style.top = my + 'px';
-    rx += (mx - rx) * 0.13; ry += (my - ry) * 0.13;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(tick);
-  })();
-  document.querySelectorAll('a, .svc-card, .dp, .wk-card, .tc').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cur.style.width = '14px'; cur.style.height = '14px';
-      ring.style.width = '48px'; ring.style.height = '48px';
+  if (window.matchMedia('(pointer: fine)').matches) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    (function tick() {
+      cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+      rx += (mx - rx) * 0.13; ry += (my - ry) * 0.13;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(tick);
+    })();
+    document.querySelectorAll('a, .svc-card, .dp, .wk-card, .tc').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cur.style.width = '14px'; cur.style.height = '14px';
+        ring.style.width = '48px'; ring.style.height = '48px';
+      });
+      el.addEventListener('mouseleave', () => {
+        cur.style.width = '8px'; cur.style.height = '8px';
+        ring.style.width = '32px'; ring.style.height = '32px';
+      });
     });
-    el.addEventListener('mouseleave', () => {
-      cur.style.width = '8px'; cur.style.height = '8px';
-      ring.style.width = '32px'; ring.style.height = '32px';
-    });
-  });
+  } else {
+    cur.style.display = 'none';
+    ring.style.display = 'none';
+  }
 
   // Project modal data
   // TO SWAP IMAGES: replace the URL strings in each project's `images` array.
@@ -1695,6 +1930,25 @@
     document.getElementById('proj-modal').classList.remove('open');
     document.body.style.overflow = '';
   }
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close mobile nav on any link click
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
 
   // Nav scroll
   const nav = document.getElementById('nav');
