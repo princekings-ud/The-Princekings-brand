@@ -1,0 +1,3526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO: Title & Description -->
+<title>The Princekings Brand — Brand Identity, Social Media & Design Agency</title>
+<meta name="description" content="The Princekings Brand is a global design agency specialising in brand identity design, social media management, flyer design, magazine publications, and print. We build brands that mean business.">
+<meta name="keywords" content="brand identity design, social media management, logo design, branding agency, flyer design, graphic design agency, magazine design, print design, packaging design, corporate branding, visual identity">
+<meta name="robots" content="index, follow">
+<meta name="author" content="The Princekings Brand">
+<link rel="canonical" href="https://theprincekingsbrand.com">
+
+<!-- Open Graph — WhatsApp, LinkedIn, Facebook previews -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://theprincekingsbrand.com">
+<meta property="og:title" content="The Princekings Brand — Brand Identity, Social Media & Design Agency">
+<meta property="og:description" content="We build visual identities, manage brand presence, and produce design that performs. Brand identity, social media management, flyer design, and publications for corporate brands.">
+<meta property="og:image" content="https://theprincekingsbrand.com/logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Princekings Brand — Design Agency">
+<meta name="twitter:description" content="Brand identity, social media management, and premium design for corporations ready to lead.">
+<meta name="twitter:image" content="https://theprincekingsbrand.com/logo.png">
+
+<!-- Structured Data: Design Agency -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "The Princekings Brand",
+  "description": "Global design agency specialising in brand identity design, social media management, flyer design, magazine publications, and print & packaging for corporate brands.",
+  "url": "https://theprincekingsbrand.com",
+  "logo": "https://theprincekingsbrand.com/logo.png",
+  "telephone": "+2348147065225",
+  "sameAs": [
+    "https://instagram.com/the_princekings_brand"
+  ],
+  "serviceType": [
+    "Brand Identity Design",
+    "Logo Design",
+    "Social Media Management",
+    "Flyer Design",
+    "Magazine & Publication Design",
+    "Print & Packaging Design",
+    "Visual Identity",
+    "Brand Strategy"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Design Services",
+    "itemListElement": [
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Brand Identity Design"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Management"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Magazine & Publication Design"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Print & Packaging Design"}},
+      {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Flyer Design"}}
+    ]
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
+<link rel="icon" type="image/png" href="logo.png">
+<style>
+  :root {
+    --red:        #F2622A;
+    --red-glow:   rgba(242,98,42,0.24);
+    --olive:      #6B7D23;
+    --bg:         #0C0C0B;
+    --bg2:        #111110;
+    --bg3:        #161614;
+    --card:       #141412;
+    --white:      #EDEBE6;
+    --muted:      rgba(237,235,230,0.42);
+    --muted2:     rgba(237,235,230,0.22);
+    --border:     rgba(237,235,230,0.07);
+    --border-mid: rgba(237,235,230,0.13);
+    --border-red: rgba(242,98,42,0.22);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Instrument Sans', sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    cursor: none;
+  }
+
+  /* ── CUSTOM CURSOR ── */
+  #cur {
+    width: 8px; height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9999;
+    transform: translate(-50%,-50%);
+    transition: width .18s, height .18s;
+    box-shadow: 0 0 10px var(--red), 0 0 24px var(--red-glow);
+  }
+  #cur-ring {
+    width: 32px; height: 32px;
+    border: 1px solid rgba(232,50,10,0.45);
+    border-radius: 50%;
+    position: fixed; pointer-events: none; z-index: 9998;
+    transform: translate(-50%,-50%);
+    transition: transform .14s ease, width .22s, height .22s;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 800;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 64px;
+    background: rgba(12,12,11,0.88);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 0.5px solid var(--border);
+    transition: height 0.3s;
+  }
+
+  nav.scrolled { height: 56px; }
+
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    text-decoration: none;
+  }
+
+  .logo-circle {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
+
+  .nav-brand {
+    font-family: 'Nexa Bold', 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 0.88rem;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+    color: var(--white);
+    text-decoration: none;
+  }
+
+  .nav-links {
+    display: flex; align-items: center;
+    gap: 36px; list-style: none;
+  }
+
+  .nav-links > li > a {
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color .22s;
+  }
+
+  .nav-links > li > a:hover { color: var(--white); }
+
+  .has-dropdown { position: relative; }
+
+  .has-dropdown > a {
+    display: flex; align-items: center; gap: 6px; cursor: none;
+  }
+
+  .chevron {
+    display: inline-block;
+    width: 7px; height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    opacity: 0.5;
+    transition: transform 0.2s;
+  }
+
+  .has-dropdown:hover .chevron { transform: rotate(-135deg) translateY(-2px); }
+
+  .dropdown {
+    display: none;
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%; transform: translateX(-50%);
+    background: var(--bg2);
+    border: 0.5px solid var(--border-mid);
+    border-radius: 12px;
+    padding: 8px;
+    min-width: 250px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.75);
+  }
+
+  .has-dropdown:hover .dropdown { display: block; }
+
+  .dropdown a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px; border-radius: 8px;
+    font-size: 0.8rem; font-weight: 500;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: background .15s, color .15s;
+  }
+
+  .dropdown a:hover { background: rgba(237,235,230,0.04); color: var(--white); }
+
+  .d-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%; background: var(--red); flex-shrink: 0;
+  }
+
+  .d-dot.olive { background: var(--olive); }
+
+  .nav-cta {
+    padding: 9px 22px;
+    border: 1px solid var(--red);
+    color: var(--red);
+    background: transparent;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em;
+    border-radius: 2px;
+    text-decoration: none;
+    cursor: none;
+    transition: background .22s, color .22s, box-shadow .22s;
+  }
+
+  .hamburger { display: none; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 140px 5% 100px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(237,235,230,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(237,235,230,0.025) 1px, transparent 1px);
+    background-size: 68px 68px;
+    pointer-events: none;
+    mask-image: radial-gradient(ellipse at center, black 20%, transparent 72%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 72%);
+  }
+
+  .hero-glow {
+    position: absolute;
+    top: 0; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 600px;
+    background: radial-gradient(ellipse at 50% 30%, rgba(232,50,10,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero-glow-b {
+    position: absolute;
+    bottom: -80px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 400px;
+    background: radial-gradient(ellipse, rgba(107,125,35,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(237,235,230,0.05);
+    border: 0.5px solid var(--border-mid);
+    border-radius: 100px;
+    padding: 8px 18px;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 48px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.1s forwards;
+  }
+
+  .pulse-dot {
+    width: 6px; height: 6px;
+    background: var(--olive); border-radius: 50%;
+    animation: pulse 2.2s ease-in-out infinite;
+    box-shadow: 0 0 8px rgba(107,125,35,0.6);
+  }
+
+  @keyframes pulse {
+    0%,100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(0.55); opacity: 0.35; }
+  }
+
+  .hero-h1 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(52px, 8vw, 118px);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    margin-bottom: 32px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.25s forwards;
+    max-width: 1000px;
+  }
+
+  .hero-h1 .block { display: block; }
+  .hero-h1 .c-red { color: var(--red); }
+  .hero-h1 .c-dim { color: rgba(237,235,230,0.28); }
+
+  .hero-sub {
+    font-size: 1rem;
+    line-height: 1.78;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 520px;
+    margin: 0 auto 52px;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.4s forwards;
+  }
+
+  .hero-btns {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; flex-wrap: wrap;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.55s forwards;
+  }
+
+  .btn-primary {
+    padding: 13px 30px;
+    background: var(--red);
+    color: #000;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.08em;
+    border: none; border-radius: 2px;
+    cursor: none; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: box-shadow .25s, transform .2s;
+  }
+
+  .btn-primary:hover {
+    box-shadow: 0 0 30px var(--red-glow);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    padding: 13px 30px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600;
+    letter-spacing: 0.08em;
+    border: 0.5px solid var(--border-mid); border-radius: 2px;
+    cursor: none; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: border-color .25s, background .25s;
+  }
+  .btn-secondary:hover { border-color: var(--muted); background: rgba(237,235,230,0.05); }
+
+  .btn-outline {
+    padding: 13px 30px;
+    background: transparent;
+    color: var(--white);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 500;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(237,235,230,0.18);
+    border-radius: 2px;
+    cursor: none; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: border-color .25s, color .25s;
+  }
+
+  .btn-outline:hover { border-color: var(--red); color: var(--red); }
+
+  .hero-score-pill {
+    margin-top: 64px;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    border: 0.5px solid var(--border-mid);
+    border-radius: 100px;
+    padding: 11px 20px 11px 13px;
+    text-decoration: none;
+    transition: border-color .25s, background .25s;
+    position: relative;
+    opacity: 0;
+    animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.7s forwards;
+    cursor: none;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .hero-score-pill:hover {
+    border-color: rgba(232,50,10,0.5);
+    background: rgba(232,50,10,0.05);
+  }
+
+  .pill-badge {
+    background: var(--red); color: #000;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.65rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 100px;
+  }
+
+  .pill-text {
+    font-size: 0.82rem; color: var(--muted);
+    font-weight: 400;
+  }
+
+  .pill-text strong { color: rgba(237,235,230,0.82); font-weight: 500; }
+  .pill-arrow { color: var(--muted2); font-size: 15px; }
+
+  /* ── TICKER STRIP ── */
+  #ticker {
+    background: var(--bg2);
+    border-top: 0.5px solid var(--border);
+    border-bottom: 0.5px solid var(--border);
+    padding: 16px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+
+  #ticker::before,
+  #ticker::after {
+    content: '';
+    position: absolute; top: 0; bottom: 0;
+    width: 120px; z-index: 2;
+    pointer-events: none;
+  }
+
+  #ticker::before {
+    left: 0;
+    background: linear-gradient(90deg, var(--bg2) 0%, transparent 100%);
+  }
+
+  #ticker::after {
+    right: 0;
+    background: linear-gradient(-90deg, var(--bg2) 0%, transparent 100%);
+  }
+
+  .ticker-track {
+    display: inline-flex;
+    animation: tickerScroll 32s linear infinite;
+    gap: 0;
+  }
+
+  .ticker-track:hover { animation-play-state: paused; }
+
+  @keyframes tickerScroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .tick-item {
+    display: inline-flex; align-items: center; gap: 20px;
+    padding: 0 28px;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.2s;
+    cursor: default;
+  }
+
+  .tick-item:hover { color: var(--white); }
+
+  .tick-sep {
+    display: inline-block;
+    width: 5px; height: 5px;
+    background: var(--red);
+    border-radius: 50%;
+    opacity: 0.6;
+    flex-shrink: 0;
+  }
+
+  /* ── TRUTH ── */
+  .truth {
+    padding: 120px 5%;
+    background: var(--bg2);
+    text-align: center;
+    position: relative; overflow: hidden;
+  }
+
+  .truth::before {
+    content: '';
+    position: absolute; top: -150px; left: 50%; transform: translateX(-50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(ellipse, rgba(232,50,10,0.07) 0%, transparent 68%);
+    pointer-events: none;
+  }
+
+  .sec-eyebrow {
+    display: block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 18px;
+    text-align: center;
+  }
+
+  .truth-h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(36px, 4.5vw, 64px);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin-bottom: 24px;
+    max-width: 820px;
+    margin-left: auto; margin-right: auto;
+  }
+
+  .truth-h2 em {
+    font-style: normal;
+    font-family: 'Syne', sans-serif;
+    color: var(--red);
+  }
+
+  .truth-p {
+    font-size: 1rem;
+    line-height: 1.78;
+    color: var(--muted);
+    font-weight: 300;
+    max-width: 580px;
+    margin: 0 auto 72px;
+  }
+
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 16px;
+    margin-bottom: 72px;
+  }
+
+  .divider .line { flex: 1; max-width: 100px; height: 1px; background: var(--border); }
+  .divider .rdot { width: 5px; height: 5px; background: var(--red); border-radius: 50%; }
+
+  .truth-stats {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border-radius: 16px; overflow: hidden;
+    max-width: 820px; margin: 0 auto;
+  }
+
+  .t-stat { background: var(--bg2); padding: 48px 36px; text-align: center; }
+
+  .t-stat-n {
+    font-family: 'Syne', sans-serif;
+    font-size: 54px; font-weight: 800;
+    letter-spacing: -0.04em;
+    color: var(--white);
+    margin-bottom: 10px; line-height: 1;
+  }
+
+  .t-stat-n span { color: var(--red); }
+  .t-stat-p { font-size: 0.82rem; color: var(--muted2); line-height: 1.62; }
+
+  /* ── SERVICES ── */
+  .services { padding: 120px 5%; background: var(--bg); }
+
+  .sec-head { text-align: center; margin-bottom: 64px; }
+
+  .sec-h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(34px, 4vw, 54px);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .sec-p {
+    font-size: 0.92rem;
+    color: var(--muted);
+    font-weight: 300;
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.72;
+  }
+
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    max-width: 1200px; margin: 0 auto;
+  }
+
+  .svc-card {
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+    padding: 36px 30px;
+    transition: transform .35s cubic-bezier(0.16,1,0.3,1), border-color .3s, background .3s;
+    text-decoration: none;
+    color: var(--white);
+    display: block;
+    background: var(--bg2);
+    cursor: none;
+  }
+
+  .svc-card:hover { transform: translateY(-7px); border-color: var(--border-red); background: var(--bg3); }
+
+  .svc-card.featured { grid-column: span 2; background: var(--bg3); border-color: var(--border-mid); }
+  .svc-card.featured:hover { border-color: rgba(232,50,10,0.35); }
+  .svc-card.sc-free { border-style: dashed; border-color: rgba(237,235,230,0.1); }
+
+  /* Individual service card solid colored backgrounds */
+  .svc-card.ac-brand  { background: rgba(242,98,42,0.1); border-color: rgba(242,98,42,0.18); }
+  .svc-card.ac-brand:hover  { background: rgba(242,98,42,0.16); border-color: rgba(242,98,42,0.38); }
+  .svc-card.ac-brand .svc-num  { color: #F2622A; opacity: 1; }
+
+  .svc-card.ac-social { background: rgba(107,125,35,0.12); border-color: rgba(107,125,35,0.22); }
+  .svc-card.ac-social:hover { background: rgba(107,125,35,0.18); border-color: rgba(107,125,35,0.4); }
+  .svc-card.ac-social .svc-num { color: #8AA62A; opacity: 1; }
+  .svc-card.ac-social:hover .svc-arrow { color: #8AA62A; }
+
+  .svc-card.ac-mag   { background: rgba(100,149,200,0.1); border-color: rgba(100,149,200,0.2); }
+  .svc-card.ac-mag:hover   { background: rgba(100,149,200,0.16); border-color: rgba(100,149,200,0.38); }
+  .svc-card.ac-mag .svc-num   { color: #6495C8; opacity: 1; }
+  .svc-card.ac-mag:hover .svc-arrow { color: #6495C8; }
+
+  .svc-card.ac-print { background: rgba(196,154,69,0.1); border-color: rgba(196,154,69,0.2); }
+  .svc-card.ac-print:hover { background: rgba(196,154,69,0.16); border-color: rgba(196,154,69,0.38); }
+  .svc-card.ac-print .svc-num { color: #C49A45; opacity: 1; }
+  .svc-card.ac-print:hover .svc-arrow { color: #C49A45; }
+
+  .svc-card.ac-score { background: rgba(160,100,220,0.1); border-color: rgba(160,100,220,0.2); border-style: dashed; }
+  .svc-card.ac-score:hover { background: rgba(160,100,220,0.16); border-color: rgba(160,100,220,0.4); }
+  .svc-card.ac-score .svc-num { color: #A064DC; opacity: 1; }
+  .svc-card.ac-score:hover .svc-arrow { color: #A064DC; }
+
+  .svc-ic {
+    width: 44px; height: 44px; border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; margin-bottom: 28px;
+  }
+
+  .ic-r { background: rgba(232,50,10,0.1); }
+  .ic-o { background: rgba(107,125,35,0.1); }
+  .ic-d { background: rgba(237,235,230,0.05); }
+
+  .svc-num {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted2); margin-bottom: 8px;
+  }
+
+  .svc-name {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem; letter-spacing: -0.01em;
+    line-height: 1.2; margin-bottom: 12px;
+  }
+
+  .svc-desc {
+    font-size: 0.84rem; line-height: 1.7;
+    color: var(--muted); font-weight: 300; margin-bottom: 28px;
+  }
+
+  .svc-desc.wide { max-width: 480px; }
+
+  .svc-arrow {
+    font-size: 1rem; color: var(--muted2);
+    display: inline-block;
+    transition: color .2s, transform .25s;
+  }
+
+  .svc-card:hover .svc-arrow { color: var(--red); transform: translateX(6px); }
+
+  /* ── DIFF ── */
+  .diff { padding: 120px 5%; background: var(--bg2); }
+
+  .diff-inner { max-width: 1100px; margin: 0 auto; }
+
+  .diff-h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(34px, 4vw, 54px);
+    letter-spacing: -0.025em;
+    line-height: 1.05;
+    margin-bottom: 18px;
+    max-width: 780px;
+    margin-left: auto; margin-right: auto;
+    text-align: center;
+  }
+
+  .diff-h2 em {
+    font-style: normal;
+    font-family: 'Syne', sans-serif;
+    color: var(--red);
+  }
+
+  .diff-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 10px; margin-top: 60px;
+  }
+
+  .dp {
+    display: flex; align-items: flex-start; gap: 20px;
+    padding: 28px 26px;
+    border-radius: 4px;
+    border: none;
+    transition: transform .3s cubic-bezier(0.16,1,0.3,1), filter .3s;
+    cursor: none;
+  }
+
+  .dp:hover { transform: translateY(-5px); filter: brightness(1.08); }
+
+  /* Colored backgrounds for each diff box */
+  .dp-orange { background: rgba(242,98,42,0.14); }
+  .dp-olive  { background: rgba(107,125,35,0.16); }
+  .dp-blue   { background: rgba(100,149,200,0.13); }
+  .dp-gold   { background: rgba(196,154,69,0.14); }
+
+  .dp-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.1em; min-width: 26px; padding-top: 3px;
+  }
+
+  .dp-orange .dp-num { color: #F2622A; }
+  .dp-olive  .dp-num { color: #8AA62A; }
+  .dp-blue   .dp-num { color: #6495C8; }
+  .dp-gold   .dp-num { color: #C49A45; }
+
+  .dp h4 {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    letter-spacing: -0.01em; margin-bottom: 7px; color: var(--white);
+  }
+
+  .dp p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+
+  /* ── WORK ── */
+  .work { padding: 120px 5%; background: var(--bg); }
+
+  .work-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 10px; max-width: 1200px; margin: 0 auto;
+  }
+
+  .wk-card {
+    border-radius: 4px; overflow: hidden;
+    border: 0.5px solid var(--border);
+    transition: transform .35s cubic-bezier(0.16,1,0.3,1), border-color .3s;
+    cursor: none; background: var(--bg2);
+    display: flex; flex-direction: column;
+  }
+
+  .wk-card:hover { transform: translateY(-7px); border-color: var(--border-mid); }
+  .wk-card.tall { grid-row: span 2; }
+
+  .wk-img {
+    width: 100%; aspect-ratio: 4/3;
+    overflow: hidden; position: relative; flex-shrink: 0;
+  }
+
+  .wk-card.tall .wk-img { aspect-ratio: unset; }
+
+  .wk-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px;
+  }
+
+  .ph-icon {
+    font-size: 2rem;
+    opacity: 0.2;
+    line-height: 1;
+  }
+
+  .wk-placeholder span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted2);
+  }
+
+  .wi-r { background: rgba(242,98,42,0.07); }
+  .wi-o { background: rgba(107,125,35,0.08); }
+  .wi-d { background: #0F0F0E; }
+  .wi-w { background: #18150F; }
+
+  .wk-meta { padding: 18px 22px 10px; flex: 1; }
+
+  .wk-tag {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 5px; opacity: 0.85;
+  }
+
+  .wk-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.92rem; font-weight: 700;
+    color: rgba(237,235,230,0.75); letter-spacing: -0.01em;
+    margin-bottom: 8px;
+  }
+
+  .wk-brief {
+    font-size: 0.78rem; line-height: 1.65;
+    color: var(--muted2); font-weight: 300;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .wk-cta {
+    padding: 12px 22px 16px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.08em;
+    color: var(--red); opacity: 0;
+    transition: opacity .25s;
+  }
+
+  .wk-card:hover .wk-cta { opacity: 1; }
+
+  /* ── PROJECT MODAL ── */
+  .proj-modal {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: rgba(0,0,0,0.88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    align-items: center; justify-content: center;
+    padding: 24px;
+    cursor: none;
+  }
+
+  .proj-modal.open { display: flex; }
+
+  .modal-box {
+    background: var(--bg2);
+    border: 0.5px solid var(--border-mid);
+    border-radius: 4px;
+    max-width: 960px; width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0;
+  }
+
+  .modal-close {
+    position: absolute; top: 16px; right: 20px;
+    background: rgba(237,235,230,0.08);
+    border: 0.5px solid var(--border);
+    color: var(--white); font-size: 1.2rem;
+    width: 34px; height: 34px; border-radius: 2px;
+    display: flex; align-items: center; justify-content: center;
+    cursor: none; z-index: 10;
+    transition: background .2s, color .2s;
+  }
+
+  .modal-close:hover { background: var(--red); border-color: var(--red); color: #000; }
+
+  .modal-images {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    padding: 28px 20px 28px 28px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+
+  .modal-img-main {
+    flex: 1;
+    border-radius: 4px; overflow: hidden;
+    min-height: 240px;
+  }
+
+  .modal-ph {
+    width: 100%; height: 100%; min-height: 240px;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 14px;
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+  }
+
+  .ph-icon-lg { font-size: 3rem; opacity: 0.18; }
+
+  .modal-ph span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted2);
+  }
+
+  .modal-img-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+  }
+
+  .modal-thumb { border-radius: 4px; overflow: hidden; aspect-ratio: 1; }
+
+  .modal-ph-sm {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-radius: 4px;
+  }
+
+  .modal-ph-sm span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--muted2);
+  }
+
+  .modal-content {
+    grid-column: 2;
+    grid-row: 1 / 3;
+    padding: 40px 28px 28px 20px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+
+  .modal-tag {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); opacity: 0.85;
+  }
+
+  .modal-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem; font-weight: 800;
+    letter-spacing: -0.02em; line-height: 1.15;
+    color: var(--white);
+  }
+
+  .modal-desc {
+    font-size: 0.84rem; line-height: 1.72;
+    color: var(--muted); font-weight: 300;
+  }
+
+  .modal-solution {
+    background: var(--bg3);
+    border: 0.5px solid var(--border);
+    border-left: 2px solid var(--red);
+    border-radius: 2px;
+    padding: 16px 18px;
+  }
+
+  .modal-sol-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 8px;
+  }
+
+  .modal-sol-text {
+    font-size: 0.82rem; line-height: 1.72;
+    color: var(--muted); font-weight: 300;
+  }
+
+  .modal-deliverables {
+    display: flex; flex-wrap: wrap; gap: 8px;
+  }
+
+  .deliv-tag {
+    background: rgba(237,235,230,0.06);
+    border: 0.5px solid var(--border);
+    border-radius: 2px;
+    padding: 5px 12px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.7rem; font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+  }
+
+  .modal-btn { margin-top: auto; align-self: flex-start; }
+
+  /* ── TESTI ── */
+  .testi { padding: 120px 5%; background: var(--bg2); }
+
+  /* BRAND TICKER */
+  .brand-ticker {
+    overflow: hidden; width: 100%; margin-top: 56px; position: relative;
+    background: #EDEBE6;
+    border-radius: 14px;
+    padding: 28px 0;
+  }
+  .brand-ticker::before,
+  .brand-ticker::after {
+    content: ''; position: absolute; top: 0; bottom: 0; width: 100px; z-index: 2; pointer-events: none;
+  }
+  .brand-ticker::before { left: 0; background: linear-gradient(to right, #EDEBE6, transparent); }
+  .brand-ticker::after  { right: 0; background: linear-gradient(to left,  #EDEBE6, transparent); }
+
+  .brand-ticker-track {
+    display: flex; align-items: center; gap: 72px;
+    width: max-content;
+    animation: brandTick 32s linear infinite;
+    padding: 0 36px;
+  }
+  .brand-ticker-track:hover { animation-play-state: paused; }
+
+  @keyframes brandTick {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .brand-ticker-logo {
+    height: 52px; width: auto; max-width: 180px;
+    display: block; flex-shrink: 0;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+    opacity: 0.9;
+    transition: opacity 0.25s;
+  }
+  .brand-ticker-logo:hover { opacity: 1; }
+  /* ZOREVA is white-on-transparent; invert makes it dark so multiply shows it on the light strip */
+  .brand-ticker-logo-invert {
+    filter: invert(1);
+  }
+
+  /* ── CTA ── */
+  .cta {
+    padding: 140px 5%; text-align: center;
+    background: var(--bg); position: relative; overflow: hidden;
+  }
+
+  .cta::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(232,50,10,0.08) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .cta-sig {
+    font-family: 'Instrument Sans', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    color: var(--muted);
+    margin-bottom: 20px;
+    display: block;
+    position: relative;
+    letter-spacing: 0.06em;
+  }
+
+  .cta-h2 {
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: clamp(42px, 5.5vw, 76px);
+    letter-spacing: -0.03em;
+    line-height: 1.02;
+    margin-bottom: 22px;
+    max-width: 800px;
+    margin-left: auto; margin-right: auto;
+    position: relative;
+  }
+
+  .cta-h2 em {
+    font-style: normal;
+    font-family: 'Syne', sans-serif;
+    color: var(--red);
+  }
+
+  .cta-sub {
+    font-size: 1rem;
+    color: var(--muted); font-weight: 300;
+    max-width: 480px; margin: 0 auto 52px; line-height: 1.72; position: relative;
+  }
+
+  .cta-btns {
+    display: flex; align-items: center; justify-content: center;
+    gap: 14px; flex-wrap: wrap; position: relative;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--bg2); padding: 68px 5% 36px;
+    border-top: 0.5px solid var(--border);
+  }
+
+  .footer-grid {
+    display: grid; grid-template-columns: 2.2fr 1fr 1fr 1fr;
+    gap: 52px; margin-bottom: 60px;
+  }
+
+  .f-about h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1rem; font-weight: 800;
+    color: var(--white); letter-spacing: 0.04em; margin-bottom: 12px;
+  }
+
+  .f-about p {
+    font-size: 0.82rem; color: var(--muted2); line-height: 1.72;
+    font-weight: 300; max-width: 280px; margin-bottom: 26px;
+  }
+
+  .socials { display: flex; gap: 9px; }
+
+  .soc {
+    width: 34px; height: 34px; border-radius: 2px;
+    background: rgba(237,235,230,0.04);
+    border: 0.5px solid var(--border);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted2); font-size: 0.72rem; font-weight: 600;
+    text-decoration: none; cursor: none;
+    transition: background .2s, color .2s, border-color .2s, box-shadow .2s;
+  }
+
+  .soc:hover {
+    background: var(--red); color: #000; border-color: var(--red);
+    box-shadow: 0 0 14px var(--red-glow);
+  }
+
+  .f-col h4 {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted2); margin-bottom: 22px;
+  }
+
+  .f-col ul { list-style: none; }
+  .f-col li { margin-bottom: 12px; }
+  .f-col a { font-size: 0.82rem; color: var(--muted); text-decoration: none; transition: color .2s; }
+  .f-col a:hover { color: var(--white); }
+
+  .f-bottom {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-top: 26px; border-top: 0.5px solid var(--border);
+  }
+
+  .f-bottom p { font-size: 0.7rem; color: var(--muted2); letter-spacing: 0.06em; }
+  .f-bottom a { font-size: 0.7rem; color: var(--muted2); text-decoration: none; transition: color .2s; }
+  .f-bottom a:hover { color: var(--white); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0; transform: translateY(32px);
+    transition: opacity .75s cubic-bezier(0.16,1,0.3,1), transform .75s cubic-bezier(0.16,1,0.3,1);
+  }
+
+  .reveal.on { opacity: 1; transform: translateY(0); }
+  .d1 { transition-delay: 0.1s; }
+  .d2 { transition-delay: 0.2s; }
+  .d3 { transition-delay: 0.3s; }
+
+  /* ── RESPONSIVE — FULL OPTIMIZATION ── */
+
+  /* Tablet — 1024px */
+  @media (max-width: 1024px) {
+    nav { padding: 0 5%; }
+    .nav-links { gap: 24px; }
+    .hero { padding: 130px 6% 90px; }
+    .hero-h1 { font-size: clamp(46px, 7vw, 80px); }
+    .svc-grid { grid-template-columns: repeat(2, 1fr); }
+    .svc-card.featured { grid-column: span 2; }
+    .diff-grid { grid-template-columns: repeat(2, 1fr); }
+    .work-grid { grid-template-columns: repeat(2, 1fr); }
+    .wk-card.tall { grid-row: auto; }
+    .testi-grid { grid-template-columns: repeat(2, 1fr); }
+    .modal-box { grid-template-columns: 1fr; max-width: 600px; }
+    .modal-images { grid-column: 1; grid-row: 1; padding: 20px 20px 10px; }
+    .modal-content { grid-column: 1; grid-row: 2; padding: 10px 20px 24px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+
+  /* Mobile — 768px */
+  @media (max-width: 768px) {
+    /* ── CURSOR OFF on touch ── */
+    body { cursor: auto; }
+    #cur, #cur-ring { display: none; }
+    a, button { cursor: pointer; }
+
+    /* ── NAV MOBILE ── */
+    nav { padding: 0 5%; height: 60px; }
+    nav.scrolled { height: 54px; }
+    .nav-links { display: none; }
+    .nav-brand { font-size: 0.78rem; }
+
+    /* Hamburger button */
+    .hamburger {
+      display: flex; flex-direction: column;
+      justify-content: center; align-items: center;
+      gap: 5px; width: 40px; height: 40px;
+      background: none; border: none; cursor: pointer;
+      padding: 6px;
+    }
+
+    .hamburger span {
+      display: block; width: 22px; height: 1.5px;
+      background: var(--white); border-radius: 2px;
+      transition: transform .3s, opacity .3s, width .3s;
+      transform-origin: center;
+    }
+
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile nav drawer */
+    .mobile-nav {
+      display: none;
+      position: fixed; top: 60px; left: 0; right: 0; bottom: 0;
+      background: var(--bg2);
+      border-top: 0.5px solid var(--border);
+      z-index: 799;
+      flex-direction: column;
+      padding: 28px 5%;
+      overflow-y: auto;
+      gap: 0;
+    }
+
+    .mobile-nav.open { display: flex; }
+
+    .mobile-nav a {
+      display: block; padding: 16px 0;
+      font-family: 'Syne', sans-serif;
+      font-size: 1.1rem; font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--muted); text-decoration: none;
+      border-bottom: 0.5px solid var(--border);
+      transition: color .2s;
+    }
+
+    .mobile-nav a:hover, .mobile-nav a:active { color: var(--white); }
+
+    .mobile-nav .mob-section-label {
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--red); padding: 20px 0 8px;
+      border-bottom: none;
+      display: block;
+    }
+
+    .mobile-nav .mob-cta {
+      margin-top: 24px;
+      display: block; text-align: center;
+      padding: 14px 20px;
+      background: var(--red); color: #000;
+      font-family: 'Instrument Sans', sans-serif;
+      font-size: 0.9rem; font-weight: 600;
+      letter-spacing: 0.08em; border-radius: 2px;
+      text-decoration: none;
+      border-bottom: none;
+    }
+
+    /* ── HERO MOBILE ── */
+    .hero {
+      min-height: 100svh;
+      padding: 100px 5% 80px;
+      justify-content: flex-start;
+      padding-top: 110px;
+    }
+
+    .hero-eyebrow {
+      font-size: 0.6rem; padding: 7px 14px;
+      margin-bottom: 32px;
+      letter-spacing: 0.1em;
+    }
+
+    .hero-h1 {
+      font-size: clamp(42px, 13vw, 64px);
+      margin-bottom: 24px;
+    }
+
+    .hero-sub {
+      font-size: 0.92rem;
+      margin-bottom: 36px;
+      padding: 0 4px;
+    }
+
+    .hero-btns {
+      flex-direction: column;
+      width: 100%;
+      gap: 10px;
+    }
+
+    .btn-primary, .btn-outline {
+      width: 100%;
+      justify-content: center;
+      padding: 15px 20px;
+      font-size: 0.85rem;
+    }
+
+    .hero-score-pill {
+      margin-top: 40px;
+      padding: 10px 16px;
+      gap: 8px;
+      width: 100%;
+      border-radius: 8px;
+      justify-content: center;
+    }
+
+    .pill-text {
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    .pill-badge {
+      font-size: 0.62rem;
+    }
+
+    /* ── TICKER MOBILE ── */
+    .tick-item { font-size: 0.62rem; padding: 0 18px; gap: 14px; }
+
+    /* ── TRUTH MOBILE ── */
+    .truth { padding: 80px 5%; }
+    .truth-h2 { font-size: clamp(28px, 8vw, 42px); }
+    .truth-p { font-size: 0.88rem; margin-bottom: 48px; }
+    .divider { margin-bottom: 48px; }
+    .truth-stats { grid-template-columns: 1fr; gap: 1px; }
+    .t-stat { padding: 28px 20px; }
+    .t-stat-n { font-size: 40px; }
+
+    /* ── SERVICES MOBILE ── */
+    .services { padding: 80px 5%; }
+    .sec-head { margin-bottom: 40px; }
+    .sec-h2 { font-size: clamp(28px, 8vw, 40px); }
+    .svc-grid { grid-template-columns: 1fr; gap: 8px; }
+    .svc-card.featured { grid-column: span 1; }
+    .svc-card { padding: 28px 22px; }
+    .svc-name { font-size: 1rem; }
+
+    /* ── DIFF MOBILE ── */
+    .diff { padding: 80px 5%; }
+    .diff-grid { grid-template-columns: 1fr; gap: 8px; margin-top: 40px; }
+    .diff-h2 { font-size: clamp(28px, 8vw, 40px); }
+    .dp { padding: 22px 18px; }
+
+    /* ── WORK MOBILE ── */
+    .work { padding: 80px 5%; }
+    .work-grid { grid-template-columns: 1fr; gap: 8px; }
+    .wk-card.tall { grid-row: auto; }
+    .wk-card.tall .wk-img { height: auto; aspect-ratio: 4/3; }
+
+    /* ── MODAL MOBILE ── */
+    .proj-modal { padding: 0; align-items: flex-end; }
+    .modal-box {
+      grid-template-columns: 1fr;
+      max-height: 92svh;
+      border-radius: 12px 12px 0 0;
+      width: 100%;
+    }
+    .modal-images { grid-column: 1; grid-row: 1; padding: 16px 16px 8px; }
+    .modal-img-main { min-height: 180px; }
+    .modal-img-strip { grid-template-columns: repeat(4, 1fr); gap: 6px; }
+    .modal-content { grid-column: 1; grid-row: 2; padding: 12px 16px 24px; gap: 12px; }
+    .modal-title { font-size: 1.1rem; }
+    .modal-desc { font-size: 0.8rem; }
+    .modal-close { top: 12px; right: 12px; }
+    .modal-btn { width: 100%; justify-content: center; }
+
+    /* ── TESTI MOBILE ── */
+    .testi { padding: 80px 5%; }
+    .testi-grid { grid-template-columns: 1fr; gap: 8px; }
+
+    /* ── CTA MOBILE ── */
+    .cta { padding: 80px 5%; }
+    .cta-h2 { font-size: clamp(32px, 9vw, 48px); }
+    .cta-sub { font-size: 0.9rem; margin-bottom: 36px; }
+    .cta-btns { flex-direction: column; width: 100%; }
+    .cta-btns .btn-primary,
+    .cta-btns .btn-outline { width: 100%; justify-content: center; padding: 15px 20px; }
+
+    /* ── FOOTER MOBILE ── */
+    footer { padding: 52px 5% 28px; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .f-about p { max-width: 100%; }
+    .f-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  /* Small mobile — 380px */
+  @media (max-width: 380px) {
+    .hero-h1 { font-size: clamp(36px, 12vw, 48px); }
+    .hero-eyebrow { font-size: 0.56rem; padding: 6px 12px; }
+    .nav-brand { font-size: 0.7rem; letter-spacing: -0.08em; }
+  }
+
+  /* ── EXTENDED COLOUR SYSTEM ── */
+  .d-dot.blue   { background: #6495C8; }
+  .d-dot.gold   { background: #C49A45; }
+  .d-dot.purple { background: #A064DC; }
+
+  /* Icon container backgrounds */
+  .ic-b { background: rgba(100,149,200,0.12); }
+  .ic-g { background: rgba(196,154,69,0.12); }
+  .ic-p { background: rgba(160,100,220,0.12); }
+
+  /* SVG icon tinting — inherits via currentColor */
+  .ac-brand .svc-ic { color: #F2622A; }
+  .ac-social .svc-ic { color: #8AA62A; }
+  .ac-mag   .svc-ic { color: #6495C8; }
+  .ac-print .svc-ic { color: #C49A45; }
+  .ac-score .svc-ic { color: #A064DC; }
+  .svc-ic svg { display: block; }
+
+  /* ── COMING SOON STATES ── */
+  .svc-soon { opacity: 0.62; pointer-events: none; cursor: default; }
+  .svc-soon:hover { transform: none !important; border-color: rgba(196,154,69,0.2) !important; }
+  .nav-link-soon { opacity: 0.45 !important; pointer-events: none; cursor: default !important; }
+
+  /* ── SERVICE CARDS (Our Services) ── */
+  .svc-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; max-width: 1200px; margin: 0 auto;
+  }
+  .svc-card {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 4px; overflow: hidden; cursor: none;
+    transition: border-color 0.35s;
+  }
+  .svc-card:hover { border-color: var(--border-mid); }
+  .svc-preview { position: relative; height: 300px; overflow: hidden; background: var(--bg3); }
+  .svc-slide {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: center top;
+    opacity: 0;
+    transform: scale(1.1);
+    transition: opacity 0.45s ease, transform 1.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .svc-slide.active { opacity: 1; }
+  .reveal.on .svc-slide { transform: scale(1.0); }
+  /* Flyer-specific preview: contain so full flyer design is visible, not cropped */
+  .svc-preview-flyer { height: 340px; background: #1a1a18; }
+  .svc-preview-flyer .svc-slide { object-fit: contain; object-position: center; }
+  .svc-body { padding: 28px 32px 36px; }
+  .svc-name {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(18px, 1.8vw, 24px); letter-spacing: -0.02em;
+    color: var(--white); margin-bottom: 10px;
+  }
+  .svc-tagline { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+  .svc-btn { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; color: var(--red); }
+
+  /* ── SERVICE MODAL SECTIONS ── */
+  .sp-section { padding: 100px 5%; background: var(--bg); }
+  .sp-section-alt { background: var(--bg2); }
+  .sp-inner { max-width: 1000px; margin: 0 auto; }
+  .sp-inner > .zs-label { display: block; margin-bottom: 40px; }
+
+  .sp-includes { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .sp-inc-item {
+    display: flex; align-items: flex-start; gap: 14px;
+    padding: 20px 22px; background: var(--card);
+    border: 0.5px solid var(--border); border-radius: 4px;
+  }
+  .sp-inc-icon { color: var(--red); font-size: 0.6rem; margin-top: 5px; flex-shrink: 0; }
+  .sp-inc-name { font-weight: 600; color: var(--white); font-size: 0.88rem; margin-bottom: 5px; }
+  .sp-inc-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+
+  .sp-portfolio { display: flex; flex-direction: column; gap: 16px; }
+  .sp-proj { background: var(--card); border: 0.5px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .sp-proj-imgs { display: grid; grid-template-columns: 2fr 1fr 1fr; height: 240px; gap: 2px; }
+  .sp-proj-img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .sp-proj-meta {
+    padding: 18px 24px; display: flex; align-items: center; gap: 20px;
+    border-top: 0.5px solid var(--border);
+  }
+  .sp-proj-num { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.6rem; color: var(--border-mid); flex-shrink: 0; }
+  .sp-proj-client { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 0.95rem; color: var(--white); margin-bottom: 3px; }
+  .sp-proj-title { font-size: 0.8rem; color: var(--muted); }
+  .sp-proj-ph { min-height: 220px; }
+  .sp-ph-inner {
+    height: 220px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 6px;
+    border: 0.5px dashed var(--border-mid); border-radius: 4px; background: var(--bg3);
+  }
+  .sp-ph-label { color: var(--muted); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; }
+  .sp-ph-hint { color: var(--muted2); font-size: 0.68rem; }
+
+  .sp-process { display: flex; flex-direction: column; }
+  .sp-step {
+    display: grid; grid-template-columns: 52px 1fr;
+    gap: 0 24px; align-items: start;
+    padding: 28px 0; border-bottom: 0.5px solid var(--border);
+  }
+  .sp-step:last-child { border-bottom: none; }
+  .sp-step-num {
+    font-family: 'Instrument Sans', sans-serif; font-weight: 600;
+    font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--red); padding-top: 3px; flex-shrink: 0;
+  }
+  .sp-step-body { display: flex; flex-direction: column; }
+  .sp-step-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 8px; }
+  .sp-step-desc { color: var(--muted); font-size: 0.87rem; line-height: 1.65; }
+  .sp-pricing-note { color: var(--muted); font-size: 0.82rem; text-align: center; margin-top: 28px; }
+
+  /* PORTFOLIO EDITORIAL GRID */
+  .pw-head {
+    text-align: center; max-width: 640px; margin: 0 auto 56px;
+  }
+  .pw-eyebrow {
+    display: block; font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 14px;
+  }
+  .pw-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(26px, 3vw, 40px);
+    color: var(--white); line-height: 1.1;
+    letter-spacing: -0.02em; margin-bottom: 14px;
+  }
+  .pw-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+
+  .pw-grid {
+    display: grid;
+    grid-template-columns: 1.45fr 1fr;
+    gap: 8px;
+  }
+
+  /* Featured card — image fills, text overlay */
+  .pw-feat {
+    grid-row: span 2;
+    position: relative; border-radius: 4px; overflow: hidden;
+    background: var(--bg3); cursor: pointer;
+  }
+  .pw-feat-img {
+    width: 100%; height: auto;
+    display: block;
+    transform: scale(1.1);
+    transition: transform 1.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .zs-reveal.on .pw-feat-img { transform: scale(1.0); }
+  .pw-feat:hover .pw-feat-img { transform: scale(1.05); }
+  .pw-feat-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.88) 38%, rgba(0,0,0,0.06) 72%);
+    display: flex; flex-direction: column;
+    justify-content: space-between; padding: 20px 22px;
+  }
+  .pw-feat-tag {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase;
+    color: rgba(237,235,230,0.6);
+    background: rgba(0,0,0,0.4); border: 0.5px solid rgba(237,235,230,0.12);
+    border-radius: 100px; padding: 4px 12px; width: fit-content;
+  }
+  .pw-feat-name {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: clamp(14px, 1.3vw, 18px); color: var(--white);
+    margin-bottom: 8px; line-height: 1.3;
+  }
+  .pw-feat-desc { font-size: 0.76rem; color: rgba(237,235,230,0.52); line-height: 1.6; }
+
+  /* Smaller side cards */
+  .pw-card {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 4px; overflow: hidden;
+    display: flex; flex-direction: column; cursor: pointer;
+    transition: border-color 0.3s;
+  }
+  .pw-card:hover { border-color: var(--border-mid); }
+  .pw-card-img-wrap {
+    position: relative; overflow: hidden;
+    flex-shrink: 0; background: var(--bg3);
+  }
+  .pw-card-img {
+    width: 100%; height: auto; display: block;
+    transform: scale(1.1);
+    transition: transform 1.4s cubic-bezier(0.16,1,0.3,1);
+  }
+  .zs-reveal.on .pw-card-img { transform: scale(1.0); }
+  .pw-card:hover .pw-card-img { transform: scale(1.05); }
+  .pw-card-tag {
+    position: absolute; top: 12px; left: 12px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.56rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(237,235,230,0.6);
+    background: rgba(0,0,0,0.5); border: 0.5px solid rgba(237,235,230,0.1);
+    border-radius: 100px; padding: 3px 10px;
+  }
+  .pw-card-body { padding: 16px 18px; flex: 1; }
+  .pw-card-name {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.88rem; color: var(--white);
+    margin-bottom: 6px; line-height: 1.35;
+  }
+  .pw-card-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.55; }
+
+  /* Placeholder card */
+  .pw-ph {
+    background: var(--bg3); border: 0.5px dashed var(--border-mid);
+    border-radius: 4px; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 6px; min-height: 190px; text-align: center;
+  }
+  .pw-ph-num {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 1.8rem; color: var(--border-mid); line-height: 1;
+  }
+  .pw-ph-label {
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .pw-ph-hint { font-size: 0.68rem; color: var(--muted2); }
+
+  @media (max-width: 768px) {
+    .svc-grid { grid-template-columns: 1fr; }
+    .svc-preview { height: 240px; }
+    .svc-body { padding: 22px 24px 28px; }
+    .svc-card { cursor: pointer; }
+    .sp-includes { grid-template-columns: 1fr; }
+    .sp-proj-imgs { grid-template-columns: 1fr 1fr; height: 180px; }
+    .sp-proj-imgs .sp-proj-img:last-child { display: none; }
+    .sp-section { padding: 70px 5%; }
+    .pw-grid { grid-template-columns: 1fr; }
+    .pw-feat { grid-row: auto; }
+    .pw-card-img-wrap { height: auto; }
+  }
+
+  /* ── ZOREVA BRAND STORY — full-scroll experience ── */
+  .zoreva-modal {
+    display: none;
+    position: fixed; inset: 0; z-index: 1000;
+    background: var(--bg);
+    overflow-y: auto; overflow-x: hidden;
+    scrollbar-gutter: stable both-sides;
+    cursor: none;
+  }
+
+  .zoreva-modal.open {
+    display: block;
+    animation: zorevaPageIn 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+  }
+
+  @keyframes zorevaPageIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Fixed close button */
+  .zoreva-close-btn {
+    position: fixed; top: 24px; right: 24px; z-index: 1020;
+    width: 44px; height: 44px; border-radius: 2px;
+    background: rgba(12,12,11,0.82);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 0.5px solid var(--border-mid);
+    color: var(--white); font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    cursor: none;
+    transition: background .2s, color .2s, border-color .2s;
+  }
+  .zoreva-close-btn:hover { background: var(--red); color: #000; border-color: var(--red); }
+
+  /* HERO — full viewport */
+  .zs-hero { position: relative; height: 100vh; height: 100svh; overflow: hidden; }
+
+  .zs-hero-img {
+    width: 100%; height: 100%;
+    object-fit: cover; object-position: 50% 28%;
+    display: block;
+    animation: zHeroZoom 10s ease forwards;
+  }
+
+  @keyframes zHeroZoom {
+    from { transform: scale(1.06); }
+    to   { transform: scale(1); }
+  }
+
+  .zs-hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(6,6,5,0.75) 100%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-end;
+    padding: 0 5% 72px; text-align: center;
+  }
+
+  .zs-eyebrow {
+    display: block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.65rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #C49A45; margin-bottom: 20px;
+  }
+
+  .zs-hero-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(38px, 6vw, 72px);
+    letter-spacing: -0.04em; line-height: 0.93;
+    color: var(--white);
+  }
+
+  .zs-hero-sub {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase;
+    color: rgba(237,235,230,0.42); margin-top: 22px;
+  }
+
+  .zs-scroll-hint {
+    margin-top: 40px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    animation: zScrollBounce 2.2s ease-in-out infinite;
+  }
+
+  @keyframes zScrollBounce {
+    0%,100% { transform: translateY(0); opacity: 0.38; }
+    50%      { transform: translateY(9px); opacity: 0.85; }
+  }
+
+  .zs-scroll-hint span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.56rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: rgba(237,235,230,0.4);
+  }
+
+  .zs-arrow-line {
+    width: 1px; height: 38px;
+    background: linear-gradient(to bottom, rgba(196,154,69,0.85), transparent);
+  }
+
+  /* SERVICE MODAL — TEXT HERO */
+  .sm-hero {
+    min-height: 100vh; min-height: 100svh;
+    background: var(--bg);
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 140px 7% 90px;
+    position: relative;
+    border-bottom: 0.5px solid var(--border);
+  }
+
+  .sm-pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.68rem; font-weight: 500;
+    letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted);
+    border: 0.5px solid var(--border-mid);
+    border-radius: 100px; padding: 6px 16px;
+    margin-bottom: 64px; width: fit-content;
+  }
+
+  .sm-pill::before {
+    content: ''; width: 5px; height: 5px;
+    border-radius: 50%; background: var(--red); flex-shrink: 0;
+  }
+
+  .sm-hero-h1 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(54px, 9.5vw, 128px);
+    line-height: 0.9; letter-spacing: -0.025em;
+    margin: 0;
+  }
+
+  .sm-hero-h1 .h1-white  { color: var(--white);               display: block; }
+  .sm-hero-h1 .h1-accent { color: var(--red);                  display: block; }
+  .sm-hero-h1 .h1-ghost  { color: rgba(237,235,230,0.18);      display: block; }
+
+  .sm-hero-sub {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.95rem; line-height: 1.7;
+    color: var(--muted); margin-top: 36px; max-width: 520px;
+  }
+
+  .sm-hero-ctas {
+    display: flex; gap: 12px; margin-top: 44px; flex-wrap: wrap;
+  }
+
+  .sm-cta-primary {
+    display: inline-flex; align-items: center;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 600; letter-spacing: 0.04em;
+    color: #0C0C0B; background: var(--red);
+    border: 1.5px solid var(--red);
+    border-radius: 100px; padding: 14px 28px;
+    text-decoration: none; transition: opacity 0.2s;
+  }
+  .sm-cta-primary:hover { opacity: 0.85; }
+
+  .sm-cta-secondary {
+    display: inline-flex; align-items: center;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.82rem; font-weight: 500; letter-spacing: 0.04em;
+    color: var(--white); background: transparent;
+    border: 1.5px solid var(--border-mid);
+    border-radius: 100px; padding: 14px 28px;
+    text-decoration: none; cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .sm-cta-secondary:hover { border-color: rgba(237,235,230,0.35); color: var(--white); }
+
+  /* ZOREVA PROJECT MODAL */
+  .zp-info {
+    padding: 80px 7%; background: var(--bg2);
+  }
+  .zp-info-inner {
+    max-width: 1000px; margin: 0 auto;
+    display: grid; grid-template-columns: 200px 1fr; gap: 60px; align-items: start;
+  }
+  .zp-meta-item { margin-bottom: 28px; }
+  .zp-meta-label {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.58rem; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 5px;
+  }
+  .zp-meta-value {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: 0.92rem; color: var(--white);
+  }
+  .zp-brief p {
+    font-size: 0.95rem; color: var(--muted); line-height: 1.78;
+    margin-bottom: 22px;
+  }
+  .zp-brief p:last-child { margin-bottom: 0; }
+  .zp-brief em { color: var(--white); font-style: normal; font-weight: 600; }
+
+  /* ZOREVA chapter layout — full images, no cropping */
+  .zc-opener { background: #000; }
+  .zc-opener img { width: 100%; height: auto; display: block; }
+  .zc-chapter { padding: 80px 7%; }
+  .zc-chapter-dark { background: #000; }
+  .zc-chapter-mid  { background: var(--bg2); }
+  .zc-text { max-width: 680px; margin-bottom: 48px; }
+  .zc-num {
+    display: block; font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 14px;
+  }
+  .zc-title {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(20px, 2.2vw, 30px); color: var(--white);
+    letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 16px;
+  }
+  .zc-body { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
+  .zc-img-full { width: 100%; height: auto; display: block; }
+  .zc-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 3px; }
+  .zc-pair img { width: 100%; height: auto; display: block; }
+  .zc-stack { display: flex; flex-direction: column; gap: 3px; }
+  .zc-stack img { width: 100%; height: auto; display: block; }
+  @media (max-width: 768px) {
+    .zc-pair { grid-template-columns: 1fr; }
+    .zc-chapter { padding: 60px 5%; }
+  }
+
+  .zp-delivers {
+    padding: 80px 7%; text-align: center; background: var(--bg2);
+  }
+  .zp-del-label {
+    display: block; font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.6rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 24px;
+  }
+  .zp-del-tags {
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 48px;
+  }
+  .zp-del-tag {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.73rem; color: var(--muted);
+    border: 0.5px solid var(--border-mid); border-radius: 100px; padding: 6px 16px;
+  }
+  .zp-del-head {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(20px, 2.4vw, 30px); color: var(--white);
+    line-height: 1.2; margin-bottom: 28px;
+  }
+
+  @media (max-width: 768px) {
+    .zp-info-inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  @media (max-width: 768px) {
+    .sm-hero { padding: 110px 5% 70px; }
+    .sm-pill { margin-bottom: 40px; }
+  }
+
+  /* EDITORIAL TEXT SECTIONS */
+  .zs-text {
+    padding: 130px 5%;
+    display: flex; justify-content: center;
+    background: var(--bg);
+  }
+
+  .zs-text-inner { max-width: 860px; width: 100%; }
+
+  .zs-label {
+    display: block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 30px;
+  }
+
+  .zs-editorial {
+    font-family: 'Syne', sans-serif; font-weight: 700;
+    font-size: clamp(20px, 2.6vw, 36px);
+    letter-spacing: -0.025em; line-height: 1.22;
+    color: var(--white);
+  }
+
+  .zs-editorial em { font-style: normal; color: var(--red); }
+
+  /* IMAGE SECTIONS */
+  .zs-img-full { overflow: hidden; }
+
+  .zs-img {
+    width: 100%; height: auto;
+    object-fit: unset; display: block;
+    transition: transform 9s ease;
+  }
+
+  .zs-img-full:hover .zs-img { transform: scale(1.025); }
+
+  .zs-img-pair {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4px; height: 68vh;
+  }
+
+  .zs-img-half { overflow: hidden; }
+  .zs-img-half .zs-img { height: 100%; object-fit: cover; }
+  .zs-img-half:hover .zs-img { transform: scale(1.025); }
+
+  /* OUTRO */
+  .zs-outro {
+    padding: 130px 5%;
+    display: flex; flex-direction: column;
+    align-items: center; gap: 40px;
+    text-align: center; background: var(--bg);
+  }
+
+  .zs-outro-head {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(28px, 3.2vw, 46px);
+    letter-spacing: -0.025em; line-height: 1.1;
+    color: var(--white); max-width: 620px;
+  }
+
+  .zs-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+
+  .zs-tag {
+    background: rgba(196,154,69,0.1);
+    border: 0.5px solid rgba(196,154,69,0.22);
+    border-radius: 2px; padding: 6px 14px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.72rem; font-weight: 500;
+    letter-spacing: 0.06em; color: #C49A45;
+  }
+
+  /* FLYER CAROUSEL */
+  .fl-carousel-section { padding: 80px 5%; background: var(--bg3); }
+  .fl-carousel-label {
+    font-family: 'Instrument Sans', sans-serif; font-size: 0.7rem;
+    font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 32px; display: block;
+  }
+  .fl-carousel {
+    display: flex; gap: 12px;
+    overflow-x: auto; overflow-y: hidden;
+    scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; padding-bottom: 16px;
+    cursor: grab;
+    scrollbar-width: thin; scrollbar-color: var(--border-mid) transparent;
+  }
+  .fl-carousel:active { cursor: grabbing; }
+  .fl-slide {
+    flex: none; width: 260px; aspect-ratio: 3/4; object-fit: cover;
+    border-radius: 4px; scroll-snap-align: start; display: block;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+  }
+  .fl-slide:hover { transform: scale(1.025); box-shadow: 0 10px 36px rgba(0,0,0,0.45); }
+  .fl-nav {
+    display: flex; align-items: center; justify-content: flex-end;
+    gap: 10px; margin-top: 20px;
+  }
+  .fl-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    border: 0.5px solid var(--border-mid); background: transparent;
+    color: var(--white); font-size: 1.1rem; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .fl-btn:hover { background: rgba(237,235,230,0.06); border-color: rgba(237,235,230,0.25); }
+
+  /* FLYER PRICING */
+  .fl-pricing-section {
+    padding: 120px 24px;
+    background: var(--bg2);
+    display: flex; flex-direction: column; align-items: center;
+  }
+  .fl-pricing-head { text-align: center; margin: 0 auto 64px; width: 100%; max-width: 1100px; }
+  .fl-pricing-head h3 {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(26px, 3vw, 44px); letter-spacing: -0.025em;
+    line-height: 1.1; color: var(--white); margin-bottom: 14px;
+  }
+  .fl-pricing-head p { color: var(--muted); font-size: 0.92rem; max-width: 480px; line-height: 1.65; margin: 0 auto; }
+  .fl-plans {
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px; width: 100%; max-width: 1100px;
+    margin: 0 auto;
+  }
+  .fl-plan {
+    background: var(--card); border: 0.5px solid var(--border);
+    border-radius: 4px; padding: 40px 36px;
+    position: relative; display: flex; flex-direction: column; gap: 22px;
+    transition: border-color 0.3s;
+  }
+  .fl-plan:hover { border-color: var(--border-mid); }
+  .fl-plan-best { border-color: rgba(242,98,42,0.28); }
+  .fl-plan-best:hover { border-color: rgba(242,98,42,0.5); }
+  .fl-badge {
+    position: absolute; top: -1px; right: 24px;
+    background: var(--red); color: #fff;
+    font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; padding: 4px 11px; border-radius: 0 0 4px 4px;
+  }
+  .fl-plan-name {
+    font-family: 'Instrument Sans', sans-serif; font-size: 0.68rem;
+    font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  .fl-price {
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: clamp(32px, 3.8vw, 50px); letter-spacing: -0.03em;
+    line-height: 1; color: var(--white);
+  }
+  .fl-price span { font-size: 0.88rem; font-weight: 400; color: var(--muted); margin-left: 3px; }
+  .fl-save { font-size: 0.78rem; color: var(--red); font-weight: 500; margin-top: -10px; }
+  .fl-plan-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-top: -8px; }
+  .fl-price-sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+  .fl-feats { list-style: none; display: flex; flex-direction: column; gap: 11px; flex: 1; }
+  .fl-feat-badge {
+    display: inline-block; font-size: 0.56rem; font-weight: 700; letter-spacing: 0.08em;
+    text-transform: uppercase; background: rgba(242,98,42,0.14); color: var(--red);
+    border: 0.5px solid rgba(242,98,42,0.3); border-radius: 3px;
+    padding: 2px 6px; margin-left: 6px; vertical-align: middle;
+  }
+  .fl-feats li {
+    font-size: 0.86rem; color: var(--muted);
+    padding-left: 18px; position: relative; line-height: 1.4;
+  }
+  .fl-feats li::before { content: '✓'; position: absolute; left: 0; color: var(--red); font-size: 0.75rem; }
+
+  @media (max-width: 768px) {
+    .fl-slide { width: 210px; }
+    .fl-plans { grid-template-columns: 1fr; max-width: 460px; }
+    .fl-pricing-section { padding: 80px 5%; }
+  }
+
+  /* Scroll reveal */
+  .zs-reveal {
+    opacity: 0; transform: translateY(38px);
+    transition: opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1);
+  }
+  .zs-reveal.on { opacity: 1; transform: translateY(0); }
+  .zs-d1 { transition-delay: 0.14s; }
+  .zs-d2 { transition-delay: 0.26s; }
+
+  /* Clickable display image */
+  .di[onclick] { cursor: none; }
+
+  @media (max-width: 768px) {
+    .zoreva-modal { cursor: auto; }
+    .zoreva-close-btn { top: 16px; right: 16px; cursor: pointer; }
+    .zs-img-full { height: 58vh; }
+    .zs-img-pair { height: 48vh; }
+    .zs-text { padding: 80px 5%; }
+    .zs-outro { padding: 80px 5%; }
+    .di[onclick] { cursor: pointer; }
+  }
+</style>
+</head>
+<body>
+
+<div id="cur"></div>
+<div id="cur-ring"></div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="/" class="nav-logo" aria-label="The Princekings Brand — Home">
+    <div class="logo-circle">
+      <img src="logo.png" alt="The Princekings Brand" style="width:36px;height:36px;border-radius:50%;display:block;object-fit:cover;">
+    </div>
+    <span class="nav-brand">The Princekings Brand</span>
+  </a>
+
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="#">Services <span class="chevron"></span></a>
+      <div class="dropdown">
+        <a href="#" onclick="openSvcBrand(); return false;"><span class="d-dot"></span>Brand Identity Design</a>
+        <a href="#" onclick="openSvcSocial(); return false;"><span class="d-dot olive"></span>Social Media &amp; Flyer Design</a>
+        <a href="#" onclick="openSvcMagazine(); return false;"><span class="d-dot blue"></span>Magazine &amp; Publications</a>
+        <a href="#" onclick="openSvcPrint(); return false;"><span class="d-dot gold"></span>Print &amp; Packaging</a>
+      </div>
+    </li>
+    <li><a href="#work">Work</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="https://score.theprincekingsbrand.com">Brand Score</a></li>
+    <li><a href="https://wa.me/2348147065225" class="nav-cta">Start a Project</a></li>
+  </ul>
+
+  <!-- Hamburger — shown on mobile only -->
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Mobile Nav Drawer -->
+<div class="mobile-nav" id="mobile-nav">
+  <span class="mob-section-label">Services</span>
+  <a href="#" onclick="openSvcBrand(); return false;">Brand Identity Design</a>
+  <a href="#" onclick="openSvcSocial(); return false;">Social Media &amp; Flyer Design</a>
+  <a href="#" onclick="openSvcMagazine(); return false;">Magazine &amp; Publications</a>
+  <a href="#" onclick="openSvcPrint(); return false;">Print &amp; Packaging</a>
+  <span class="mob-section-label">Company</span>
+  <a href="#work">Our Work</a>
+  <a href="#about">About</a>
+  <a href="https://score.theprincekingsbrand.com">Brand Scorecard</a>
+  <a href="https://wa.me/2348147065225" class="mob-cta">Start a Project &rarr;</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-b"></div>
+
+  <div class="hero-eyebrow">
+    <span class="pulse-dot"></span>
+    Global Design Agency &nbsp;·&nbsp; Brand Identity &amp; Social Media
+  </div>
+
+  <h1 class="hero-h1">
+    <span class="block">Designing Brands</span>
+    <span class="block c-red">That</span>
+    <span class="block c-dim">Lead.</span>
+  </h1>
+
+  <p class="hero-sub">
+    We build visual identities, manage brand presence, and produce design that doesn't just look good — it performs. For corporations ready to own their market.
+  </p>
+
+  <div class="hero-btns">
+    <a href="https://wa.me/2348147065225" class="btn-primary">Start a Project &rarr;</a>
+    <a href="#work" class="btn-outline">See Our Work</a>
+  </div>
+
+  <a href="https://score.theprincekingsbrand.com" class="hero-score-pill">
+    <span class="pill-badge">Free</span>
+    <span class="pill-text"><strong>Score your brand health</strong> — takes 3 minutes</span>
+    <span class="pill-arrow">&rarr;</span>
+  </a>
+</section>
+
+<!-- TICKER STRIP -->
+<div id="ticker">
+  <div class="ticker-track">
+    <span class="tick-item">Brand Identity<span class="tick-sep"></span></span>
+    <span class="tick-item">Logo Design<span class="tick-sep"></span></span>
+    <span class="tick-item">Brand Strategy<span class="tick-sep"></span></span>
+    <span class="tick-item">Visual Systems<span class="tick-sep"></span></span>
+    <span class="tick-item">Typography<span class="tick-sep"></span></span>
+    <span class="tick-item">Colour Theory<span class="tick-sep"></span></span>
+    <span class="tick-item">Packaging Design<span class="tick-sep"></span></span>
+    <span class="tick-item">Brand Guidelines<span class="tick-sep"></span></span>
+    <span class="tick-item">Social Media Design<span class="tick-sep"></span></span>
+    <span class="tick-item">Art Direction<span class="tick-sep"></span></span>
+    <span class="tick-item">Print Production<span class="tick-sep"></span></span>
+    <span class="tick-item">Publication Design<span class="tick-sep"></span></span>
+    <!-- duplicate for seamless loop -->
+    <span class="tick-item">Brand Identity<span class="tick-sep"></span></span>
+    <span class="tick-item">Logo Design<span class="tick-sep"></span></span>
+    <span class="tick-item">Brand Strategy<span class="tick-sep"></span></span>
+    <span class="tick-item">Visual Systems<span class="tick-sep"></span></span>
+    <span class="tick-item">Typography<span class="tick-sep"></span></span>
+    <span class="tick-item">Colour Theory<span class="tick-sep"></span></span>
+    <span class="tick-item">Packaging Design<span class="tick-sep"></span></span>
+    <span class="tick-item">Brand Guidelines<span class="tick-sep"></span></span>
+    <span class="tick-item">Social Media Design<span class="tick-sep"></span></span>
+    <span class="tick-item">Art Direction<span class="tick-sep"></span></span>
+    <span class="tick-item">Print Production<span class="tick-sep"></span></span>
+    <span class="tick-item">Publication Design<span class="tick-sep"></span></span>
+  </div>
+</div>
+
+<!-- TRUTH -->
+<section class="truth">
+  <span class="sec-eyebrow">The Reality</span>
+  <h2 class="truth-h2 reveal">
+    Your brand speaks<br>before you <em>say a word.</em>
+  </h2>
+  <p class="truth-p reveal">
+    Corporate buyers form an impression in seconds. Weak visuals, inconsistent identity, and generic design cost you deals before a single conversation starts. The brands winning today aren't louder — they're clearer, sharper, and more intentional.
+  </p>
+  <div class="divider">
+    <span class="line"></span><span class="rdot"></span><span class="line"></span>
+  </div>
+  <div class="truth-stats reveal">
+    <div class="t-stat">
+      <div class="t-stat-n" data-count="7"><span class="count-num">0</span><span>sec</span></div>
+      <div class="t-stat-p">Time it takes to form a first brand impression</div>
+    </div>
+    <div class="t-stat">
+      <div class="t-stat-n" data-count="33"><span class="count-num">0</span><span>%</span></div>
+      <div class="t-stat-p">Average revenue increase from consistent brand identity</div>
+    </div>
+    <div class="t-stat">
+      <div class="t-stat-n" data-count="3"><span class="count-num">0</span><span>×</span></div>
+      <div class="t-stat-p">More trust earned by brands with professional design</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="sec-head">
+    <span class="sec-eyebrow">What We Do</span>
+    <h2 class="sec-h2 reveal">Services Built<br>for Outcomes</h2>
+    <p class="sec-p reveal">Every service is engineered around one goal — making your brand perform harder for your business.</p>
+  </div>
+
+  <div class="svc-grid">
+    <a href="#" onclick="openSvcBrand(); return false;" class="svc-card featured ac-brand reveal">
+      <div class="svc-ic ic-r"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="22"/><line x1="2" y1="12" x2="8" y2="12"/><line x1="16" y1="12" x2="22" y2="12"/></svg></div>
+      <div class="svc-num">01</div>
+      <div class="svc-name">Brand Identity Design</div>
+      <div class="svc-desc wide">We craft visual systems that position your company as the authority in your space. Logos, color systems, brand guidelines — everything your brand needs to show up with intention and own every room it walks into.</div>
+      <span class="svc-arrow">&rarr;</span>
+    </a>
+
+    <a href="#" onclick="openSvcSocial(); return false;" class="svc-card ac-social reveal d1">
+      <div class="svc-ic ic-o"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></div>
+      <div class="svc-num">02</div>
+      <div class="svc-name">Social Media Management</div>
+      <div class="svc-desc">Design-led content that builds brand equity daily. Strategy, visuals, captions, scheduling and reporting — handled end to end.</div>
+      <span class="svc-arrow">&rarr;</span>
+    </a>
+
+    <a href="#" onclick="openSvcMagazine(); return false;" class="svc-card ac-mag reveal d2">
+      <div class="svc-ic ic-b"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></div>
+      <div class="svc-num">03</div>
+      <div class="svc-name">Magazine &amp; Publications</div>
+      <div class="svc-desc">From annual reports to commercial magazines — editorial design that makes your content impossible to put down.</div>
+      <span class="svc-arrow">&rarr;</span>
+    </a>
+
+    <a href="#" onclick="openSvcPrint(); return false;" class="svc-card ac-print reveal d1">
+      <div class="svc-ic ic-g"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+      <div class="svc-num">04</div>
+      <div class="svc-name">Print &amp; Packaging</div>
+      <div class="svc-desc">Merch, stationery, and packaging that turns your physical brand into a statement. From tees to box design — we make it tangible.</div>
+      <span class="svc-arrow">&rarr;</span>
+    </a>
+
+    <a href="https://score.theprincekingsbrand.com" class="svc-card ac-score reveal d2">
+      <div class="svc-ic ic-p"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <div class="svc-num">Free</div>
+      <div class="svc-name">AI Brand Scorecard</div>
+      <div class="svc-desc">Not sure where your brand stands? Get a personalised brand health score and two custom design directions — free, in under 3 minutes.</div>
+      <span class="svc-arrow">&rarr;</span>
+    </a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="work" id="work">
+  <div class="sec-head">
+    <span class="sec-eyebrow">Our Services</span>
+    <h2 class="sec-h2 reveal">What We Do Best</h2>
+    <p class="sec-p reveal">Four specialisms. One agency. Every touchpoint, intentional.</p>
+  </div>
+
+  <div class="svc-grid">
+    <!-- BRAND IDENTITY -->
+    <div class="svc-card reveal" onclick="openSvcBrand()">
+      <div class="svc-preview">
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Brand Identity Design</div>
+        <p class="svc-tagline">Logos, visual systems &amp; brand guidelines that command any room</p>
+        <span class="svc-btn">Explore Service &rarr;</span>
+      </div>
+    </div>
+
+    <!-- SOCIAL MEDIA & FLYER -->
+    <div class="svc-card reveal d1" onclick="openSvcSocial()">
+      <div class="svc-preview svc-preview-flyer">
+        <img src="flyer/amala-1.png" class="svc-slide active" alt="">
+        <img src="flyer/breej-1.jpg" class="svc-slide" alt="">
+        <img src="flyer/global-5.jpg" class="svc-slide" alt="">
+        <img src="flyer/global-9.jpg" class="svc-slide" alt="">
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Social Media &amp; Flyer Design</div>
+        <p class="svc-tagline">Premium content &amp; flyer subscription that keeps your brand visible every month</p>
+        <span class="svc-btn">Explore Service &rarr;</span>
+      </div>
+    </div>
+
+    <!-- MAGAZINE -->
+    <div class="svc-card reveal d1" onclick="openSvcMagazine()">
+      <div class="svc-preview">
+        <img src="magazi%20nne/Magazine-design.jpg" class="svc-slide active" alt="">
+        <img src="magazi%20nne/presentation-4.jpg" class="svc-slide" alt="">
+        <img src="magazi%20nne/magazineee.jpg" class="svc-slide" alt="">
+        <img src="magazi%20nne/magazine-5.jpg" class="svc-slide" alt="">
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Magazine &amp; Publications</div>
+        <p class="svc-tagline">Editorial design that people reach for before they read the headline</p>
+        <span class="svc-btn">Explore Service &rarr;</span>
+      </div>
+    </div>
+
+    <!-- PRINT & PACKAGING -->
+    <div class="svc-card reveal d2" onclick="openSvcPrint()">
+      <div class="svc-preview">
+        <img src="prints/white-shirt.png" class="svc-slide active" alt="">
+        <img src="prints/9.jpg" class="svc-slide" alt="">
+        <img src="prints/10.jpg" class="svc-slide" alt="">
+        <img src="prints/book.jpg" class="svc-slide" alt="">
+      </div>
+      <div class="svc-body">
+        <div class="svc-name">Print &amp; Packaging</div>
+        <p class="svc-tagline">Production-ready artwork for everything your brand physically touches</p>
+        <span class="svc-btn">Explore Service &rarr;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECT MODAL -->
+<div id="proj-modal" class="proj-modal" onclick="closeProject(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeProjectBtn()">&times;</button>
+
+    <div class="modal-images" id="modal-images">
+      <!-- MAIN IMAGE — swap src via JS from projects array -->
+      <div class="modal-img-main">
+        <img id="modal-main-img" src="" alt=""
+             style="width:100%;height:100%;min-height:240px;object-fit:cover;border-radius:4px;display:block;">
+      </div>
+      <!-- 4 DETAIL IMAGES — swap src via JS from projects array -->
+      <div class="modal-img-strip">
+        <div class="modal-thumb">
+          <img id="modal-thumb-0" src="" alt=""
+               style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;">
+        </div>
+        <div class="modal-thumb">
+          <img id="modal-thumb-1" src="" alt=""
+               style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;">
+        </div>
+        <div class="modal-thumb">
+          <img id="modal-thumb-2" src="" alt=""
+               style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;">
+        </div>
+        <div class="modal-thumb">
+          <img id="modal-thumb-3" src="" alt=""
+               style="width:100%;height:100%;object-fit:cover;display:block;border-radius:4px;">
+        </div>
+      </div>
+    </div>
+
+    <div class="modal-content">
+      <div class="modal-tag" id="modal-tag">Brand Identity · 2024</div>
+      <h3 class="modal-title" id="modal-title">Project Title</h3>
+      <p class="modal-desc" id="modal-desc">Project description goes here.</p>
+
+      <div class="modal-solution">
+        <div class="modal-sol-label">The Solution</div>
+        <p class="modal-sol-text" id="modal-solution">Solution detail goes here.</p>
+      </div>
+
+      <div class="modal-deliverables" id="modal-deliverables"></div>
+
+      <a href="https://wa.me/2348147065225" class="btn-primary modal-btn">Start a Similar Project &rarr;</a>
+    </div>
+  </div>
+</div>
+
+<!-- BRAND IDENTITY SERVICE MODAL -->
+<div id="svc-brand-modal" class="zoreva-modal">
+  <button class="zoreva-close-btn" onclick="closeSvcBrand()">×</button>
+
+  <div class="sm-hero">
+    <span class="sm-pill">Brand Identity Design</span>
+    <h2 class="sm-hero-h1">
+      <span class="h1-white">Brands That</span>
+      <span class="h1-accent" style="color:#F2622A">Command</span>
+      <span class="h1-ghost">The Room.</span>
+    </h2>
+    <p class="sm-hero-sub">We build complete visual identity systems — from logo and colour palette to typography and brand guidelines — designed to position your brand at the top and keep it there.</p>
+    <div class="sm-hero-ctas">
+      <a href="https://wa.me/2348147065225?text=I%20want%20a%20brand%20identity%20project." class="sm-cta-primary">Start a Project &rarr;</a>
+      <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Logo System</div><div class="sp-inc-desc">Primary, secondary &amp; monogram marks — SVG, PNG, PDF</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Colour Palette</div><div class="sp-inc-desc">Primary &amp; secondary colours with HEX, RGB, and CMYK values</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Typography System</div><div class="sp-inc-desc">Heading, body, and accent typefaces with full usage rules</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Guidelines</div><div class="sp-inc-desc">A complete PDF document your team and vendors can follow</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Applications</div><div class="sp-inc-desc">Business cards, letterhead, email signature &amp; social media kit</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">All editable AI/PSD files — you own everything we create</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="pw-head zs-reveal">
+      <span class="pw-eyebrow">Selected Projects</span>
+      <h2 class="pw-title">Identity Work That<br>Speaks Before You Do</h2>
+      <p class="pw-sub">Every project begins with deep listening and ends with a visual system that owns every room it enters.</p>
+    </div>
+    <div class="pw-grid">
+      <div class="pw-feat zs-reveal" onclick="openZorevaProj()" style="cursor:pointer;">
+        <img src="ChatGPT%20Image%20Jul%2015%2C%202026%2C%2008_18_38%20AM.png" class="pw-feat-img" alt="ZOREVA">
+        <div class="pw-feat-overlay">
+          <span class="pw-feat-tag">Brand Identity &middot; Hospitality &middot; 2024</span>
+          <div>
+            <div class="pw-feat-name">ZOREVA — Luxury Restaurant &amp; Lounge</div>
+            <p class="pw-feat-desc">Full brand identity system for a luxury dining concept. Logo, colour palette, typography, brand guidelines &amp; application design. <span style="color:var(--red);font-size:0.72rem;display:block;margin-top:6px;">View Project →</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="pw-card zs-reveal zs-d1" onclick="openAsiliProj()" style="cursor:pointer;">
+        <div class="pw-card-img-wrap">
+          <img src="asili/a.jpg" class="pw-card-img" alt="Asili">
+          <span class="pw-card-tag">Brand Identity &middot; 2024</span>
+        </div>
+        <div class="pw-card-body">
+          <div class="pw-card-name">Asili</div>
+          <p class="pw-card-desc">Full brand identity for an authentic African lifestyle brand. <span style="color:var(--red);">View Project →</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Discovery</div><div class="sp-step-desc">We learn your goals, audience, and market position before we open a single design file.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Brand Strategy</div><div class="sp-step-desc">We define your visual direction — personality, tone, and style — so every design decision has a reason.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Full logo system, colour palette, typography, and applications — built from scratch, not a template.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Refinement</div><div class="sp-step-desc">Multiple revision rounds until the identity is exactly right. We don't stop until you're confident.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">05</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Brand guidelines PDF, all source files, and a handover session — everything you need to run your brand.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fl-pricing-section">
+    <div class="fl-pricing-head zs-reveal">
+      <span class="zs-label" style="display:block;text-align:center;margin-bottom:16px;">Investment</span>
+      <h3>A brand is your most permanent asset.</h3>
+      <p>Choose the tier that matches the scope of your identity project.</p>
+    </div>
+    <div class="fl-plans">
+
+      <!-- FOUNDATION -->
+      <div class="fl-plan zs-reveal">
+        <div class="fl-plan-name">Foundation</div>
+        <p class="fl-plan-desc">For new businesses and startups building their brand from the ground up. Everything you need to show up with confidence.</p>
+        <div>
+          <div class="fl-price">&#8358;280,000</div>
+          <div class="fl-price-sub">~$170 USD</div>
+        </div>
+        <ul class="fl-feats">
+          <li>Primary logo + secondary logo</li>
+          <li>Favicon / app icon</li>
+          <li>Colour palette system</li>
+          <li>Typography system</li>
+          <li>Brand guidelines document</li>
+          <li>All file formats delivered</li>
+          <li>2 revision rounds</li>
+        </ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Foundation%20Brand%20Identity%20package." class="btn-secondary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+
+      <!-- STANDARD (Most Popular) -->
+      <div class="fl-plan fl-plan-best zs-reveal zs-d1">
+        <div class="fl-badge">Most Popular</div>
+        <div class="fl-plan-name">Standard</div>
+        <p class="fl-plan-desc">For growing businesses ready for a complete brand system — plus a professional web presence to match.</p>
+        <div>
+          <div class="fl-price">&#8358;650,000</div>
+          <div class="fl-price-sub">~$395 USD</div>
+        </div>
+        <ul class="fl-feats">
+          <li>Everything in Foundation</li>
+          <li>Brand voice &amp; tone guidelines</li>
+          <li>Stationery design — business card, letterhead, envelope</li>
+          <li>Social media kit</li>
+          <li>Email signature design</li>
+          <li>Landing page design &amp; development <span class="fl-feat-badge">Web Design</span></li>
+          <li>3 revision rounds</li>
+        </ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Standard%20Brand%20Identity%20package." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+
+      <!-- LEGACY -->
+      <div class="fl-plan zs-reveal zs-d2">
+        <div class="fl-plan-name">Legacy</div>
+        <p class="fl-plan-desc">For established brands and serious investors who want a complete brand world — identity, strategy, and a full website, built to dominate.</p>
+        <div>
+          <div class="fl-price">&#8358;1,500,000</div>
+          <div class="fl-price-sub">~$910 USD</div>
+        </div>
+        <ul class="fl-feats">
+          <li>Everything in Standard</li>
+          <li>Full brand bible</li>
+          <li>Packaging design direction</li>
+          <li>Brand launch strategy</li>
+          <li>Full website design &amp; development — up to 5 pages <span class="fl-feat-badge">Web Dev</span></li>
+          <li>CMS setup — update your site without a developer</li>
+          <li>Unlimited revisions</li>
+          <li>30-day post-launch support</li>
+        </ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Legacy%20Brand%20Identity%20package." class="btn-secondary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+
+    </div>
+    <p class="sp-pricing-note zs-reveal">Enterprise and custom scopes available — <a href="https://wa.me/2348147065225" style="color:var(--red)">speak to us directly</a>.</p>
+  </div>
+
+  <div class="zs-outro">
+    <span class="zs-label zs-reveal">What We Deliver</span>
+    <div class="zs-tags zs-reveal zs-d1">
+      <span class="zs-tag">Logo Systems</span><span class="zs-tag">Brand Guidelines</span><span class="zs-tag">Colour Palettes</span><span class="zs-tag">Typography</span><span class="zs-tag">Brand Applications</span><span class="zs-tag">Social Media Kits</span><span class="zs-tag">Stationery Suites</span><span class="zs-tag">Source Files</span>
+    </div>
+    <h3 class="zs-outro-head zs-reveal zs-d2">Ready to build a brand that leads?</h3>
+    <a href="https://wa.me/2348147065225?text=I%20want%20to%20start%20a%20brand%20identity%20project." class="btn-primary zs-reveal zs-d2">Start Your Brand Identity &rarr;</a>
+  </div>
+</div>
+
+
+<!-- ZOREVA PROJECT MODAL -->
+<div id="zoreva-proj-modal" class="zoreva-modal">
+  <button class="zoreva-close-btn" onclick="closeZorevaProj()">×</button>
+
+  <!-- Opening image — full bleed, first thing shown -->
+  <div class="zc-opener">
+    <img src="ChatGPT%20Image%20Jul%2015%2C%202026%2C%2008_18_38%20AM.png" alt="ZOREVA exterior signage">
+  </div>
+
+  <div class="zp-info">
+    <div class="zp-info-inner">
+      <div>
+        <div class="zp-meta-item">
+          <div class="zp-meta-label">Client</div>
+          <div class="zp-meta-value">ZOREVA</div>
+        </div>
+        <div class="zp-meta-item">
+          <div class="zp-meta-label">Category</div>
+          <div class="zp-meta-value">Brand Identity</div>
+        </div>
+        <div class="zp-meta-item">
+          <div class="zp-meta-label">Industry</div>
+          <div class="zp-meta-value">Luxury Hospitality</div>
+        </div>
+        <div class="zp-meta-item">
+          <div class="zp-meta-label">Year</div>
+          <div class="zp-meta-value">2024</div>
+        </div>
+      </div>
+      <div class="zp-brief">
+        <p>ZOREVA was entering a luxury hospitality market where most competitors defaulted to <em>predictable darks</em> and overworked type. The identity needed to command the price point — and the room — before a single guest arrived.</p>
+        <p>We built a visual system rooted in <em>forest green</em>, chosen deliberately over the expected black. A bespoke interlocking Z mark that carries both motion and heritage. From signage to staff uniform, every touchpoint was designed to signal authority before a word was spoken.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 01: The Logo System -->
+  <div class="zc-chapter zc-chapter-dark">
+    <div class="zc-text">
+      <span class="zc-num">01 &mdash; The Logo System</span>
+      <h3 class="zc-title">A mark built for permanence</h3>
+      <p class="zc-body">At the core of ZOREVA's identity is a bespoke interlocking Z monogram — a custom form crafted to carry both motion and heritage. No template, no shortcut. The primary logomark pairs the monogram with extended letterforms that signal authority before a single word is read. It works at 16px on a screen and 16 feet on a wall.</p>
+    </div>
+    <div class="zc-pair">
+      <img src="ZOREVA%20IMAGES/1%20ZOREVA.jpg" alt="ZOREVA primary logo mark">
+      <img src="ZOREVA%20IMAGES/2%20ZOREVA.jpg" alt="ZOREVA logo system variations">
+    </div>
+  </div>
+
+  <!-- Chapter 02: Colour & Typography -->
+  <div class="zc-chapter zc-chapter-mid">
+    <div class="zc-text">
+      <span class="zc-num">02 &mdash; Colour &amp; Typography</span>
+      <h3 class="zc-title">Chosen deliberately, not by default</h3>
+      <p class="zc-body">ZOREVA's palette is anchored in deep forest green — selected over the predictable darks that dominate luxury hospitality. Gold acts as the accent: warm, earned, and authoritative. The typography follows the same logic: generous spacing, confident weight, built to travel from a business card to a building fascia without losing composure.</p>
+    </div>
+    <img src="ZOREVA%20IMAGES/3%20ZOREVA.jpg" class="zc-img-full" alt="ZOREVA colour palette and typography system">
+  </div>
+
+  <!-- Chapter 03: Brand in Space -->
+  <div class="zc-chapter zc-chapter-dark">
+    <div class="zc-text">
+      <span class="zc-num">03 &mdash; Brand in Space</span>
+      <h3 class="zc-title">Designed to inhabit real environments</h3>
+      <p class="zc-body">Every mark was tested in three-dimensional context. Signage, wall applications, and dimensional lettering were all developed to ensure the identity maintains its weight at architectural scale — not just in a presentation PDF. The green-and-gold palette commands the room before a guest sits down.</p>
+    </div>
+    <div class="zc-pair">
+      <img src="ZOREVA%20IMAGES/4%20ZOREVA.jpg" alt="ZOREVA interior wall signage">
+      <img src="ZOREVA%20IMAGES/5%20ZOREVA.jpg" alt="ZOREVA dimensional logo in space">
+    </div>
+  </div>
+
+  <!-- Chapter 04: Applications & Collateral -->
+  <div class="zc-chapter zc-chapter-mid">
+    <div class="zc-text">
+      <span class="zc-num">04 &mdash; Applications &amp; Collateral</span>
+      <h3 class="zc-title">Every touchpoint, considered</h3>
+      <p class="zc-body">A brand identity that only lives on a logo sheet is incomplete. For ZOREVA, every guest-facing surface was designed — from menus and business cards to staff uniform and packaging. The system maintains its elegance whether held in a guest's hand or mounted above an entrance.</p>
+    </div>
+    <div class="zc-stack">
+      <img src="ZOREVA%20IMAGES/6%20ZOREVA.jpg" class="zc-img-full" alt="ZOREVA brand collateral and stationery">
+      <div class="zc-pair">
+        <img src="ZOREVA%20IMAGES/7%20ZOREVA.jpg" alt="ZOREVA menu and packaging design">
+        <img src="ZOREVA%20IMAGES/8%20ZOREVA.jpg" alt="ZOREVA staff uniform and hospitality items">
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 05: Outdoor & Final Identity -->
+  <div class="zc-chapter zc-chapter-dark">
+    <div class="zc-text">
+      <span class="zc-num">05 &mdash; Outdoor &amp; Final Identity</span>
+      <h3 class="zc-title">The brand travels beyond the building</h3>
+      <p class="zc-body">ZOREVA's identity was built to extend into the city. Outdoor applications — from billboard to vehicle branding — were designed to carry the same authority as the interior. The final brand system is cohesive across every format: print, digital, environmental, and everything in between.</p>
+    </div>
+    <div class="zc-stack">
+      <img src="ZOREVA%20IMAGES/9%20ZOREVA.jpg" class="zc-img-full" alt="ZOREVA outdoor billboard application">
+      <img src="ZOREVA%20IMAGES/10%20ZOREVA.jpg" class="zc-img-full" alt="ZOREVA complete brand identity overview">
+    </div>
+  </div>
+
+  <div class="zp-delivers">
+    <span class="zp-del-label">Deliverables</span>
+    <div class="zp-del-tags">
+      <span class="zp-del-tag">Logo System</span>
+      <span class="zp-del-tag">Monogram Mark</span>
+      <span class="zp-del-tag">Brand Guidelines</span>
+      <span class="zp-del-tag">Colour Palette</span>
+      <span class="zp-del-tag">Typography System</span>
+      <span class="zp-del-tag">Signage System</span>
+      <span class="zp-del-tag">Interior Applications</span>
+      <span class="zp-del-tag">Staff Uniform</span>
+      <span class="zp-del-tag">Packaging Design</span>
+      <span class="zp-del-tag">Vehicle Branding</span>
+      <span class="zp-del-tag">Brand Document</span>
+    </div>
+    <h3 class="zp-del-head">Want a brand identity like this<br>for your business?</h3>
+    <a href="https://wa.me/2348147065225?text=I%20want%20a%20brand%20identity%20like%20ZOREVA%20for%20my%20business." class="btn-primary">Start a Similar Project &rarr;</a>
+  </div>
+</div>
+
+<!-- ASILI PROJECT MODAL -->
+<div id="asili-proj-modal" class="zoreva-modal">
+  <button class="zoreva-close-btn" onclick="closeAsiliProj()">×</button>
+
+  <!-- Full-bleed hero image — first thing seen -->
+  <div class="zc-opener">
+    <img src="asili/a.jpg" alt="Asili — Rooted in Heritage. Designed for Tomorrow." style="width:100%;height:auto;display:block;">
+  </div>
+
+  <div class="zp-info">
+    <div class="zp-info-inner">
+      <div>
+        <div class="zp-meta-item"><div class="zp-meta-label">Client</div><div class="zp-meta-value">Asili</div></div>
+        <div class="zp-meta-item"><div class="zp-meta-label">Category</div><div class="zp-meta-value">Brand Identity</div></div>
+        <div class="zp-meta-item"><div class="zp-meta-label">Industry</div><div class="zp-meta-value">Lifestyle &amp; Culture</div></div>
+        <div class="zp-meta-item"><div class="zp-meta-label">Year</div><div class="zp-meta-value">2024</div></div>
+      </div>
+      <div class="zp-brief">
+        <p>Asili — meaning <em>origin, authentic, true to source</em> — needed a visual identity that matched the weight of that name. The brand sits at the intersection of African heritage and contemporary lifestyle, and required a system that could carry both without compromise.</p>
+        <p>We built an identity rooted in <em>cultural confidence</em>: bold enough to stand on the shelf, refined enough to sit in premium spaces. Every design decision traces back to the core idea — <em>authentic, from the source</em>.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 01: The Mark -->
+  <div class="zc-chapter zc-chapter-dark">
+    <div class="zc-text">
+      <span class="zc-num">01 &mdash; The Logo System</span>
+      <h3 class="zc-title">A mark that carries the name</h3>
+      <p class="zc-body">The Asili logomark was built to communicate authenticity before a single word is read. Clean, intentional, and grounded — the mark draws on the idea of origin without resorting to cliché. It scales from a product label to a storefront without losing its voice.</p>
+    </div>
+    <div class="zc-pair">
+      <img src="asili/b.jpg" alt="Asili primary logo">
+      <img src="asili/c.jpg" alt="Asili logo variations">
+    </div>
+  </div>
+
+  <!-- Chapter 02: Colour & Typography -->
+  <div class="zc-chapter zc-chapter-mid">
+    <div class="zc-text">
+      <span class="zc-num">02 &mdash; Colour &amp; Typography</span>
+      <h3 class="zc-title">A palette with a point of view</h3>
+      <p class="zc-body">Asili's colour system was chosen to feel warm, grounded, and premium simultaneously — earthy tones that speak to African landscape and heritage, lifted by refined typographic choices that position the brand for contemporary, premium spaces. Nothing arbitrary. Every choice earns its place.</p>
+    </div>
+    <img src="asili/d.jpg" class="zc-img-full" alt="Asili colour palette and typography">
+  </div>
+
+  <!-- Chapter 03: Brand in Context -->
+  <div class="zc-chapter zc-chapter-dark">
+    <div class="zc-text">
+      <span class="zc-num">03 &mdash; Brand in Context</span>
+      <h3 class="zc-title">Identity that lives in real spaces</h3>
+      <p class="zc-body">Brand identity only proves itself when it leaves the design file. We tested Asili's system across the environments it would actually inhabit — product surfaces, retail contexts, digital spaces — to ensure the identity holds its authority at every scale and format.</p>
+    </div>
+    <div class="zc-pair">
+      <img src="asili/e.jpg" alt="Asili brand in context">
+      <img src="asili/f.jpg" alt="Asili brand application">
+    </div>
+  </div>
+
+  <!-- Chapter 04: Applications -->
+  <div class="zc-chapter zc-chapter-mid">
+    <div class="zc-text">
+      <span class="zc-num">04 &mdash; Brand Applications</span>
+      <h3 class="zc-title">Every touchpoint, considered</h3>
+      <p class="zc-body">From packaging to promotional materials, every surface was designed as an extension of the Asili identity — not an afterthought. The system was built to maintain its character whether it's in a customer's hands, on a shelf, or across digital channels.</p>
+    </div>
+    <div class="zc-stack">
+      <img src="asili/g.jpg" class="zc-img-full" alt="Asili packaging design">
+      <div class="zc-pair">
+        <img src="asili/h.jpg" alt="Asili collateral">
+        <img src="asili/i.jpg" alt="Asili brand materials">
+      </div>
+    </div>
+  </div>
+
+  <!-- Chapter 05: Complete System -->
+  <div class="zc-chapter zc-chapter-dark">
+    <div class="zc-text">
+      <span class="zc-num">05 &mdash; The Complete System</span>
+      <h3 class="zc-title">A brand built for the long run</h3>
+      <p class="zc-body">The final Asili identity system is consistent, adaptable, and built to grow with the brand. Every element — from the mark to the colour palette to the type choices — works together as a unified whole. This is a brand that knows exactly who it is.</p>
+    </div>
+    <div class="zc-stack">
+      <img src="asili/j.jpg" class="zc-img-full" alt="Asili full brand system">
+      <div class="zc-pair">
+        <img src="asili/k.jpg" alt="Asili final brand application">
+        <img src="asili/l.jpg" alt="Asili complete identity">
+      </div>
+    </div>
+  </div>
+
+  <div class="zp-delivers">
+    <span class="zp-del-label">Deliverables</span>
+    <div class="zp-del-tags">
+      <span class="zp-del-tag">Logo System</span>
+      <span class="zp-del-tag">Brand Guidelines</span>
+      <span class="zp-del-tag">Colour Palette</span>
+      <span class="zp-del-tag">Typography System</span>
+      <span class="zp-del-tag">Packaging Design</span>
+      <span class="zp-del-tag">Brand Applications</span>
+      <span class="zp-del-tag">Social Media Kit</span>
+      <span class="zp-del-tag">All Source Files</span>
+    </div>
+    <h3 class="zp-del-head">Want a brand identity like this<br>for your business?</h3>
+    <a href="https://wa.me/2348147065225?text=I%20want%20a%20brand%20identity%20like%20Asili%20for%20my%20business." class="btn-primary">Start a Similar Project &rarr;</a>
+  </div>
+</div>
+
+<!-- SOCIAL MEDIA & FLYER SERVICE MODAL -->
+<div id="svc-social-modal" class="zoreva-modal">
+  <button class="zoreva-close-btn" onclick="closeSvcSocial()">×</button>
+
+  <div class="sm-hero">
+    <span class="sm-pill">Social Media &amp; Flyer Design</span>
+    <h2 class="sm-hero-h1">
+      <span class="h1-white">Graphics That</span>
+      <span class="h1-accent" style="color:#8B5CF6">Stop</span>
+      <span class="h1-ghost">The Scroll.</span>
+    </h2>
+    <p class="sm-hero-sub">Premium social media flyers, event graphics, and WhatsApp broadcast materials. Fast turnaround, no retainer needed — just results.</p>
+    <div class="sm-hero-ctas">
+      <a href="https://wa.me/2348147065225?text=I%20want%20social%20media%20and%20flyer%20designs." class="sm-cta-primary" style="background:#8B5CF6;border-color:#8B5CF6">Order a Flyer &rarr;</a>
+      <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Monthly Flyer Designs</div><div class="sp-inc-desc">4 premium flyers per month — event, promo, product, or campaign</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Social Media Sizing</div><div class="sp-inc-desc">Every design in Instagram, Facebook, and WhatsApp formats</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">Editable files delivered every month — fully yours to use</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">48-Hour Turnaround</div><div class="sp-inc-desc">Briefs submitted today, designs ready in two business days</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Unlimited Revisions</div><div class="sp-inc-desc">We refine until every piece is exactly right for your brand</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Consistency</div><div class="sp-inc-desc">Your brand file is kept on record — every design stays on brand</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="pw-head zs-reveal">
+      <span class="pw-eyebrow">Selected Projects</span>
+      <h2 class="pw-title">Content That Moves<br>Brands Forward</h2>
+      <p class="pw-sub">Scroll-stopping visuals for food brands, ed-tech platforms, and logistics leaders — delivered every month.</p>
+    </div>
+    <div class="pw-grid">
+      <div class="pw-feat zs-reveal">
+        <img src="flyer/amala-1.png" class="pw-feat-img" alt="Teecas Amala Express">
+        <div class="pw-feat-overlay">
+          <span class="pw-feat-tag">Food Brand &middot; Flyer Campaign &middot; 2024</span>
+          <div>
+            <div class="pw-feat-name">Teecas Amala Express</div>
+            <p class="pw-feat-desc">Campaign flyer series driving foot traffic and brand recall for a bold Nigerian food brand. Social media sizing included.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pw-card zs-reveal zs-d1">
+        <div class="pw-card-img-wrap">
+          <img src="flyer/breej-1.jpg" class="pw-card-img" alt="Thebreej">
+          <span class="pw-card-tag">Ed-Tech &middot; Launch Campaign</span>
+        </div>
+        <div class="pw-card-body">
+          <div class="pw-card-name">Thebreej</div>
+          <p class="pw-card-desc">Launch campaign &amp; tutor recruitment flyers for a fast-growing ed-tech platform.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">You tell us what you're promoting, who it's for, and when it goes live. We take it from there.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Premium visuals crafted to your brand standards — hierarchy, colour, and energy working together in seconds.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Review</div><div class="sp-step-desc">You review, we refine. Unlimited rounds until every piece is exactly what you want.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Print-ready and digital formats delivered. Repeat every month — your brand stays visible, consistently.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fl-pricing-section">
+    <div class="fl-pricing-head zs-reveal">
+      <span class="zs-label" style="display:block;text-align:center;margin-bottom:16px;">Subscription Plans</span>
+      <h3>Consistent content, consistent growth.</h3>
+      <p>Subscribe and receive premium designs on a fixed monthly schedule.</p>
+    </div>
+    <div class="fl-plans">
+      <div class="fl-plan zs-reveal">
+        <div class="fl-plan-name">Monthly</div>
+        <div class="fl-price">&#8358;55,000<span>/mo</span></div>
+        <ul class="fl-feats"><li>4 premium flyer designs/month</li><li>Social media sizing included</li><li>Source files delivered</li><li>48-hour turnaround</li><li>Unlimited revision rounds</li></ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Monthly%20Flyer%20Subscription." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+      <div class="fl-plan fl-plan-best zs-reveal zs-d1">
+        <div class="fl-badge">Best Value</div>
+        <div class="fl-plan-name">Annual</div>
+        <div class="fl-price">&#8358;550,000<span>/yr</span></div>
+        <div class="fl-save">Save &#8358;110,000 vs monthly</div>
+        <ul class="fl-feats"><li>4 premium flyer designs/month</li><li>Social media sizing included</li><li>Source files delivered</li><li>48-hour turnaround</li><li>Unlimited revision rounds</li><li>Priority design slot</li><li>Dedicated brand file on record</li></ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Annual%20Flyer%20Subscription." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="zs-outro">
+    <span class="zs-label zs-reveal">What We Design</span>
+    <div class="zs-tags zs-reveal zs-d1">
+      <span class="zs-tag">Event Flyers</span><span class="zs-tag">Product Promos</span><span class="zs-tag">Launch Campaigns</span><span class="zs-tag">Countdown Posts</span><span class="zs-tag">Holiday Specials</span><span class="zs-tag">Social Content Packs</span><span class="zs-tag">Food &amp; Hospitality</span><span class="zs-tag">Corporate Announcements</span>
+    </div>
+    <h3 class="zs-outro-head zs-reveal zs-d2">Ready to make your audience stop scrolling?</h3>
+    <a href="https://wa.me/2348147065225?text=I%20want%20flyer%20and%20social%20media%20designs." class="btn-primary zs-reveal zs-d2">Start a Project &rarr;</a>
+  </div>
+</div>
+
+<!-- MAGAZINE & PUBLICATIONS SERVICE MODAL -->
+<div id="svc-magazine-modal" class="zoreva-modal">
+  <button class="zoreva-close-btn" onclick="closeSvcMagazine()">×</button>
+
+  <div class="sm-hero">
+    <span class="sm-pill">Magazine &amp; Publication Design</span>
+    <h2 class="sm-hero-h1">
+      <span class="h1-white">Editorial</span>
+      <span class="h1-accent" style="color:#06B6D4">That Stays</span>
+      <span class="h1-ghost">On The Shelf.</span>
+    </h2>
+    <p class="sm-hero-sub">From magazine covers to annual reports and brand books — editorial layouts designed to be picked up, read, and kept long after the deadline.</p>
+    <div class="sm-hero-ctas">
+      <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="sm-cta-primary" style="background:#06B6D4;border-color:#06B6D4">Start a Publication &rarr;</a>
+      <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Magazine Cover Design</div><div class="sp-inc-desc">Commanding covers built to stand out on any shelf or screen</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Editorial Layout</div><div class="sp-inc-desc">Full grid system, typographic hierarchy, and spread design for every page</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Feature Spreads</div><div class="sp-inc-desc">High-impact interior spreads, pull quotes, and photo-forward layouts</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Advertorials</div><div class="sp-inc-desc">Branded content pages that read editorially and convert commercially</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Annual Reports</div><div class="sp-inc-desc">Data-rich publications designed to signal leadership to investors</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Print-Ready Files</div><div class="sp-inc-desc">Bleed-accurate, CMYK-optimised files for any commercial printer</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="pw-head zs-reveal">
+      <span class="pw-eyebrow">Selected Projects</span>
+      <h2 class="pw-title">Publications That<br>Speak for Themselves</h2>
+      <p class="pw-sub">Editorial work designed to be kept, referenced, and remembered — long after the first read.</p>
+    </div>
+    <div class="pw-grid">
+      <div class="pw-feat zs-reveal">
+        <img src="magazi%20nne/Magazine-design.jpg" class="pw-feat-img" alt="HABITAT Magazine">
+        <div class="pw-feat-overlay">
+          <span class="pw-feat-tag">Lifestyle Editorial &middot; Magazine &middot; 2024</span>
+          <div>
+            <div class="pw-feat-name">HABITAT Magazine</div>
+            <p class="pw-feat-desc">Cover design and full interior layout for a lifestyle &amp; culture editorial — grid systems, typography, and art direction from brief to print-ready.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">We study your editorial voice, readership, and what the publication needs to communicate.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Layout Architecture</div><div class="sp-step-desc">Grid system, typographic hierarchy, and section structure — the framework everything sits on.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Cover, spreads, and layouts — built to hold their weight on a coffee table and a screen.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Production</div><div class="sp-step-desc">Bleed setup, CMYK conversion, and printer preflight. Technical detail handled completely.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">05</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Print-ready files, digital PDF edition, and source files — packaged and handed over completely.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fl-pricing-section">
+    <div class="fl-pricing-head zs-reveal">
+      <span class="zs-label" style="display:block;text-align:center;margin-bottom:16px;">Investment</span>
+      <h3>Publications that people actually keep.</h3>
+      <p>Pricing is scoped by page count and content complexity.</p>
+    </div>
+    <div class="fl-plans">
+
+      <!-- NEWSLETTER & BROCHURE -->
+      <div class="fl-plan zs-reveal">
+        <div class="fl-plan-name">Newsletter &amp; Brochure</div>
+        <p class="fl-plan-desc">Brand newsletters, company profiles, brochures, and short-form publications up to 20 pages.</p>
+        <div>
+          <div class="fl-price">&#8358;200,000</div>
+          <div class="fl-price-sub">~$120 USD</div>
+        </div>
+        <ul class="fl-feats">
+          <li>Up to 20 pages</li>
+          <li>Editorial layout design</li>
+          <li>2 cover concepts</li>
+          <li>Print-ready PDF delivery</li>
+          <li>Digital version included</li>
+          <li>1 revision round</li>
+        </ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20a%20Newsletter%20or%20Brochure%20design%20package." class="btn-secondary" style="text-align:center;">Get a Quote &rarr;</a>
+      </div>
+
+      <!-- CORPORATE PUBLICATION (Most Popular) -->
+      <div class="fl-plan fl-plan-best zs-reveal zs-d1">
+        <div class="fl-badge">Most Popular</div>
+        <div class="fl-plan-name">Corporate Publication</div>
+        <p class="fl-plan-desc">Annual reports, stakeholder magazines, and corporate publications from 24–60 pages.</p>
+        <div>
+          <div class="fl-price">&#8358;480,000</div>
+          <div class="fl-price-sub">~$290 USD</div>
+        </div>
+        <ul class="fl-feats">
+          <li>24–60 pages</li>
+          <li>Full editorial layout system</li>
+          <li>Custom infographics &amp; data viz</li>
+          <li>Photography art direction</li>
+          <li>3 cover concepts</li>
+          <li>Print-ready + digital PDF</li>
+          <li>2 revision rounds</li>
+        </ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20a%20Corporate%20Publication%20design%20package." class="btn-primary" style="text-align:center;">Get a Quote &rarr;</a>
+      </div>
+
+      <!-- COMMERCIAL MAGAZINE -->
+      <div class="fl-plan zs-reveal zs-d2">
+        <div class="fl-plan-name">Commercial Magazine</div>
+        <p class="fl-plan-desc">Consumer and trade magazines for publishers and media brands. Priced per issue.</p>
+        <div>
+          <div class="fl-price">&#8358;800,000</div>
+          <div class="fl-price-sub">~$485 USD</div>
+        </div>
+        <ul class="fl-feats">
+          <li>48–100+ pages</li>
+          <li>Full issue design system</li>
+          <li>Cover + feature spread design</li>
+          <li>Photography &amp; styling direction</li>
+          <li>Ad page templates</li>
+          <li>Issue retainer available</li>
+          <li>Unlimited revisions</li>
+        </ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20a%20Commercial%20Magazine%20design%20package." class="btn-secondary" style="text-align:center;">Get a Quote &rarr;</a>
+      </div>
+
+    </div>
+    <p class="sp-pricing-note zs-reveal">Prices are starting points. Final cost depends on page count, content complexity, and turnaround. <a href="https://wa.me/2348147065225" style="color:var(--red)">Send us your brief</a> for an exact quote.</p>
+  </div>
+
+  <div class="zs-outro">
+    <span class="zs-label zs-reveal">What We Design</span>
+    <div class="zs-tags zs-reveal zs-d1">
+      <span class="zs-tag">Magazine Covers</span><span class="zs-tag">Editorial Layouts</span><span class="zs-tag">Feature Spreads</span><span class="zs-tag">Annual Reports</span><span class="zs-tag">Brand Advertorials</span><span class="zs-tag">Table of Contents</span><span class="zs-tag">Digital Editions</span><span class="zs-tag">Publication Branding</span>
+    </div>
+    <h3 class="zs-outro-head zs-reveal zs-d2">Ready for a publication that people actually keep?</h3>
+    <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="btn-primary zs-reveal zs-d2">Start a Publication Project &rarr;</a>
+  </div>
+</div>
+
+<!-- PRINT & PACKAGING SERVICE MODAL -->
+<div id="svc-print-modal" class="zoreva-modal">
+  <button class="zoreva-close-btn" onclick="closeSvcPrint()">×</button>
+
+  <div class="sm-hero">
+    <span class="sm-pill">Print &amp; Packaging</span>
+    <h2 class="sm-hero-h1">
+      <span class="h1-white">Identity That</span>
+      <span class="h1-accent" style="color:#10B981">Lives</span>
+      <span class="h1-ghost">In Your Hands.</span>
+    </h2>
+    <p class="sm-hero-sub">Packaging, branded merchandise, stationery, and print assets that carry your identity beyond the screen into the physical world.</p>
+    <div class="sm-hero-ctas">
+      <a href="https://wa.me/2348147065225?text=I%20want%20print%20and%20packaging%20design." class="sm-cta-primary" style="background:#10B981;border-color:#10B981">Start a Print Project &rarr;</a>
+      <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Apparel Printing</div><div class="sp-inc-desc">T-shirts, polos, headbands, and branded merchandise — print-ready artwork</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Business Collateral</div><div class="sp-inc-desc">Business cards, letterheads, envelopes, and branded stationery</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Book &amp; Magazine Covers</div><div class="sp-inc-desc">Publication covers designed for spine presence and shelf authority</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Packaging Design</div><div class="sp-inc-desc">Product boxes, labels, and tote bags — premium feel, shelf-ready</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Production-Ready Files</div><div class="sp-inc-desc">Bleed-accurate, CMYK files built to exact printer specifications</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">All editable artwork files handed over on delivery</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="pw-head zs-reveal">
+      <span class="pw-eyebrow">Selected Projects</span>
+      <h2 class="pw-title">Print That Makes<br>an Impression</h2>
+      <p class="pw-sub">Production-ready artwork for apparel, business essentials, and anything your brand physically touches.</p>
+    </div>
+    <div class="pw-grid">
+      <div class="pw-feat zs-reveal">
+        <img src="prints/white-shirt.png" class="pw-feat-img" alt="Branded Apparel">
+        <div class="pw-feat-overlay">
+          <span class="pw-feat-tag">Branded Apparel &middot; Print &middot; 2024</span>
+          <div>
+            <div class="pw-feat-name">Branded Apparel</div>
+            <p class="pw-feat-desc">T-shirts, polos &amp; merchandise artwork — print-ready files built to exact fabric and print specifications, with colour profiles dialled in from the start.</p>
+          </div>
+        </div>
+      </div>
+      <div class="pw-card zs-reveal zs-d1">
+        <div class="pw-card-img-wrap">
+          <img src="prints/book.jpg" class="pw-card-img" alt="Business Collateral">
+          <span class="pw-card-tag">Collateral &middot; Print</span>
+        </div>
+        <div class="pw-card-body">
+          <div class="pw-card-name">Business Collateral</div>
+          <p class="pw-card-desc">Business cards, book covers &amp; print publications — production-ready, professional, precise.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">We understand your brand, what you're putting it on, and the exact specifications of your printer.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Artwork built precisely to production specs — correct dimensions, bleeds, and colour profiles from the first draft.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Review</div><div class="sp-step-desc">Technical checks and visual revisions. We don't sign off until the file will print exactly as designed.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Production-ready files, organised and packaged — ready to send straight to your printer.</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fl-pricing-section">
+    <div class="fl-pricing-head zs-reveal">
+      <span class="zs-label" style="display:block;text-align:center;margin-bottom:16px;">Investment</span>
+      <h3>Every brand needs to live in the physical world.</h3>
+      <p>Pricing is scoped by item count and complexity. Common starting points below.</p>
+    </div>
+    <div class="fl-plans">
+      <div class="fl-plan zs-reveal">
+        <div class="fl-plan-name">Per Project</div>
+        <div class="fl-price">from &#8358;40,000</div>
+        <ul class="fl-feats"><li>Single print item</li><li>2 revision rounds</li><li>Print-ready file</li><li>Source file included</li></ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20a%20print%20design%20project." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+      <div class="fl-plan fl-plan-best zs-reveal zs-d1">
+        <div class="fl-badge">Full Suite</div>
+        <div class="fl-plan-name">Brand Print Pack</div>
+        <div class="fl-price">&#8358;250,000</div>
+        <ul class="fl-feats"><li>Up to 6 print items</li><li>Apparel + collateral + packaging</li><li>Unlimited revisions</li><li>All print-ready files</li><li>All source files</li><li>Brand consistency guaranteed</li></ul>
+        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Brand%20Print%20Pack." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+    </div>
+    <p class="sp-pricing-note zs-reveal">Bulk orders and retainer arrangements available — <a href="https://wa.me/2348147065225" style="color:var(--red)">speak to us directly</a>.</p>
+  </div>
+
+  <div class="zs-outro">
+    <span class="zs-label zs-reveal">What We Design</span>
+    <div class="zs-tags zs-reveal zs-d1">
+      <span class="zs-tag">T-Shirts &amp; Polos</span><span class="zs-tag">Business Cards</span><span class="zs-tag">Book Covers</span><span class="zs-tag">Tote Bags</span><span class="zs-tag">Product Packaging</span><span class="zs-tag">Headbands &amp; Accessories</span><span class="zs-tag">Stationery</span><span class="zs-tag">Magazine Layouts</span>
+    </div>
+    <h3 class="zs-outro-head zs-reveal zs-d2">Ready to put your brand on everything?</h3>
+    <a href="https://wa.me/2348147065225?text=I%20want%20premium%20print%20designs%20for%20my%20brand." class="btn-primary zs-reveal zs-d2">Start a Print Project &rarr;</a>
+  </div>
+</div>
+
+<!-- DIFF — now after WORK -->
+<section class="diff" id="about">
+  <div class="diff-inner">
+    <span class="sec-eyebrow">Why Princekings</span>
+    <h2 class="diff-h2 reveal">We don't decorate.<br>We <em>build</em> brand equity.</h2>
+    <p class="sec-p reveal" style="margin:0 auto;">Most agencies hand you a logo and call it branding. We engineer visual systems designed around how your audience thinks, buys, and trusts.</p>
+    <div class="diff-grid">
+      <div class="dp dp-orange reveal">
+        <span class="dp-num">01</span>
+        <div>
+          <h4>Results before aesthetics</h4>
+          <p>Every design decision is made with a business outcome in mind. Beautiful is a byproduct of strategic.</p>
+        </div>
+      </div>
+      <div class="dp dp-olive reveal d1">
+        <span class="dp-num">02</span>
+        <div>
+          <h4>Audience-led direction</h4>
+          <p>We study who your customers are before we open a single design file. Your brand speaks their language.</p>
+        </div>
+      </div>
+      <div class="dp dp-blue reveal d2">
+        <span class="dp-num">03</span>
+        <div>
+          <h4>End-to-end brand thinking</h4>
+          <p>From identity to print to digital — one agency, one vision, complete consistency across every channel.</p>
+        </div>
+      </div>
+      <div class="dp dp-gold reveal d3">
+        <span class="dp-num">04</span>
+        <div>
+          <h4>Built for global standards</h4>
+          <p>We design for the room you want to be in — not just the market you're in. Premium, precise, positioned.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTI -->
+<section class="testi">
+  <div class="sec-head">
+    <span class="sec-eyebrow">Our Clients</span>
+    <h2 class="sec-h2 reveal">Brands We Have Worked With</h2>
+  </div>
+
+  <div class="brand-ticker">
+    <div class="brand-ticker-track">
+      <img class="brand-ticker-logo brand-ticker-logo-invert" src="logo/zoreva.png" alt="ZOREVA" style="height:80px;max-width:220px">
+      <img class="brand-ticker-logo" src="logo/breej.png" alt="Thebreej">
+      <img class="brand-ticker-logo" src="logo/global.png" alt="Global Circle Logistics">
+      <img class="brand-ticker-logo" src="logo/brsk%20png.png" alt="BRSK">
+      <img class="brand-ticker-logo" src="logo/colourrr.png" alt="Colourrr">
+      <img class="brand-ticker-logo" src="logo/habitat%20october%20edi%27tion.png" alt="Habitat October Edition" style="filter:brightness(0);mix-blend-mode:normal">
+      <img class="brand-ticker-logo" src="logo/healthy%20feast.png" alt="Healthy Feast">
+      <img class="brand-ticker-logo" src="logo/onoteena%201.png" alt="Onoteena" style="height:72px;max-width:220px;filter:brightness(0);mix-blend-mode:normal">
+      <img class="brand-ticker-logo brand-ticker-logo-invert" src="logo/zoreva.png" alt="ZOREVA" style="height:80px;max-width:220px">
+      <img class="brand-ticker-logo" src="logo/breej.png" alt="Thebreej">
+      <img class="brand-ticker-logo" src="logo/global.png" alt="Global Circle Logistics">
+      <img class="brand-ticker-logo" src="logo/brsk%20png.png" alt="BRSK">
+      <img class="brand-ticker-logo" src="logo/colourrr.png" alt="Colourrr">
+      <img class="brand-ticker-logo" src="logo/habitat%20october%20edi%27tion.png" alt="Habitat October Edition" style="filter:brightness(0);mix-blend-mode:normal">
+      <img class="brand-ticker-logo" src="logo/healthy%20feast.png" alt="Healthy Feast">
+      <img class="brand-ticker-logo" src="logo/onoteena%201.png" alt="Onoteena" style="height:72px;max-width:220px;filter:brightness(0);mix-blend-mode:normal">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <span class="cta-sig reveal">— The Princekings Brand</span>
+  <h2 class="cta-h2 reveal">Your brand has one chance<br>at a <em>first impression.</em></h2>
+  <p class="cta-sub reveal">Let's make sure it commands the room, closes deals, and builds recognition that compounds.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/2348147065225" class="btn-primary">Start a Project &rarr;</a>
+    <a href="https://score.theprincekingsbrand.com" class="btn-outline">Score My Brand First</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="f-about">
+      <h3>The Princekings Brand</h3>
+      <p>A global design agency building brands that mean business. Premium identity, strategy, and design for corporations ready to lead.</p>
+      <div class="socials">
+        <a href="#" class="soc">in</a>
+        <a href="https://instagram.com/the_princekings_brand" class="soc">ig</a>
+        <a href="#" class="soc">tw</a>
+        <a href="#" class="soc">be</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#" onclick="openSvcBrand(); return false;">Brand Identity</a></li>
+        <li><a href="#" onclick="openSvcSocial(); return false;">Social Media &amp; Flyer</a></li>
+        <li><a href="#" onclick="openSvcMagazine(); return false;">Magazine &amp; Publications</a></li>
+        <li><a href="#" onclick="openSvcPrint(); return false;">Print &amp; Packaging</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#work">Our Work</a></li>
+        <li><a href="https://score.theprincekingsbrand.com">Brand Scorecard</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div class="f-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="https://wa.me/2348147065225">WhatsApp Us</a></li>
+        <li><a href="mailto:hello@theprincekingsbrand.com">hello@theprincekingsbrand.com</a></li>
+        <li><a href="#">Worldwide</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <p>&copy; 2026 The Princekings Brand &nbsp;·&nbsp; All Rights Reserved</p>
+    <a href="https://score.theprincekingsbrand.com">Score Your Brand &rarr;</a>
+  </div>
+</footer>
+
+<script>
+  // Custom cursor — desktop only
+  const cur = document.getElementById('cur');
+  const ring = document.getElementById('cur-ring');
+  if (window.matchMedia('(pointer: fine)').matches) {
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+    (function tick() {
+      cur.style.left = mx + 'px'; cur.style.top = my + 'px';
+      rx += (mx - rx) * 0.13; ry += (my - ry) * 0.13;
+      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+      requestAnimationFrame(tick);
+    })();
+    document.querySelectorAll('a, .svc-card, .dp, .wk-card, .tc, .di[onclick]').forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cur.style.width = '14px'; cur.style.height = '14px';
+        ring.style.width = '48px'; ring.style.height = '48px';
+      });
+      el.addEventListener('mouseleave', () => {
+        cur.style.width = '8px'; cur.style.height = '8px';
+        ring.style.width = '32px'; ring.style.height = '32px';
+      });
+    });
+  } else {
+    cur.style.display = 'none';
+    ring.style.display = 'none';
+  }
+
+  // Stat counter animation
+  const counters = document.querySelectorAll('[data-count]');
+  if (counters.length) {
+    const cObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const el = entry.target;
+        const target = parseInt(el.dataset.count, 10);
+        const numEl = el.querySelector('.count-num');
+        if (!numEl) return;
+        let start = null;
+        const duration = 1400;
+        function step(ts) {
+          if (!start) start = ts;
+          const p = Math.min((ts - start) / duration, 1);
+          const eased = 1 - Math.pow(1 - p, 3);
+          numEl.textContent = Math.round(eased * target);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+        cObs.unobserve(el);
+      });
+    }, { threshold: 0.5 });
+    counters.forEach(el => cObs.observe(el));
+  }
+
+  // Project modal data
+  const projects = [
+    {
+      tag: 'Brand Identity · 2024',
+      title: 'Apex Corp — Complete Rebrand',
+      desc: 'A full identity overhaul for a logistics company expanding its operations across West Africa. The brief called for a brand that could hold its own in both local and international markets — commanding, modern, and built to scale.',
+      solution: 'We developed a modular logo system anchored in bold geometry, paired with a navy and burnt sienna palette. A full brand guidelines document, stationery suite, vehicle livery, and social media kit were delivered — ensuring every touchpoint from boardroom to delivery truck spoke one language.',
+      deliverables: ['Logo System', 'Brand Guidelines', 'Stationery Suite', 'Vehicle Livery', 'Social Media Kit', 'Business Cards'],
+      images: [
+        'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=900&q=85',
+        'https://images.unsplash.com/photo-1572044162444-ad60f128bdea?w=400&q=80',
+        'https://images.unsplash.com/photo-1634986666676-ec8fd927c23d?w=400&q=80',
+        'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=400&q=80',
+        'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=400&q=80'
+      ]
+    },
+    {
+      tag: 'Social Media Management · 2024',
+      title: 'Noir Collective — Brand Presence',
+      desc: 'A premium fashion label needed their digital presence to match the quality of their physical garments. Their social media was inconsistent, under-performing, and not converting followers into buyers.',
+      solution: 'We took over their full social media design operation — building a monthly content calendar, designing 20 posts per month with coordinated captions, managing scheduling across Instagram and LinkedIn, and delivering bi-weekly performance reports. Engagement tripled within 60 days.',
+      deliverables: ['20 Posts/Month', 'Caption Writing', 'Content Calendar', 'Story Designs', 'Bi-weekly Reports', 'Scheduling'],
+      images: [
+        'https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=85',
+        'https://images.unsplash.com/photo-1611162616305-c69b3037c7bb?w=400&q=80',
+        'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=400&q=80',
+        'https://images.unsplash.com/photo-1533750516457-a7f992034fec?w=400&q=80',
+        'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?w=400&q=80'
+      ]
+    },
+    {
+      tag: 'Magazine Design · 2024',
+      title: 'Vantage Corp — Annual Report',
+      desc: 'A financial services firm needed their annual report to do more than communicate figures — it needed to signal leadership, attract investors, and serve as a leave-behind at boardroom meetings across the continent.',
+      solution: 'We designed a 48-page premium editorial publication complete with bespoke data visualisations, photography art direction, full grid layout system, and print production management. The result was a publication that clients framed and displayed rather than filed away.',
+      deliverables: ['48-Page Layout', 'Data Visualisations', 'Photography Direction', 'Infographic Design', 'Print Production', 'Digital PDF Version'],
+      images: [
+        'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=900&q=85',
+        'https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&q=80',
+        'https://images.unsplash.com/photo-1543286386-713bdd548da4?w=400&q=80',
+        'https://images.unsplash.com/photo-1512314889357-e157c22f938d?w=400&q=80',
+        'https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=400&q=80'
+      ]
+    },
+    {
+      tag: 'Print & Packaging · 2023',
+      title: 'Solace Labs — Product Range',
+      desc: 'A skincare startup launching three product lines needed packaging that could compete on retail shelves with established brands — premium feel, shelf presence, and a cohesive brand world across every item.',
+      solution: 'We designed the complete packaging system from scratch: outer boxes, product labels, tissue paper, branded tote bags, and a thank-you card insert. All designs were prepared for print production and we managed the full production process from file to finished product.',
+      deliverables: ['Box Design', 'Product Labels', 'Tissue Paper', 'Branded Tote Bags', 'Thank-You Cards', 'Print Production'],
+      images: [
+        'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=85',
+        'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=400&q=80',
+        'https://images.unsplash.com/photo-1556228578-8c89e6adf883?w=400&q=80',
+        'https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?w=400&q=80',
+        'https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?w=400&q=80'
+      ]
+    },
+    {
+      tag: 'Brand Strategy · 2024',
+      title: 'Kova Studio — Brand World',
+      desc: 'An interior design studio expanding into the commercial real estate market across Accra, Nairobi, and beyond needed a brand that spoke the language of corporate decision-makers — sophisticated, credible, and unmistakably premium.',
+      solution: 'We built a complete brand world from the ground up — brand naming rationale, visual identity, tone of voice guidelines, a full stationery suite, and a digital-first presentation template. The brand launched to an industry audience at a Pan-African real estate summit.',
+      deliverables: ['Brand Strategy', 'Visual Identity', 'Tone of Voice', 'Stationery Suite', 'Presentation Template', 'Brand Launch'],
+      images: [
+        'https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=900&q=85',
+        'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=400&q=80',
+        'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80',
+        'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=400&q=80',
+        'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&q=80'
+      ]
+    }
+  ];
+
+  function openProject(i) {
+    const p = projects[i];
+    document.getElementById('modal-tag').textContent       = p.tag;
+    document.getElementById('modal-title').textContent     = p.title;
+    document.getElementById('modal-desc').textContent      = p.desc;
+    document.getElementById('modal-solution').textContent  = p.solution;
+
+    // Populate images
+    document.getElementById('modal-main-img').src = p.images[0];
+    document.getElementById('modal-main-img').alt = p.title;
+    document.getElementById('modal-thumb-0').src  = p.images[1];
+    document.getElementById('modal-thumb-1').src  = p.images[2];
+    document.getElementById('modal-thumb-2').src  = p.images[3];
+    document.getElementById('modal-thumb-3').src  = p.images[4];
+
+    // Deliverable tags
+    const d = document.getElementById('modal-deliverables');
+    d.innerHTML = p.deliverables.map(t => `<span class="deliv-tag">${t}</span>`).join('');
+
+    document.getElementById('proj-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeProject(e) {
+    if (e.target === document.getElementById('proj-modal')) {
+      document.getElementById('proj-modal').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  }
+
+  function closeProjectBtn() {
+    document.getElementById('proj-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  // Scroll reveal for service modals
+  const zsObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('on'); zsObs.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1 });
+
+  function openSvcModal(id) {
+    const modal = document.getElementById(id);
+    modal.classList.add('open'); modal.scrollTop = 0;
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => { modal.querySelectorAll('.zs-reveal:not(.on)').forEach(el => zsObs.observe(el)); }, 60);
+  }
+  function closeSvcModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+
+  function openSvcBrand()    { openSvcModal('svc-brand-modal'); }
+  function closeSvcBrand()   { closeSvcModal('svc-brand-modal'); }
+  function openZorevaProj()  { openSvcModal('zoreva-proj-modal'); }
+  function closeZorevaProj() { closeSvcModal('zoreva-proj-modal'); }
+  function openAsiliProj()   { openSvcModal('asili-proj-modal'); }
+  function closeAsiliProj()  { closeSvcModal('asili-proj-modal'); }
+  function openSvcSocial()   { openSvcModal('svc-social-modal'); }
+  function closeSvcSocial()  { closeSvcModal('svc-social-modal'); }
+  function openSvcMagazine() { openSvcModal('svc-magazine-modal'); }
+  function closeSvcMagazine(){ closeSvcModal('svc-magazine-modal'); }
+  function openSvcPrint()    { openSvcModal('svc-print-modal'); }
+  function closeSvcPrint()   { closeSvcModal('svc-print-modal'); }
+
+  // Service card slide preview on hover
+  document.querySelectorAll('.svc-card').forEach(card => {
+    const slides = card.querySelectorAll('.svc-slide');
+    let idx = 0, timer = null;
+    card.addEventListener('mouseenter', () => {
+      clearInterval(timer);
+      idx = 1;
+      slides.forEach((s, j) => s.classList.toggle('active', j === idx));
+      timer = setInterval(() => {
+        idx = (idx + 1) % slides.length;
+        slides.forEach((s, j) => s.classList.toggle('active', j === idx));
+      }, 900);
+    });
+    card.addEventListener('mouseleave', () => {
+      clearInterval(timer);
+      idx = 0;
+      slides.forEach((s, j) => s.classList.toggle('active', j === 0));
+    });
+  });
+
+  // Escape closes any open modal
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.getElementById('proj-modal').classList.remove('open');
+    ['svc-brand-modal','svc-social-modal','svc-magazine-modal','svc-print-modal','zoreva-proj-modal','asili-proj-modal'].forEach(id => {
+      document.getElementById(id).classList.remove('open');
+    });
+    document.body.style.overflow = '';
+  });
+
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  hamburger.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+
+  // Close mobile nav on any link click
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('on'), i * 80);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
