@@ -325,7 +325,7 @@
   .hero-h1 .c-dim { color: rgba(237,235,230,0.28); }
 
   .hero-sub {
-    font-size: 1rem;
+    font-size: 0.87rem;
     line-height: 1.78;
     color: var(--muted);
     font-weight: 300;
@@ -598,7 +598,7 @@
   }
 
   .sec-p {
-    font-size: 0.92rem;
+    font-size: 0.82rem;
     color: var(--muted);
     font-weight: 300;
     text-align: center;
@@ -757,7 +757,7 @@
     letter-spacing: -0.01em; margin-bottom: 7px; color: var(--white);
   }
 
-  .dp p { font-size: 0.84rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
+  .dp p { font-size: 0.75rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
 
   /* ── WORK ── */
   .work { padding: 120px 5%; background: var(--bg); }
@@ -824,7 +824,7 @@
   }
 
   .wk-brief {
-    font-size: 0.78rem; line-height: 1.65;
+    font-size: 0.71rem; line-height: 1.65;
     color: var(--muted2); font-weight: 300;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -1452,7 +1452,7 @@
     font-size: clamp(18px, 1.8vw, 24px); letter-spacing: -0.02em;
     color: var(--white); margin-bottom: 10px;
   }
-  .svc-tagline { font-size: 0.88rem; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+  .svc-tagline { font-size: 0.78rem; color: var(--muted); line-height: 1.65; margin-bottom: 24px; font-weight: 300; }
   .svc-btn { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; color: var(--red); }
 
   /* ── SERVICE MODAL SECTIONS ── */
@@ -1469,7 +1469,7 @@
   }
   .sp-inc-icon { color: var(--red); font-size: 0.6rem; margin-top: 5px; flex-shrink: 0; }
   .sp-inc-name { font-weight: 600; color: var(--white); font-size: 0.88rem; margin-bottom: 5px; }
-  .sp-inc-desc { color: var(--muted); font-size: 0.8rem; line-height: 1.5; }
+  .sp-inc-desc { color: var(--muted); font-size: 0.72rem; line-height: 1.5; font-weight: 300; }
 
   .sp-portfolio { display: flex; flex-direction: column; gap: 16px; }
   .sp-proj { background: var(--card); border: 0.5px solid var(--border); border-radius: 4px; overflow: hidden; }
@@ -1505,8 +1505,8 @@
   }
   .sp-step-body { display: flex; flex-direction: column; }
   .sp-step-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: var(--white); margin-bottom: 8px; }
-  .sp-step-desc { color: var(--muted); font-size: 0.87rem; line-height: 1.65; }
-  .sp-pricing-note { color: var(--muted); font-size: 0.82rem; text-align: center; margin-top: 28px; }
+  .sp-step-desc { color: var(--muted); font-size: 0.77rem; line-height: 1.65; font-weight: 300; }
+  .sp-pricing-note { color: var(--muted); font-size: 0.73rem; font-weight: 300; text-align: center; margin-top: 28px; }
 
   /* PORTFOLIO EDITORIAL GRID */
   .pw-head {
@@ -1523,22 +1523,22 @@
     color: var(--white); line-height: 1.1;
     letter-spacing: -0.02em; margin-bottom: 14px;
   }
-  .pw-sub { font-size: 0.82rem; color: var(--muted); line-height: 1.65; }
+  .pw-sub { font-size: 0.74rem; color: var(--muted); line-height: 1.65; font-weight: 300; }
 
   .pw-grid {
     display: grid;
-    grid-template-columns: 1.45fr 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: 8px;
   }
 
   /* Featured card — image fills, text overlay */
   .pw-feat {
-    grid-row: span 2;
     position: relative; border-radius: 4px; overflow: hidden;
     background: var(--bg3); cursor: pointer;
+    aspect-ratio: 4/3;
   }
   .pw-feat-img {
-    width: 100%; height: auto;
+    width: 100%; height: 100%; object-fit: cover;
     display: block;
     transform: scale(1.1);
     transition: transform 1.4s cubic-bezier(0.16,1,0.3,1);
@@ -1563,7 +1563,7 @@
     font-size: clamp(14px, 1.3vw, 18px); color: var(--white);
     margin-bottom: 8px; line-height: 1.3;
   }
-  .pw-feat-desc { font-size: 0.76rem; color: rgba(237,235,230,0.52); line-height: 1.6; }
+  .pw-feat-desc { font-size: 0.69rem; color: rgba(237,235,230,0.52); line-height: 1.6; font-weight: 300; }
 
   /* Smaller side cards */
   .pw-card {
@@ -1576,9 +1576,10 @@
   .pw-card-img-wrap {
     position: relative; overflow: hidden;
     flex-shrink: 0; background: var(--bg3);
+    aspect-ratio: 4/3;
   }
   .pw-card-img {
-    width: 100%; height: auto; display: block;
+    width: 100%; height: 100%; object-fit: cover; display: block;
     transform: scale(1.1);
     transition: transform 1.4s cubic-bezier(0.16,1,0.3,1);
   }
@@ -1598,7 +1599,7 @@
     font-size: 0.88rem; color: var(--white);
     margin-bottom: 6px; line-height: 1.35;
   }
-  .pw-card-desc { font-size: 0.75rem; color: var(--muted); line-height: 1.55; }
+  .pw-card-desc { font-size: 0.7rem; color: var(--muted); line-height: 1.55; font-weight: 300; }
 
   /* Placeholder card */
   .pw-ph {
@@ -1627,8 +1628,6 @@
     .sp-proj-imgs .sp-proj-img:last-child { display: none; }
     .sp-section { padding: 70px 5%; }
     .pw-grid { grid-template-columns: 1fr; }
-    .pw-feat { grid-row: auto; }
-    .pw-card-img-wrap { height: auto; }
   }
 
   /* ── ZOREVA BRAND STORY — full-scroll experience ── */
@@ -1769,7 +1768,8 @@
 
   .sm-hero-sub {
     font-family: 'Instrument Sans', sans-serif;
-    font-size: 0.95rem; line-height: 1.7;
+    font-size: 0.84rem; line-height: 1.75;
+    font-weight: 300;
     color: var(--muted); margin-top: 36px; max-width: 520px;
   }
 
@@ -1880,8 +1880,12 @@
   }
 
   @media (max-width: 768px) {
-    .sm-hero { padding: 110px 5% 70px; }
-    .sm-pill { margin-bottom: 40px; }
+    .sm-hero { padding: 100px 5% 60px; }
+    .sm-pill { margin-bottom: 32px; }
+    .sm-hero-h1 { font-size: clamp(34px, 9.5vw, 128px); }
+    .sm-hero-sub { font-size: 0.8rem; margin-top: 24px; }
+    .sm-hero-ctas { flex-direction: column; align-items: stretch; gap: 8px; margin-top: 24px; }
+    .sm-cta-primary, .sm-cta-secondary { justify-content: center; padding: 13px 20px; }
   }
 
   /* EDITORIAL TEXT SECTIONS */
@@ -2002,7 +2006,7 @@
     font-size: clamp(26px, 3vw, 44px); letter-spacing: -0.025em;
     line-height: 1.1; color: var(--white); margin-bottom: 14px;
   }
-  .fl-pricing-head p { color: var(--muted); font-size: 0.92rem; max-width: 480px; line-height: 1.65; margin: 0 auto; }
+  .fl-pricing-head p { color: var(--muted); font-size: 0.8rem; font-weight: 300; max-width: 480px; line-height: 1.65; margin: 0 auto; }
   .fl-plans {
     display: grid; grid-template-columns: 1fr 1fr 1fr;
     gap: 16px; width: 100%; max-width: 1100px;
@@ -2035,7 +2039,7 @@
   }
   .fl-price span { font-size: 0.88rem; font-weight: 400; color: var(--muted); margin-left: 3px; }
   .fl-save { font-size: 0.78rem; color: var(--red); font-weight: 500; margin-top: -10px; }
-  .fl-plan-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.6; margin-top: -8px; }
+  .fl-plan-desc { font-size: 0.74rem; color: var(--muted); line-height: 1.6; margin-top: -8px; font-weight: 300; }
   .fl-price-sub { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
   .fl-feats { list-style: none; display: flex; flex-direction: column; gap: 11px; flex: 1; }
   .fl-feat-badge {
@@ -2045,7 +2049,7 @@
     padding: 2px 6px; margin-left: 6px; vertical-align: middle;
   }
   .fl-feats li {
-    font-size: 0.86rem; color: var(--muted);
+    font-size: 0.76rem; color: var(--muted); font-weight: 300;
     padding-left: 18px; position: relative; line-height: 1.4;
   }
   .fl-feats li::before { content: '✓'; position: absolute; left: 0; color: var(--red); font-size: 0.75rem; }
@@ -2405,20 +2409,6 @@
     </div>
   </div>
 
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">What's Included</span>
-      <div class="sp-includes">
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Logo System</div><div class="sp-inc-desc">Primary, secondary &amp; monogram marks — SVG, PNG, PDF</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Colour Palette</div><div class="sp-inc-desc">Primary &amp; secondary colours with HEX, RGB, and CMYK values</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Typography System</div><div class="sp-inc-desc">Heading, body, and accent typefaces with full usage rules</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Guidelines</div><div class="sp-inc-desc">A complete PDF document your team and vendors can follow</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Applications</div><div class="sp-inc-desc">Business cards, letterhead, email signature &amp; social media kit</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">All editable AI/PSD files — you own everything we create</div></div></div>
-      </div>
-    </div>
-  </div>
-
   <div class="sp-section sp-section-alt">
     <div class="pw-head zs-reveal">
       <span class="pw-eyebrow">Selected Projects</span>
@@ -2445,19 +2435,6 @@
           <div class="pw-card-name">Asili</div>
           <p class="pw-card-desc">Full brand identity for an authentic African lifestyle brand. <span style="color:var(--red);">View Project →</span></p>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">The Process</span>
-      <div class="sp-process">
-        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Discovery</div><div class="sp-step-desc">We learn your goals, audience, and market position before we open a single design file.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Brand Strategy</div><div class="sp-step-desc">We define your visual direction — personality, tone, and style — so every design decision has a reason.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Full logo system, colour palette, typography, and applications — built from scratch, not a template.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Refinement</div><div class="sp-step-desc">Multiple revision rounds until the identity is exactly right. We don't stop until you're confident.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">05</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Brand guidelines PDF, all source files, and a handover session — everything you need to run your brand.</div></div></div>
       </div>
     </div>
   </div>
@@ -2534,6 +2511,33 @@
 
     </div>
     <p class="sp-pricing-note zs-reveal">Enterprise and custom scopes available — <a href="https://wa.me/2348147065225" style="color:var(--red)">speak to us directly</a>.</p>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Logo System</div><div class="sp-inc-desc">Primary, secondary &amp; monogram marks — SVG, PNG, PDF</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Colour Palette</div><div class="sp-inc-desc">Primary &amp; secondary colours with HEX, RGB, and CMYK values</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Typography System</div><div class="sp-inc-desc">Heading, body, and accent typefaces with full usage rules</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Guidelines</div><div class="sp-inc-desc">A complete PDF document your team and vendors can follow</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Applications</div><div class="sp-inc-desc">Business cards, letterhead, email signature &amp; social media kit</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">All editable AI/PSD files — you own everything we create</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Discovery</div><div class="sp-step-desc">We learn your goals, audience, and market position before we open a single design file.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Brand Strategy</div><div class="sp-step-desc">We define your visual direction — personality, tone, and style — so every design decision has a reason.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Full logo system, colour palette, typography, and applications — built from scratch, not a template.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Refinement</div><div class="sp-step-desc">Multiple revision rounds until the identity is exactly right. We don't stop until you're confident.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">05</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Brand guidelines PDF, all source files, and a handover session — everything you need to run your brand.</div></div></div>
+      </div>
+    </div>
   </div>
 
   <div class="zs-outro">
@@ -2795,20 +2799,6 @@
     </div>
   </div>
 
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">What's Included</span>
-      <div class="sp-includes">
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Monthly Flyer Designs</div><div class="sp-inc-desc">4 premium flyers per month — event, promo, product, or campaign</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Social Media Sizing</div><div class="sp-inc-desc">Every design in Instagram, Facebook, and WhatsApp formats</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">Editable files delivered every month — fully yours to use</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">48-Hour Turnaround</div><div class="sp-inc-desc">Briefs submitted today, designs ready in two business days</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Unlimited Revisions</div><div class="sp-inc-desc">We refine until every piece is exactly right for your brand</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Consistency</div><div class="sp-inc-desc">Your brand file is kept on record — every design stays on brand</div></div></div>
-      </div>
-    </div>
-  </div>
-
   <div class="sp-section sp-section-alt">
     <div class="pw-head zs-reveal">
       <span class="pw-eyebrow">Selected Projects</span>
@@ -2839,18 +2829,6 @@
     </div>
   </div>
 
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">The Process</span>
-      <div class="sp-process">
-        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">You tell us what you're promoting, who it's for, and when it goes live. We take it from there.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Premium visuals crafted to your brand standards — hierarchy, colour, and energy working together in seconds.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Review</div><div class="sp-step-desc">You review, we refine. Unlimited rounds until every piece is exactly what you want.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Print-ready and digital formats delivered. Repeat every month — your brand stays visible, consistently.</div></div></div>
-      </div>
-    </div>
-  </div>
-
   <div class="fl-pricing-section">
     <div class="fl-pricing-head zs-reveal">
       <span class="zs-label" style="display:block;text-align:center;margin-bottom:16px;">Subscription Plans</span>
@@ -2871,6 +2849,32 @@
         <div class="fl-save">Save &#8358;110,000 vs monthly</div>
         <ul class="fl-feats"><li>4 premium flyer designs/month</li><li>Social media sizing included</li><li>Source files delivered</li><li>48-hour turnaround</li><li>Unlimited revision rounds</li><li>Priority design slot</li><li>Dedicated brand file on record</li></ul>
         <a href="https://wa.me/2348147065225?text=I%20want%20the%20Annual%20Flyer%20Subscription." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Monthly Flyer Designs</div><div class="sp-inc-desc">4 premium flyers per month — event, promo, product, or campaign</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Social Media Sizing</div><div class="sp-inc-desc">Every design in Instagram, Facebook, and WhatsApp formats</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">Editable files delivered every month — fully yours to use</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">48-Hour Turnaround</div><div class="sp-inc-desc">Briefs submitted today, designs ready in two business days</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Unlimited Revisions</div><div class="sp-inc-desc">We refine until every piece is exactly right for your brand</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Consistency</div><div class="sp-inc-desc">Your brand file is kept on record — every design stays on brand</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">You tell us what you're promoting, who it's for, and when it goes live. We take it from there.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Premium visuals crafted to your brand standards — hierarchy, colour, and energy working together in seconds.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Review</div><div class="sp-step-desc">You review, we refine. Unlimited rounds until every piece is exactly what you want.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Print-ready and digital formats delivered. Repeat every month — your brand stays visible, consistently.</div></div></div>
       </div>
     </div>
   </div>
@@ -2903,20 +2907,6 @@
     </div>
   </div>
 
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">What's Included</span>
-      <div class="sp-includes">
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Magazine Cover Design</div><div class="sp-inc-desc">Commanding covers built to stand out on any shelf or screen</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Editorial Layout</div><div class="sp-inc-desc">Full grid system, typographic hierarchy, and spread design for every page</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Feature Spreads</div><div class="sp-inc-desc">High-impact interior spreads, pull quotes, and photo-forward layouts</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Advertorials</div><div class="sp-inc-desc">Branded content pages that read editorially and convert commercially</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Annual Reports</div><div class="sp-inc-desc">Data-rich publications designed to signal leadership to investors</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Print-Ready Files</div><div class="sp-inc-desc">Bleed-accurate, CMYK-optimised files for any commercial printer</div></div></div>
-      </div>
-    </div>
-  </div>
-
   <div class="sp-section sp-section-alt">
     <div class="pw-head zs-reveal">
       <span class="pw-eyebrow">Selected Projects</span>
@@ -2933,19 +2923,6 @@
             <p class="pw-feat-desc">Cover design and full interior layout for a lifestyle &amp; culture editorial — grid systems, typography, and art direction from brief to print-ready.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">The Process</span>
-      <div class="sp-process">
-        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">We study your editorial voice, readership, and what the publication needs to communicate.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Layout Architecture</div><div class="sp-step-desc">Grid system, typographic hierarchy, and section structure — the framework everything sits on.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Cover, spreads, and layouts — built to hold their weight on a coffee table and a screen.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Production</div><div class="sp-step-desc">Bleed setup, CMYK conversion, and printer preflight. Technical detail handled completely.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">05</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Print-ready files, digital PDF edition, and source files — packaged and handed over completely.</div></div></div>
       </div>
     </div>
   </div>
@@ -3022,6 +2999,33 @@
     <p class="sp-pricing-note zs-reveal">Prices are starting points. Final cost depends on page count, content complexity, and turnaround. <a href="https://wa.me/2348147065225" style="color:var(--red)">Send us your brief</a> for an exact quote.</p>
   </div>
 
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Magazine Cover Design</div><div class="sp-inc-desc">Commanding covers built to stand out on any shelf or screen</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Editorial Layout</div><div class="sp-inc-desc">Full grid system, typographic hierarchy, and spread design for every page</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Feature Spreads</div><div class="sp-inc-desc">High-impact interior spreads, pull quotes, and photo-forward layouts</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Brand Advertorials</div><div class="sp-inc-desc">Branded content pages that read editorially and convert commercially</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Annual Reports</div><div class="sp-inc-desc">Data-rich publications designed to signal leadership to investors</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Print-Ready Files</div><div class="sp-inc-desc">Bleed-accurate, CMYK-optimised files for any commercial printer</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">We study your editorial voice, readership, and what the publication needs to communicate.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Layout Architecture</div><div class="sp-step-desc">Grid system, typographic hierarchy, and section structure — the framework everything sits on.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Cover, spreads, and layouts — built to hold their weight on a coffee table and a screen.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Production</div><div class="sp-step-desc">Bleed setup, CMYK conversion, and printer preflight. Technical detail handled completely.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">05</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Print-ready files, digital PDF edition, and source files — packaged and handed over completely.</div></div></div>
+      </div>
+    </div>
+  </div>
+
   <div class="zs-outro">
     <span class="zs-label zs-reveal">What We Design</span>
     <div class="zs-tags zs-reveal zs-d1">
@@ -3047,20 +3051,6 @@
     <div class="sm-hero-ctas">
       <a href="https://wa.me/2348147065225?text=I%20want%20print%20and%20packaging%20design." class="sm-cta-primary" style="background:#10B981;border-color:#10B981">Start a Print Project &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
-    </div>
-  </div>
-
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">What's Included</span>
-      <div class="sp-includes">
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Apparel Printing</div><div class="sp-inc-desc">T-shirts, polos, headbands, and branded merchandise — print-ready artwork</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Business Collateral</div><div class="sp-inc-desc">Business cards, letterheads, envelopes, and branded stationery</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Book &amp; Magazine Covers</div><div class="sp-inc-desc">Publication covers designed for spine presence and shelf authority</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Packaging Design</div><div class="sp-inc-desc">Product boxes, labels, and tote bags — premium feel, shelf-ready</div></div></div>
-        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Production-Ready Files</div><div class="sp-inc-desc">Bleed-accurate, CMYK files built to exact printer specifications</div></div></div>
-        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">All editable artwork files handed over on delivery</div></div></div>
-      </div>
     </div>
   </div>
 
@@ -3094,18 +3084,6 @@
     </div>
   </div>
 
-  <div class="sp-section">
-    <div class="sp-inner">
-      <span class="zs-label zs-reveal">The Process</span>
-      <div class="sp-process">
-        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">We understand your brand, what you're putting it on, and the exact specifications of your printer.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Artwork built precisely to production specs — correct dimensions, bleeds, and colour profiles from the first draft.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Review</div><div class="sp-step-desc">Technical checks and visual revisions. We don't sign off until the file will print exactly as designed.</div></div></div>
-        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Production-ready files, organised and packaged — ready to send straight to your printer.</div></div></div>
-      </div>
-    </div>
-  </div>
-
   <div class="fl-pricing-section">
     <div class="fl-pricing-head zs-reveal">
       <span class="zs-label" style="display:block;text-align:center;margin-bottom:16px;">Investment</span>
@@ -3128,6 +3106,32 @@
       </div>
     </div>
     <p class="sp-pricing-note zs-reveal">Bulk orders and retainer arrangements available — <a href="https://wa.me/2348147065225" style="color:var(--red)">speak to us directly</a>.</p>
+  </div>
+
+  <div class="sp-section">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">What's Included</span>
+      <div class="sp-includes">
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Apparel Printing</div><div class="sp-inc-desc">T-shirts, polos, headbands, and branded merchandise — print-ready artwork</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Business Collateral</div><div class="sp-inc-desc">Business cards, letterheads, envelopes, and branded stationery</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Book &amp; Magazine Covers</div><div class="sp-inc-desc">Publication covers designed for spine presence and shelf authority</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Packaging Design</div><div class="sp-inc-desc">Product boxes, labels, and tote bags — premium feel, shelf-ready</div></div></div>
+        <div class="sp-inc-item zs-reveal"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Production-Ready Files</div><div class="sp-inc-desc">Bleed-accurate, CMYK files built to exact printer specifications</div></div></div>
+        <div class="sp-inc-item zs-reveal zs-d1"><div class="sp-inc-icon">◆</div><div><div class="sp-inc-name">Source Files</div><div class="sp-inc-desc">All editable artwork files handed over on delivery</div></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sp-section sp-section-alt">
+    <div class="sp-inner">
+      <span class="zs-label zs-reveal">The Process</span>
+      <div class="sp-process">
+        <div class="sp-step zs-reveal"><div class="sp-step-num">01</div><div class="sp-step-body"><div class="sp-step-name">Brief</div><div class="sp-step-desc">We understand your brand, what you're putting it on, and the exact specifications of your printer.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">02</div><div class="sp-step-body"><div class="sp-step-name">Design</div><div class="sp-step-desc">Artwork built precisely to production specs — correct dimensions, bleeds, and colour profiles from the first draft.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">03</div><div class="sp-step-body"><div class="sp-step-name">Review</div><div class="sp-step-desc">Technical checks and visual revisions. We don't sign off until the file will print exactly as designed.</div></div></div>
+        <div class="sp-step zs-reveal"><div class="sp-step-num">04</div><div class="sp-step-body"><div class="sp-step-name">Delivery</div><div class="sp-step-desc">Production-ready files, organised and packaged — ready to send straight to your printer.</div></div></div>
+      </div>
+    </div>
   </div>
 
   <div class="zs-outro">
