@@ -1589,10 +1589,18 @@
     gap: 8px;
   }
 
-  /* Featured card — image fills, text overlay */
+  /* Featured card — image top, text body below (mirrors pw-card) */
   .pw-feat {
-    position: relative; border-radius: 4px; overflow: hidden;
+    display: flex; flex-direction: column;
+    border-radius: 4px; overflow: hidden;
     background: var(--bg3); cursor: pointer;
+    border: 0.5px solid var(--border);
+    transition: border-color 0.3s;
+  }
+  .pw-feat:hover { border-color: var(--border-mid); }
+  .pw-feat-img-wrap {
+    flex: 1; position: relative; overflow: hidden; min-height: 200px;
+    background: var(--bg3);
   }
   .pw-feat-img {
     width: 100%; height: 100%; object-fit: cover;
@@ -1602,12 +1610,6 @@
   }
   .zs-reveal.on .pw-feat-img { transform: scale(1.0); }
   .pw-feat:hover .pw-feat-img { transform: scale(1.05); }
-  .pw-feat-overlay {
-    position: absolute; inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.88) 38%, rgba(0,0,0,0.06) 72%);
-    display: flex; flex-direction: column;
-    justify-content: space-between; padding: 20px 22px;
-  }
   .pw-feat-tag {
     font-family: 'Instrument Sans', sans-serif;
     font-size: 0.58rem; letter-spacing: 0.13em; text-transform: uppercase;
@@ -2349,6 +2351,8 @@
     <!-- BRAND IDENTITY -->
     <div class="svc-card reveal" onclick="openSvcBrand()">
       <div class="svc-preview">
+        <img src="ChatGPT%20Image%20Jul%2015%2C%202026%2C%2008_18_38%20AM.png" class="svc-slide active" alt="">
+        <img src="asili/a.jpg" class="svc-slide" alt="">
       </div>
       <div class="svc-body">
         <div class="svc-name">Brand Identity Design</div>
@@ -2479,13 +2483,13 @@
     </div>
     <div class="pw-grid">
       <div class="pw-feat zs-reveal" onclick="openZorevaProj()" style="cursor:pointer;">
-        <img src="ChatGPT%20Image%20Jul%2015%2C%202026%2C%2008_18_38%20AM.png" class="pw-feat-img" alt="ZOREVA">
-        <div class="pw-feat-overlay">
-          <span class="pw-feat-tag">Brand Identity &middot; Hospitality &middot; 2024</span>
-          <div>
-            <div class="pw-feat-name">ZOREVA — Luxury Restaurant &amp; Lounge</div>
-            <p class="pw-feat-desc">Full brand identity system for a luxury dining concept. Logo, colour palette, typography, brand guidelines &amp; application design. <span style="color:var(--red);font-size:0.72rem;display:block;margin-top:6px;">View Project →</span></p>
-          </div>
+        <div class="pw-feat-img-wrap">
+          <img src="ChatGPT%20Image%20Jul%2015%2C%202026%2C%2008_18_38%20AM.png" class="pw-feat-img" alt="ZOREVA">
+          <span class="pw-card-tag">Brand Identity &middot; Hospitality &middot; 2024</span>
+        </div>
+        <div class="pw-card-body">
+          <div class="pw-card-name">ZOREVA — Luxury Restaurant &amp; Lounge</div>
+          <p class="pw-card-desc">Full brand identity for a luxury dining concept. Logo, colour palette, typography &amp; brand guidelines. <span style="color:var(--red);">View Project →</span></p>
         </div>
       </div>
       <div class="pw-card zs-reveal zs-d1" onclick="openAsiliProj()" style="cursor:pointer;">
@@ -2869,13 +2873,13 @@
     </div>
     <div class="pw-grid">
       <div class="pw-feat zs-reveal">
-        <img src="flyer/amala-1.png" class="pw-feat-img" alt="Teecas Amala Express">
-        <div class="pw-feat-overlay">
-          <span class="pw-feat-tag">Food Brand &middot; Flyer Campaign &middot; 2024</span>
-          <div>
-            <div class="pw-feat-name">Teecas Amala Express</div>
-            <p class="pw-feat-desc">Campaign flyer series driving foot traffic and brand recall for a bold Nigerian food brand. Social media sizing included.</p>
-          </div>
+        <div class="pw-feat-img-wrap">
+          <img src="flyer/amala-1.png" class="pw-feat-img" alt="Teecas Amala Express">
+          <span class="pw-card-tag">Food Brand &middot; Flyer Campaign &middot; 2024</span>
+        </div>
+        <div class="pw-card-body">
+          <div class="pw-card-name">Teecas Amala Express</div>
+          <p class="pw-card-desc">Campaign flyer series driving foot traffic and brand recall for a bold Nigerian food brand.</p>
         </div>
       </div>
       <div class="pw-card zs-reveal zs-d1">
@@ -2977,13 +2981,13 @@
     </div>
     <div class="pw-grid">
       <div class="pw-feat zs-reveal">
-        <img src="magazi%20nne/Magazine-design.jpg" class="pw-feat-img" alt="HABITAT Magazine">
-        <div class="pw-feat-overlay">
-          <span class="pw-feat-tag">Lifestyle Editorial &middot; Magazine &middot; 2024</span>
-          <div>
-            <div class="pw-feat-name">HABITAT Magazine</div>
-            <p class="pw-feat-desc">Cover design and full interior layout for a lifestyle &amp; culture editorial — grid systems, typography, and art direction from brief to print-ready.</p>
-          </div>
+        <div class="pw-feat-img-wrap">
+          <img src="magazi%20nne/Magazine-design.jpg" class="pw-feat-img" alt="HABITAT Magazine">
+          <span class="pw-card-tag">Lifestyle Editorial &middot; Magazine &middot; 2024</span>
+        </div>
+        <div class="pw-card-body">
+          <div class="pw-card-name">HABITAT Magazine</div>
+          <p class="pw-card-desc">Cover design and full interior layout for a lifestyle &amp; culture editorial — grid systems, typography &amp; art direction.</p>
         </div>
       </div>
     </div>
@@ -3124,13 +3128,13 @@
     </div>
     <div class="pw-grid">
       <div class="pw-feat zs-reveal">
-        <img src="prints/white-shirt.png" class="pw-feat-img" alt="Branded Apparel">
-        <div class="pw-feat-overlay">
-          <span class="pw-feat-tag">Branded Apparel &middot; Print &middot; 2024</span>
-          <div>
-            <div class="pw-feat-name">Branded Apparel</div>
-            <p class="pw-feat-desc">T-shirts, polos &amp; merchandise artwork — print-ready files built to exact fabric and print specifications, with colour profiles dialled in from the start.</p>
-          </div>
+        <div class="pw-feat-img-wrap">
+          <img src="prints/white-shirt.png" class="pw-feat-img" alt="Branded Apparel">
+          <span class="pw-card-tag">Branded Apparel &middot; Print &middot; 2024</span>
+        </div>
+        <div class="pw-card-body">
+          <div class="pw-card-name">Branded Apparel</div>
+          <p class="pw-card-desc">T-shirts, polos &amp; merchandise artwork — print-ready files built to exact fabric and print specifications.</p>
         </div>
       </div>
       <div class="pw-card zs-reveal zs-d1">
