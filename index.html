@@ -248,18 +248,19 @@
     padding: 140px 5% 100px;
     position: relative;
     overflow: hidden;
+    background: linear-gradient(160deg, #150c07 0%, #0c0c0b 48%, #090c08 100%);
   }
 
   .hero::before {
     content: '';
     position: absolute; inset: 0;
     background-image:
-      linear-gradient(rgba(237,235,230,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(237,235,230,0.025) 1px, transparent 1px);
-    background-size: 68px 68px;
+      linear-gradient(rgba(237,235,230,0.065) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(237,235,230,0.065) 1px, transparent 1px);
+    background-size: 60px 60px;
     pointer-events: none;
-    mask-image: radial-gradient(ellipse at center, black 20%, transparent 72%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 20%, transparent 72%);
+    mask-image: radial-gradient(ellipse at 50% 18%, black 28%, transparent 72%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 18%, black 28%, transparent 72%);
   }
 
   .hero-glow {
