@@ -3466,6 +3466,36 @@
     }
   ];
 
+  // ── HISTORY / BACK-BUTTON MODAL MANAGEMENT ──────────────────────────────
+  // Each modal open pushes a history entry. The back button closes the modal
+  // instead of leaving the site. _skipNextPopstate prevents double-close when
+  // the user taps the × button (which calls history.back() itself).
+  let _modalStack = [];
+  let _skipNextPopstate = false;
+
+  function _modalOpen(id) {
+    history.pushState({ modal: id }, '');
+    _modalStack.push(id);
+  }
+  function _modalClose(id) {
+    document.getElementById(id).classList.remove('open');
+    const i = _modalStack.lastIndexOf(id);
+    if (i !== -1) _modalStack.splice(i, 1);
+    document.body.style.overflow = _modalStack.length > 0 ? 'hidden' : '';
+    _skipNextPopstate = true;
+    history.back();
+  }
+
+  window.addEventListener('popstate', function () {
+    if (_skipNextPopstate) { _skipNextPopstate = false; return; }
+    if (_modalStack.length === 0) return;
+    const id = _modalStack.pop();
+    const el = document.getElementById(id);
+    if (el) el.classList.remove('open');
+    document.body.style.overflow = _modalStack.length > 0 ? 'hidden' : '';
+  });
+  // ─────────────────────────────────────────────────────────────────────────
+
   function openProject(i) {
     const p = projects[i];
     document.getElementById('modal-tag').textContent       = p.tag;
@@ -3487,18 +3517,17 @@
 
     document.getElementById('proj-modal').classList.add('open');
     document.body.style.overflow = 'hidden';
+    _modalOpen('proj-modal');
   }
 
   function closeProject(e) {
     if (e.target === document.getElementById('proj-modal')) {
-      document.getElementById('proj-modal').classList.remove('open');
-      document.body.style.overflow = '';
+      _modalClose('proj-modal');
     }
   }
 
   function closeProjectBtn() {
-    document.getElementById('proj-modal').classList.remove('open');
-    document.body.style.overflow = '';
+    _modalClose('proj-modal');
   }
 
   // Scroll reveal for service modals
@@ -3513,8 +3542,9 @@
     modal.classList.add('open'); modal.scrollTop = 0;
     document.body.style.overflow = 'hidden';
     setTimeout(() => { modal.querySelectorAll('.zs-reveal:not(.on)').forEach(el => zsObs.observe(el)); }, 60);
+    _modalOpen(id);
   }
-  function closeSvcModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+  function closeSvcModal(id) { _modalClose(id); }
 
   function openSvcBrand()    { openSvcModal('svc-brand-modal'); }
   function closeSvcBrand()   { closeSvcModal('svc-brand-modal'); }
