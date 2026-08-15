@@ -86,7 +86,7 @@
     --card:       #141412;
     --white:      #EDEBE6;
     --muted:      #EDEBE6;
-    --muted2:     #C5C3BE;
+    --muted2:     #EDEBE6;
     --border:     rgba(237,235,230,0.08);
     --border-mid: rgba(237,235,230,0.16);
     --border-red: rgba(249,117,53,0.22);
@@ -100,7 +100,7 @@
     --card:       #EAE6DD;
     --white:      #1C1B18;
     --muted:      #1C1B18;
-    --muted2:     #4A4945;
+    --muted2:     #1C1B18;
     --border:     rgba(28,27,24,0.09);
     --border-mid: rgba(28,27,24,0.18);
     --border-red: rgba(249,117,53,0.26);
@@ -123,8 +123,8 @@
   [data-theme="light"] .hero-glow-b {
     background: radial-gradient(ellipse, rgba(107,125,35,0.09) 0%, transparent 70%);
   }
-  [data-theme="light"] .sm-hero-h1 .h1-ghost  { color: rgba(28,27,24,0.15); }
-  [data-theme="light"] .hero-h1 .ghost         { color: rgba(28,27,24,0.13); }
+  [data-theme="light"] .sm-hero-h1 .h1-ghost  { color: var(--white); }
+  [data-theme="light"] .hero-h1 .ghost         { color: var(--white); }
   [data-theme="light"] .zoreva-close-btn {
     background: rgba(28,27,24,0.06);
     border-color: rgba(28,27,24,0.14);
@@ -421,7 +421,7 @@
 
   .hero-h1 .block { display: block; }
   .hero-h1 .c-red { color: var(--red); }
-  .hero-h1 .c-dim { color: rgba(237,235,230,0.28); }
+  .hero-h1 .c-dim { color: var(--white); }
 
   .hero-sub {
     font-size: 0.87rem;
@@ -738,13 +738,13 @@
 
   .svc-card.ac-social { background: rgba(107,125,35,0.12); border-color: rgba(107,125,35,0.22); }
   .svc-card.ac-social:hover { background: rgba(107,125,35,0.18); border-color: rgba(107,125,35,0.4); }
-  .svc-card.ac-social .svc-num { color: #8AA62A; opacity: 1; }
-  .svc-card.ac-social:hover .svc-arrow { color: #8AA62A; }
+  .svc-card.ac-social .svc-num { color: var(--red); opacity: 1; }
+  .svc-card.ac-social:hover .svc-arrow { color: var(--red); }
 
   .svc-card.ac-mag   { background: rgba(100,149,200,0.1); border-color: rgba(100,149,200,0.2); }
   .svc-card.ac-mag:hover   { background: rgba(100,149,200,0.16); border-color: rgba(100,149,200,0.38); }
-  .svc-card.ac-mag .svc-num   { color: #6495C8; opacity: 1; }
-  .svc-card.ac-mag:hover .svc-arrow { color: #6495C8; }
+  .svc-card.ac-mag .svc-num   { color: var(--red); opacity: 1; }
+  .svc-card.ac-mag:hover .svc-arrow { color: var(--red); }
 
   .svc-card.ac-print { background: rgba(196,154,69,0.1); border-color: rgba(196,154,69,0.2); }
   .svc-card.ac-print:hover { background: rgba(196,154,69,0.16); border-color: rgba(196,154,69,0.38); }
@@ -753,8 +753,8 @@
 
   .svc-card.ac-score { background: rgba(160,100,220,0.1); border-color: rgba(160,100,220,0.2); border-style: dashed; }
   .svc-card.ac-score:hover { background: rgba(160,100,220,0.16); border-color: rgba(160,100,220,0.4); }
-  .svc-card.ac-score .svc-num { color: #A064DC; opacity: 1; }
-  .svc-card.ac-score:hover .svc-arrow { color: #A064DC; }
+  .svc-card.ac-score .svc-num { color: var(--red); opacity: 1; }
+  .svc-card.ac-score:hover .svc-arrow { color: var(--red); }
 
   .svc-ic {
     width: 44px; height: 44px; border-radius: 4px;
@@ -804,10 +804,10 @@
   }
   .svc-card:hover .svc-learn { color: var(--white); border-color: rgba(237,235,230,0.28); }
   .svc-card.ac-brand:hover  .svc-learn { color: #F97535; border-color: rgba(249,117,53,0.45); }
-  .svc-card.ac-social:hover .svc-learn { color: #8AA62A; border-color: rgba(138,166,42,0.45); }
-  .svc-card.ac-mag:hover    .svc-learn { color: #6495C8; border-color: rgba(100,149,200,0.45); }
+  .svc-card.ac-social:hover .svc-learn { color: var(--red); border-color: rgba(249,117,53,0.45); }
+  .svc-card.ac-mag:hover    .svc-learn { color: var(--red); border-color: rgba(249,117,53,0.45); }
   .svc-card.ac-print:hover  .svc-learn { color: #C49A45; border-color: rgba(196,154,69,0.45); }
-  .svc-card.ac-score:hover  .svc-learn { color: #A064DC; border-color: rgba(160,100,220,0.45); }
+  .svc-card.ac-score:hover  .svc-learn { color: var(--red); border-color: rgba(249,117,53,0.45); }
 
   /* ── DIFF ── */
   .diff { padding: 120px 5%; background: var(--bg2); }
@@ -861,8 +861,8 @@
   }
 
   .dp-orange .dp-num { color: #F97535; }
-  .dp-olive  .dp-num { color: #8AA62A; }
-  .dp-blue   .dp-num { color: #6495C8; }
+  .dp-olive  .dp-num { color: var(--red); }
+  .dp-blue   .dp-num { color: var(--red); }
   .dp-gold   .dp-num { color: #C49A45; }
 
   .dp h4 {
@@ -1538,10 +1538,10 @@
 
   /* SVG icon tinting — inherits via currentColor */
   .ac-brand .svc-ic { color: #F97535; }
-  .ac-social .svc-ic { color: #8AA62A; }
-  .ac-mag   .svc-ic { color: #6495C8; }
+  .ac-social .svc-ic { color: #F97535; }
+  .ac-mag   .svc-ic { color: #F97535; }
   .ac-print .svc-ic { color: #C49A45; }
-  .ac-score .svc-ic { color: #A064DC; }
+  .ac-score .svc-ic { color: #F97535; }
   .svc-ic svg { display: block; }
 
   /* ── COMING SOON STATES ── */
@@ -1585,7 +1585,7 @@
     display: inline-flex; align-items: center; gap: 5px;
     font-family: 'Instrument Sans', sans-serif;
     font-size: 0.7rem; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase;
-    color: #8AA62A; background: none; border: none; padding: 0; margin-top: 10px;
+    color: var(--red); background: none; border: none; padding: 0; margin-top: 10px;
     cursor: pointer; transition: opacity 0.2s;
   }
   .pw-see-more:hover { opacity: 0.65; }
@@ -1981,7 +1981,7 @@
 
   .sm-hero-h1 .h1-white  { color: var(--white);               display: block; }
   .sm-hero-h1 .h1-accent { color: var(--red);                  display: block; }
-  .sm-hero-h1 .h1-ghost  { color: rgba(237,235,230,0.18);      display: block; }
+  .sm-hero-h1 .h1-ghost  { color: var(--white);                 display: block; }
 
   .sm-hero-sub {
     font-family: 'Instrument Sans', sans-serif;
@@ -3238,12 +3238,12 @@
     <span class="sm-pill">Magazine &amp; Publication Design</span>
     <h2 class="sm-hero-h1">
       <span class="h1-white">Editorial</span>
-      <span class="h1-accent" style="color:#06B6D4">That Stays</span>
+      <span class="h1-accent" style="color:#F97535">That Stays</span>
       <span class="h1-ghost">On The Shelf.</span>
     </h2>
     <p class="sm-hero-sub">From magazine covers to annual reports and brand books — editorial layouts designed to be picked up, read, and kept long after the deadline.</p>
     <div class="sm-hero-ctas">
-      <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="sm-cta-primary" style="background:#06B6D4;border-color:#06B6D4">Start a Publication &rarr;</a>
+      <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="sm-cta-primary" style="background:#F97535;border-color:#F97535">Start a Publication &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
     </div>
     <div class="sm-scroll-hint">
@@ -3389,12 +3389,12 @@
     <span class="sm-pill">Print &amp; Packaging</span>
     <h2 class="sm-hero-h1">
       <span class="h1-white">Identity That</span>
-      <span class="h1-accent" style="color:#10B981">Lives</span>
+      <span class="h1-accent" style="color:#F97535">Lives</span>
       <span class="h1-ghost">In Your Hands.</span>
     </h2>
     <p class="sm-hero-sub">Packaging, branded merchandise, stationery, and print assets that carry your identity beyond the screen into the physical world.</p>
     <div class="sm-hero-ctas">
-      <a href="https://wa.me/2348147065225?text=I%20want%20print%20and%20packaging%20design." class="sm-cta-primary" style="background:#10B981;border-color:#10B981">Start a Print Project &rarr;</a>
+      <a href="https://wa.me/2348147065225?text=I%20want%20print%20and%20packaging%20design." class="sm-cta-primary" style="background:#F97535;border-color:#F97535">Start a Print Project &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
     </div>
     <div class="sm-scroll-hint">
