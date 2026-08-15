@@ -3588,18 +3588,30 @@
   }
   function closeSvcModal(id) { _modalClose(id); }
 
-  function openSvcBrand()    { openSvcModal('svc-brand-modal'); }
-  function closeSvcBrand()   { closeSvcModal('svc-brand-modal'); }
+  function openSvcBrand()    { openSvcModal('svc-brand-modal');    location.hash = 'brand'; }
+  function closeSvcBrand()   { closeSvcModal('svc-brand-modal');   history.replaceState(null,'',location.pathname); }
   function openZorevaProj()  { openSvcModal('zoreva-proj-modal'); }
   function closeZorevaProj() { closeSvcModal('zoreva-proj-modal'); }
   function openAsiliProj()   { openSvcModal('asili-proj-modal'); }
   function closeAsiliProj()  { closeSvcModal('asili-proj-modal'); }
-  function openSvcSocial()   { openSvcModal('svc-social-modal'); }
-  function closeSvcSocial()  { closeSvcModal('svc-social-modal'); }
-  function openSvcMagazine() { openSvcModal('svc-magazine-modal'); }
-  function closeSvcMagazine(){ closeSvcModal('svc-magazine-modal'); }
-  function openSvcPrint()    { openSvcModal('svc-print-modal'); }
-  function closeSvcPrint()   { closeSvcModal('svc-print-modal'); }
+  function openSvcSocial()   { openSvcModal('svc-social-modal');   location.hash = 'social'; }
+  function closeSvcSocial()  { closeSvcModal('svc-social-modal');  history.replaceState(null,'',location.pathname); }
+  function openSvcMagazine() { openSvcModal('svc-magazine-modal'); location.hash = 'magazine'; }
+  function closeSvcMagazine(){ closeSvcModal('svc-magazine-modal');history.replaceState(null,'',location.pathname); }
+  function openSvcPrint()    { openSvcModal('svc-print-modal');    location.hash = 'print'; }
+  function closeSvcPrint()   { closeSvcModal('svc-print-modal');   history.replaceState(null,'',location.pathname); }
+
+  // Hash-based deep linking — e.g. theprincekingsbrand.com/#brand opens Brand Identity on load
+  (function () {
+    const hashMap = {
+      '#brand':    openSvcBrand,
+      '#social':   openSvcSocial,
+      '#magazine': openSvcMagazine,
+      '#print':    openSvcPrint,
+    };
+    const fn = hashMap[window.location.hash.toLowerCase()];
+    if (fn) fn();
+  })();
 
   // Service card slide preview on hover
   document.querySelectorAll('.svc-card').forEach(card => {
