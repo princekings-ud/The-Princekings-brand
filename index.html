@@ -3588,20 +3588,24 @@
   }
   function closeSvcModal(id) { _modalClose(id); }
 
-  function openSvcBrand()    { openSvcModal('svc-brand-modal');    location.hash = 'brand'; }
-  function closeSvcBrand()   { closeSvcModal('svc-brand-modal');   history.replaceState(null,'',location.pathname); }
+  // replaceState updates the address bar to show the hash WITHOUT adding a new history entry,
+  // so the only back-step is the one pushState added in _modalOpen.
+  function openSvcBrand()    { openSvcModal('svc-brand-modal');    history.replaceState(history.state, '', '#brand'); }
+  function closeSvcBrand()   { closeSvcModal('svc-brand-modal'); }
   function openZorevaProj()  { openSvcModal('zoreva-proj-modal'); }
   function closeZorevaProj() { closeSvcModal('zoreva-proj-modal'); }
   function openAsiliProj()   { openSvcModal('asili-proj-modal'); }
   function closeAsiliProj()  { closeSvcModal('asili-proj-modal'); }
-  function openSvcSocial()   { openSvcModal('svc-social-modal');   location.hash = 'social'; }
-  function closeSvcSocial()  { closeSvcModal('svc-social-modal');  history.replaceState(null,'',location.pathname); }
-  function openSvcMagazine() { openSvcModal('svc-magazine-modal'); location.hash = 'magazine'; }
-  function closeSvcMagazine(){ closeSvcModal('svc-magazine-modal');history.replaceState(null,'',location.pathname); }
-  function openSvcPrint()    { openSvcModal('svc-print-modal');    location.hash = 'print'; }
-  function closeSvcPrint()   { closeSvcModal('svc-print-modal');   history.replaceState(null,'',location.pathname); }
+  function openSvcSocial()   { openSvcModal('svc-social-modal');   history.replaceState(history.state, '', '#social'); }
+  function closeSvcSocial()  { closeSvcModal('svc-social-modal'); }
+  function openSvcMagazine() { openSvcModal('svc-magazine-modal'); history.replaceState(history.state, '', '#magazine'); }
+  function closeSvcMagazine(){ closeSvcModal('svc-magazine-modal'); }
+  function openSvcPrint()    { openSvcModal('svc-print-modal');    history.replaceState(history.state, '', '#print'); }
+  function closeSvcPrint()   { closeSvcModal('svc-print-modal'); }
 
-  // Hash-based deep linking — e.g. theprincekingsbrand.com/#brand opens Brand Identity on load
+  // Hash-based deep linking — e.g. theprincekingsbrand.com/#brand opens Brand Identity on load.
+  // Strip the hash from the initial history entry first so that after the modal closes,
+  // history.back() lands on the clean homepage — not on an external page or the raw hash URL.
   (function () {
     const hashMap = {
       '#brand':    openSvcBrand,
@@ -3610,7 +3614,10 @@
       '#print':    openSvcPrint,
     };
     const fn = hashMap[window.location.hash.toLowerCase()];
-    if (fn) fn();
+    if (fn) {
+      history.replaceState(null, '', location.pathname);
+      fn();
+    }
   })();
 
   // Service card slide preview on hover
