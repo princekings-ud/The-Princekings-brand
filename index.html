@@ -67,6 +67,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Instrument+Sans:wght@300;400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
 <link href="https://fonts.cdnfonts.com/css/nexa-bold" rel="stylesheet">
 <link rel="icon" type="image/png" href="logo.png">
+<script>
+  /* Anti-FOUC: apply saved theme before paint */
+  (function(){
+    var t = localStorage.getItem('pkb-theme');
+    if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
 <style>
   :root {
     --red:        #F97535;
@@ -77,12 +85,60 @@
     --bg3:        #161614;
     --card:       #141412;
     --white:      #EDEBE6;
-    --muted:      rgba(237,235,230,0.42);
-    --muted2:     rgba(237,235,230,0.22);
-    --border:     rgba(237,235,230,0.07);
-    --border-mid: rgba(237,235,230,0.13);
+    --muted:      rgba(237,235,230,0.55);
+    --muted2:     rgba(237,235,230,0.40);
+    --border:     rgba(237,235,230,0.08);
+    --border-mid: rgba(237,235,230,0.16);
     --border-red: rgba(249,117,53,0.22);
   }
+
+  /* ── LIGHT MODE ── */
+  [data-theme="light"] {
+    --bg:         #F5F3EE;
+    --bg2:        #EDE9E1;
+    --bg3:        #E4E0D7;
+    --card:       #EAE6DD;
+    --white:      #1C1B18;
+    --muted:      rgba(28,27,24,0.60);
+    --muted2:     rgba(28,27,24,0.44);
+    --border:     rgba(28,27,24,0.09);
+    --border-mid: rgba(28,27,24,0.18);
+    --border-red: rgba(249,117,53,0.26);
+    --red-glow:   rgba(249,117,53,0.16);
+  }
+  [data-theme="light"] nav {
+    background: rgba(245,243,238,0.88);
+  }
+  [data-theme="light"] .hero {
+    background: linear-gradient(160deg, #EDE8DB 0%, #F5F3EE 48%, #ECF0EC 100%);
+  }
+  [data-theme="light"] .hero::before {
+    background-image:
+      linear-gradient(rgba(28,27,24,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(28,27,24,0.055) 1px, transparent 1px);
+  }
+  [data-theme="light"] .hero-glow {
+    background: radial-gradient(ellipse at 50% 30%, rgba(249,117,53,0.14) 0%, transparent 60%);
+  }
+  [data-theme="light"] .hero-glow-b {
+    background: radial-gradient(ellipse, rgba(107,125,35,0.09) 0%, transparent 70%);
+  }
+  [data-theme="light"] .sm-hero-h1 .h1-ghost  { color: rgba(28,27,24,0.15); }
+  [data-theme="light"] .hero-h1 .ghost         { color: rgba(28,27,24,0.13); }
+  [data-theme="light"] .zoreva-close-btn {
+    background: rgba(28,27,24,0.06);
+    border-color: rgba(28,27,24,0.14);
+    color: rgba(28,27,24,0.65);
+  }
+  [data-theme="light"] .zoreva-close-btn:hover { background: var(--red); color: #fff; border-color: var(--red); }
+  [data-theme="light"] .flr-gallery { background: #F0EDE6; }
+  [data-theme="light"] .flr-gallery-close {
+    background: rgba(28,27,24,0.05); border-color: rgba(28,27,24,0.14); color: rgba(28,27,24,0.55);
+  }
+  [data-theme="light"] .flr-gallery-item { background: #E5E1D8; border-color: rgba(28,27,24,0.08); }
+  [data-theme="light"] .pw-feat--flyer .pw-feat-img-wrap { background: #DDD9D0; }
+  [data-theme="light"] .mobile-nav { background: var(--bg2); }
+  [data-theme="light"] .brand-ticker { background: rgba(210,206,198,0.92); }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -129,6 +185,15 @@
   }
 
   nav.scrolled { height: 56px; }
+
+  .theme-toggle {
+    width: 34px; height: 34px; flex-shrink: 0;
+    background: none; border: 0.5px solid var(--border-mid);
+    border-radius: 50%; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--muted); transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .theme-toggle:hover { color: var(--white); border-color: var(--border-mid); background: rgba(128,128,128,0.08); }
 
   .nav-logo {
     display: flex; align-items: center; gap: 10px;
@@ -2036,7 +2101,7 @@
   }
   .sm-scroll-hint span {
     font-family: 'Instrument Sans', sans-serif;
-    font-size: 0.58rem; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 0.64rem; letter-spacing: 0.14em; text-transform: uppercase;
   }
   @keyframes smScrollBounce {
     0%, 100% { transform: translateY(0); opacity: 0.45; }
@@ -2066,7 +2131,7 @@
   .zs-label {
     display: block;
     font-family: 'Instrument Sans', sans-serif;
-    font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase;
     color: var(--red); margin-bottom: 30px;
   }
 
@@ -2287,6 +2352,8 @@
     <li><a href="https://score.theprincekingsbrand.com">Brand Score</a></li>
     <li><a href="https://wa.me/2348147065225" class="nav-cta">Start a Project</a></li>
   </ul>
+
+  <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
 
   <!-- Hamburger — shown on mobile only -->
   <button class="hamburger" id="hamburger" aria-label="Open menu">
@@ -3821,6 +3888,22 @@
   function closeFlrGallery() {
     _modalClose('flr-gallery');
   }
+
+  // ── THEME TOGGLE ──
+  const _sunSVG  = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+  const _moonSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+  function _applyTheme(t) {
+    document.documentElement.setAttribute('data-theme', t);
+    localStorage.setItem('pkb-theme', t);
+    const icon = t === 'dark' ? _sunSVG : _moonSVG;
+    document.querySelectorAll('.theme-toggle').forEach(btn => { btn.innerHTML = icon; });
+  }
+  function toggleTheme() {
+    const cur = document.documentElement.getAttribute('data-theme') || 'dark';
+    _applyTheme(cur === 'dark' ? 'light' : 'dark');
+  }
+  // Init icons after DOM is ready (theme itself already set by anti-FOUC script in <head>)
+  _applyTheme(document.documentElement.getAttribute('data-theme') || 'dark');
 
   // Hash-based deep linking — e.g. theprincekingsbrand.com/#brand opens Brand Identity on load.
   // Strip the hash from the initial history entry first so that after the modal closes,
