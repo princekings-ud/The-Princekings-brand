@@ -3718,11 +3718,13 @@
     document.getElementById('flr-gallery-grid').innerHTML = g.images.map(src =>
       `<div class="flr-gallery-item"><img src="${src}" loading="lazy" alt=""></div>`
     ).join('');
-    document.getElementById('flr-gallery').classList.add('open');
-    document.getElementById('flr-gallery').scrollTop = 0;
+    const el = document.getElementById('flr-gallery');
+    el.classList.add('open');
+    el.scrollTop = 0;
+    _modalOpen('flr-gallery');
   }
   function closeFlrGallery() {
-    document.getElementById('flr-gallery').classList.remove('open');
+    _modalClose('flr-gallery');
   }
 
   // Hash-based deep linking — e.g. theprincekingsbrand.com/#brand opens Brand Identity on load.
