@@ -1616,6 +1616,9 @@
   .flr-gallery-grid {
     display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px;
   }
+  .flr-gallery-grid--single { grid-template-columns: 1fr; gap: 16px; }
+  .flr-gallery-grid--single .flr-gallery-item { aspect-ratio: auto; }
+  .flr-gallery-grid--single .flr-gallery-item img { height: auto; object-fit: contain; }
   .flr-gallery-item {
     aspect-ratio: 4/5; overflow: hidden; border-radius: 6px;
     background: #111; border: 0.5px solid rgba(255,255,255,0.06);
@@ -3880,6 +3883,7 @@
     },
     magazine: {
       title: 'Magazine & Publications — Portfolio',
+      singleCol: true,
       images: [
         'magazi%20nne/Magazine-design.jpg',
         'magazi%20nne/Magazine-design-2.jpg',
@@ -3893,9 +3897,11 @@
   function openFlrGallery(key) {
     const g = _flrGalleries[key];
     document.getElementById('flr-gallery-head').textContent = g.title;
-    document.getElementById('flr-gallery-grid').innerHTML = g.images.map(src =>
+    const grid = document.getElementById('flr-gallery-grid');
+    grid.innerHTML = g.images.map(src =>
       `<div class="flr-gallery-item"><img src="${src}" loading="lazy" alt=""></div>`
     ).join('');
+    grid.classList.toggle('flr-gallery-grid--single', !!g.singleCol);
     const el = document.getElementById('flr-gallery');
     el.classList.add('open');
     el.scrollTop = 0;
