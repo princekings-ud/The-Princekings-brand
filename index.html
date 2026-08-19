@@ -373,61 +373,12 @@
     width: calc(100% + 10%);
     margin: 28px -5% 0;
     position: relative; z-index: 1;
-  }
-  .hv-glow {
-    position: absolute; top: 10%; left: 8%; right: 8%; bottom: 8%;
-    background: radial-gradient(ellipse at 50% 40%, rgba(249,117,53,0.32) 0%, transparent 65%);
-    filter: blur(52px); pointer-events: none; z-index: 0;
+    border-radius: 12px;
+    overflow: hidden;
   }
   .hero-visual {
-    width: 100%; height: auto; display: block;
-    border-radius: 12px;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.22), 0 28px 72px rgba(0,0,0,0.16);
-    position: relative; z-index: 1;
-  }
-  /* Corner crop marks */
-  .hv-corner { position: absolute; width: 22px; height: 22px; z-index: 3; }
-  .hv-corner::before, .hv-corner::after { content: ''; position: absolute; background: var(--red); }
-  .hv-tl { top: -5px; left: -5px; }
-  .hv-tl::before { top:0; left:0; width:2px; height:22px; }
-  .hv-tl::after  { top:0; left:0; width:22px; height:2px; }
-  .hv-tr { top: -5px; right: -5px; }
-  .hv-tr::before { top:0; right:0; width:2px; height:22px; }
-  .hv-tr::after  { top:0; right:0; width:22px; height:2px; }
-  .hv-bl { bottom: -5px; left: -5px; }
-  .hv-bl::before { bottom:0; left:0; width:2px; height:22px; }
-  .hv-bl::after  { bottom:0; left:0; width:22px; height:2px; }
-  .hv-br { bottom: -5px; right: -5px; }
-  .hv-br::before { bottom:0; right:0; width:2px; height:22px; }
-  .hv-br::after  { bottom:0; right:0; width:22px; height:2px; }
-  /* Mini Rubik's colour squares — decorative */
-  .hv-cubes {
-    position: absolute; top: -14px; right: 20px;
-    display: grid; grid-template-columns: 1fr 1fr; gap: 3px; z-index: 4;
-  }
-  .hv-cubes span { width: 10px; height: 10px; border-radius: 1px; display: block; }
-  /* Floating stat card */
-  .hv-stat {
-    position: absolute; bottom: 28px; right: -2px;
-    background: var(--card); border: 0.5px solid var(--border-red);
-    border-radius: 4px; padding: 10px 16px 10px 14px;
-    z-index: 4; box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-  }
-  .hv-stat-num {
-    display: block; font-family: 'Syne', sans-serif; font-weight: 800;
-    font-size: 1.5rem; color: var(--red); line-height: 1; margin-bottom: 3px;
-  }
-  .hv-stat-label {
-    font-family: 'Instrument Sans', sans-serif;
-    font-size: 0.55rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted);
-  }
-  /* Floating orange tag */
-  .hv-tag {
-    position: absolute; top: 28px; left: -2px;
-    background: var(--red); color: #0C0C0B;
-    font-family: 'Instrument Sans', sans-serif;
-    font-size: 0.55rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
-    padding: 5px 12px; border-radius: 2px; z-index: 4;
+    width: 100%; height: auto;
+    display: block;
   }
 
   /* Short accent rule under heading */
@@ -2467,27 +2418,7 @@
   <div class="hero-rule"></div>
 
   <div class="hero-visual-wrap">
-    <div class="hv-glow"></div>
     <img src="fix.png" class="hero-visual" alt="Turning Pieces Into Brands — The Princekings Brand">
-    <!-- corner crop marks -->
-    <div class="hv-corner hv-tl"></div>
-    <div class="hv-corner hv-tr"></div>
-    <div class="hv-corner hv-bl"></div>
-    <div class="hv-corner hv-br"></div>
-    <!-- Rubik's accent squares -->
-    <div class="hv-cubes">
-      <span style="background:#F97535"></span>
-      <span style="background:#2563EB"></span>
-      <span style="background:#16A34A"></span>
-      <span style="background:#FACC15"></span>
-    </div>
-    <!-- floating label -->
-    <div class="hv-tag">Brand Identity</div>
-    <!-- floating stat -->
-    <div class="hv-stat">
-      <span class="hv-stat-num">100+</span>
-      <span class="hv-stat-label">Brands Delivered</span>
-    </div>
   </div>
 
   <p class="hero-sub">
