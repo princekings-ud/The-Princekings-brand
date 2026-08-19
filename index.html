@@ -373,12 +373,48 @@
     width: calc(100% + 10%);
     margin: 8px -5% 0;
     position: relative; z-index: 1;
-    border-radius: 12px;
-    overflow: hidden;
+    overflow: visible;
   }
   .hero-visual {
     width: 100%; height: auto;
     display: block;
+    border-radius: 12px;
+  }
+  /* ── decorative elements around hero image ── */
+  /* Thin orange stripe — left edge, partial height — precision/craft */
+  .hf-stripe {
+    position: absolute; top: 18%; left: -3px;
+    width: 2px; height: 32%;
+    background: var(--red); border-radius: 1px; pointer-events: none;
+  }
+  /* Diamond mark — top-right — luxury */
+  .hf-diamond {
+    position: absolute; top: -16px; right: 16px;
+    font-size: 1.1rem; color: var(--red); line-height: 1; pointer-events: none;
+    letter-spacing: 0;
+  }
+  /* Trust shield — bottom-left — trust/credibility */
+  .hf-trust {
+    position: absolute; bottom: -18px; left: 10px;
+    display: flex; align-items: center; gap: 5px;
+    color: var(--red); pointer-events: none;
+  }
+  .hf-trust svg { flex-shrink: 0; }
+  .hf-trust span {
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.46rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--muted);
+  }
+  /* Sparkle star — bottom-right — excellence */
+  .hf-sparkle {
+    position: absolute; bottom: 18px; right: 8px;
+    font-size: 0.8rem; color: var(--red);
+    opacity: 0.7; pointer-events: none;
+    animation: hfPulse 2.8s ease-in-out infinite;
+  }
+  @keyframes hfPulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50%       { opacity: 0.9; transform: scale(1.15); }
   }
 
   /* Short accent rule under heading */
@@ -2419,6 +2455,13 @@
 
   <div class="hero-visual-wrap">
     <img src="fix.png" class="hero-visual" alt="Turning Pieces Into Brands — The Princekings Brand">
+    <div class="hf-stripe"></div>
+    <div class="hf-diamond">◆</div>
+    <div class="hf-trust">
+      <svg width="11" height="13" viewBox="0 0 24 28" fill="currentColor"><path d="M12 2L3 6v8c0 5.5 3.8 10.6 9 12 5.2-1.4 9-6.5 9-12V6L12 2z"/></svg>
+      <span>Trusted Agency</span>
+    </div>
+    <div class="hf-sparkle">✦</div>
   </div>
 
   <p class="hero-sub">
