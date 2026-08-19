@@ -3804,11 +3804,15 @@
 
   window.addEventListener('popstate', function () {
     if (_skipNextPopstate) { _skipNextPopstate = false; return; }
-    if (_modalStack.length === 0) return;
-    const id = _modalStack.pop();
-    const el = document.getElementById(id);
-    if (el) el.classList.remove('open');
-    document.body.style.overflow = _modalStack.length > 0 ? 'hidden' : '';
+    if (_modalStack.length > 0) {
+      const id = _modalStack.pop();
+      const el = document.getElementById(id);
+      if (el) el.classList.remove('open');
+      document.body.style.overflow = _modalStack.length > 0 ? 'hidden' : '';
+    } else {
+      // No modal open — user would leave the site. Push a state to stay.
+      history.pushState(null, '', location.pathname + location.search);
+    }
   });
   // ─────────────────────────────────────────────────────────────────────────
 
