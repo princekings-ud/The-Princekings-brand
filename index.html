@@ -556,6 +556,11 @@
     white-space: nowrap;
     position: relative;
   }
+  .hero-ticker {
+    width: calc(100% + 10%);
+    margin: 24px -5% 0;
+    align-self: stretch;
+  }
 
   #ticker::before,
   #ticker::after {
@@ -2431,15 +2436,7 @@
     <a href="#work" class="btn-outline">See Our Work</a>
   </div>
 
-  <a href="https://score.theprincekingsbrand.com" class="hero-score-pill">
-    <span class="pill-badge">Free</span>
-    <span class="pill-text"><strong>Score your brand health</strong> — takes 3 minutes</span>
-    <span class="pill-arrow">&rarr;</span>
-  </a>
-</section>
-
-<!-- TICKER STRIP -->
-<div id="ticker">
+  <div id="ticker" class="hero-ticker">
   <div class="ticker-track">
     <span class="tick-item">Brand Identity<span class="tick-sep"></span></span>
     <span class="tick-item">Logo Design<span class="tick-sep"></span></span>
@@ -2468,6 +2465,7 @@
     <span class="tick-item">Publication Design<span class="tick-sep"></span></span>
   </div>
 </div>
+</section>
 
 <!-- TRUTH -->
 <section class="truth">
