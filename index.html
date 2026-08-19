@@ -1403,7 +1403,7 @@
       padding-top: 110px;
     }
     .hero-visual-wrap { aspect-ratio: 4/5; overflow: hidden; }
-    .hero-visual { height: 100%; object-fit: cover; object-position: center 15%; }
+    .hero-visual { height: 100%; object-fit: contain; object-position: center; }
 
     .hero-eyebrow {
       font-size: 0.6rem; padding: 7px 14px;
@@ -3930,14 +3930,12 @@
     {
       lines: ['Turning Pieces', 'Into', 'Brands'],
       img: 'fix.png',
-      alt: 'Turning Pieces Into Brands — The Princekings Brand',
-      pos: 'center 15%'
+      alt: 'Turning Pieces Into Brands — The Princekings Brand'
     },
     {
       lines: ['From Concept', 'to', 'Culture'],
       img: 'fix3.png',
-      alt: 'From Concept to Culture — The Princekings Brand',
-      pos: 'center center'
+      alt: 'From Concept to Culture — The Princekings Brand'
     }
   ];
   let _heroIdx = 0;
@@ -3956,7 +3954,6 @@
       spans[2].textContent = slide.lines[2];
       img.src = slide.img;
       img.alt = slide.alt;
-      img.style.objectPosition = slide.pos;
       h1.style.opacity  = '1';
       img.style.opacity = '1';
     }, 850);
