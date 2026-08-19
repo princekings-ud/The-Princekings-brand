@@ -379,6 +379,7 @@
     width: 100%; height: auto;
     display: block;
     border-radius: 12px;
+    transition: opacity 0.8s ease;
   }
 
   /* Short accent rule under heading */
@@ -3922,6 +3923,41 @@
     el.scrollTop = 0;
     _modalOpen('flr-gallery');
   }
+  /* Hero slideshow — cycles every 20s */
+  const _heroSlides = [
+    {
+      lines: ['Turning Pieces', 'Into', 'Brands'],
+      img: 'fix.png',
+      alt: 'Turning Pieces Into Brands — The Princekings Brand'
+    },
+    {
+      lines: ['From Concept', 'to', 'Culture'],
+      img: 'fix3.png',
+      alt: 'From Concept to Culture — The Princekings Brand'
+    }
+  ];
+  let _heroIdx = 0;
+  function _cycleHero() {
+    _heroIdx = (_heroIdx + 1) % _heroSlides.length;
+    const slide = _heroSlides[_heroIdx];
+    const h1  = document.querySelector('.hero-h1');
+    const img = document.querySelector('.hero-visual');
+    h1.style.transition  = 'opacity 0.8s ease';
+    h1.style.opacity  = '0';
+    img.style.opacity = '0';
+    setTimeout(function() {
+      const spans = h1.querySelectorAll('.block');
+      spans[0].textContent = slide.lines[0];
+      spans[1].textContent = slide.lines[1];
+      spans[2].textContent = slide.lines[2];
+      img.src = slide.img;
+      img.alt = slide.alt;
+      h1.style.opacity  = '1';
+      img.style.opacity = '1';
+    }, 850);
+  }
+  setInterval(_cycleHero, 20000);
+
   function closeFlrGallery() {
     _modalClose('flr-gallery');
   }
