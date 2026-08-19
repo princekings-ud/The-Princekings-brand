@@ -309,25 +309,24 @@
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 46%;
+    grid-template-rows: 1fr auto auto;
     text-align: left;
     padding: 88px 5% 0;
-    gap: 0;
     position: relative;
     overflow: hidden;
     background: linear-gradient(160deg, #0d0703 0%, #070707 48%, #050905 100%);
   }
   .hero-left {
-    flex: 1 1 0;
+    grid-column: 1;
+    grid-row: 1;
     min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding-bottom: 60px;
+    align-self: end;
+    padding-bottom: 20px;
   }
 
   .hero::before {
@@ -380,9 +379,9 @@
 
   /* Hero visual image */
   .hero-visual-wrap {
-    flex: 0 0 46%;
-    width: 46%;
-    margin: 0;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    width: 100%;
     position: relative; z-index: 1;
     overflow: hidden;
     aspect-ratio: 4/5;
@@ -467,9 +466,13 @@
   }
 
   .hero-btns {
-    display: flex; align-items: center; justify-content: center;
+    grid-column: 1;
+    grid-row: 2;
+    display: flex; align-items: center; justify-content: flex-start;
     gap: 14px; flex-wrap: wrap;
     position: relative;
+    padding-bottom: 60px;
+    align-self: start;
     opacity: 0;
     animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.55s forwards;
   }
@@ -574,7 +577,8 @@
     position: relative;
   }
   .hero-ticker {
-    flex: 0 0 calc(100% + 10%);
+    grid-column: 1 / -1;
+    grid-row: 3;
     width: calc(100% + 10%);
     margin: 0 -5%;
     align-self: stretch;
@@ -1421,16 +1425,19 @@
     /* ── HERO MOBILE ── */
     .hero {
       min-height: 100svh;
-      padding: 72px 5% 0;
+      display: flex;
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
       text-align: center;
+      padding: 72px 5% 0;
     }
     .hero-left {
       width: 100%;
       align-items: center;
       padding-bottom: 0;
+      align-self: auto;
+      order: 1;
     }
     .hero-visual-wrap {
       flex: none;
@@ -1440,6 +1447,7 @@
       overflow: hidden;
       align-self: auto;
       border-radius: 0;
+      order: 2;
     }
     .hero-visual { width: 100%; height: 100%; object-fit: contain; object-position: center; border-radius: 0; }
     .hero-rule { margin: 0 auto 4px; }
@@ -1456,7 +1464,7 @@
     }
 
     .hero-sub {
-      font-size: 0.74rem; margin-bottom: 32px; padding: 0 4px;
+      font-size: 0.74rem; margin-bottom: 16px; padding: 0 4px;
       max-width: 320px;
       display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2;
       -webkit-box-orient: vertical; overflow: hidden;
@@ -1467,6 +1475,9 @@
       flex-direction: column;
       width: 100%;
       gap: 10px;
+      padding: 20px 0 32px;
+      order: 3;
+      justify-content: center;
     }
 
     .btn-primary, .btn-outline {
@@ -2466,11 +2477,11 @@
     <p class="hero-sub">
       We build visual identities, manage brand presence, and produce design that doesn't just look good — it performs. For corporations ready to own their market.
     </p>
+  </div>
 
-    <div class="hero-btns">
-      <a href="https://wa.me/2348147065225" class="btn-primary">Start a Project &rarr;</a>
-      <a href="#work" class="btn-outline">See Our Work</a>
-    </div>
+  <div class="hero-btns">
+    <a href="https://wa.me/2348147065225" class="btn-primary">Start a Project &rarr;</a>
+    <a href="#work" class="btn-outline">See Our Work</a>
   </div>
 
   <div class="hero-visual-wrap">
