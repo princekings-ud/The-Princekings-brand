@@ -368,6 +368,20 @@
   .hero-mark.br::before { bottom:0; right:0; width:1.5px; height:18px; }
   .hero-mark.br::after  { bottom:0; right:0; width:18px;  height:1.5px; }
 
+  /* Hero visual image */
+  .hero-visual-wrap {
+    width: calc(100% + 10%);
+    margin: 28px -5% 0;
+    position: relative; z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .hero-visual {
+    width: 100%; height: 68vh;
+    display: block;
+    object-fit: cover; object-position: 50% 12%;
+  }
+
   /* Short accent rule under heading */
   .hero-rule {
     width: 48px; height: 2px; border-radius: 1px;
@@ -2398,11 +2412,15 @@
   </div>
 
   <h1 class="hero-h1">
-    <span class="block">Designing Brands</span>
-    <span class="block c-red">That</span>
-    <span class="block c-dim">Lead.</span>
+    <span class="block">Turning Pieces</span>
+    <span class="block c-red">Into</span>
+    <span class="block c-dim">Brands</span>
   </h1>
   <div class="hero-rule"></div>
+
+  <div class="hero-visual-wrap">
+    <img src="fix.png" class="hero-visual" alt="Turning Pieces Into Brands — The Princekings Brand">
+  </div>
 
   <p class="hero-sub">
     We build visual identities, manage brand presence, and produce design that doesn't just look good — it performs. For corporations ready to own their market.
