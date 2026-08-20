@@ -540,6 +540,111 @@
   }
   .btn-back-home:hover { border-color: var(--red); color: var(--red); }
 
+  /* ── QUESTIONNAIRE MODAL ── */
+  .q-modal {
+    position: fixed; inset: 0; z-index: 3000;
+    background: rgba(7,7,7,0.85);
+    backdrop-filter: blur(8px);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  .q-modal.open { opacity: 1; pointer-events: all; }
+  .q-box {
+    background: #111;
+    border: 0.5px solid rgba(237,235,230,0.12);
+    border-radius: 6px;
+    width: 100%; max-width: 520px;
+    max-height: 90vh; overflow-y: auto;
+    padding: 40px 36px;
+    position: relative;
+  }
+  .q-close {
+    position: absolute; top: 14px; right: 14px;
+    width: 34px; height: 34px;
+    background: rgba(237,235,230,0.06);
+    border: 0.5px solid rgba(237,235,230,0.12);
+    border-radius: 2px; color: var(--white);
+    font-size: 18px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .q-close:hover { background: var(--red); }
+  .q-pill-label {
+    display: inline-block;
+    background: rgba(249,117,53,0.12);
+    border: 0.5px solid rgba(249,117,53,0.3);
+    color: var(--red); font-size: 0.62rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 100px;
+    margin-bottom: 14px;
+  }
+  .q-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(1.1rem, 2.5vw, 1.45rem);
+    font-weight: 800; letter-spacing: -0.02em;
+    color: var(--white); margin-bottom: 4px; line-height: 1.2;
+  }
+  .q-sub {
+    font-size: 0.8rem; color: var(--muted);
+    margin-bottom: 24px; line-height: 1.65;
+  }
+  .q-service-tag {
+    display: inline-block;
+    background: rgba(249,117,53,0.08);
+    border: 0.5px solid rgba(249,117,53,0.22);
+    color: var(--red); font-size: 0.7rem;
+    padding: 4px 12px; border-radius: 2px;
+    font-family: 'Instrument Sans', sans-serif;
+    letter-spacing: 0.06em; margin-bottom: 20px;
+  }
+  .q-field { margin-bottom: 16px; }
+  .q-field label {
+    display: block;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.68rem; font-weight: 600;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--muted); margin-bottom: 6px;
+  }
+  .q-field input, .q-field textarea {
+    width: 100%; box-sizing: border-box;
+    background: rgba(237,235,230,0.04);
+    border: 0.5px solid rgba(237,235,230,0.14);
+    border-radius: 2px;
+    color: var(--white);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.85rem; padding: 11px 13px;
+    transition: border-color .2s; outline: none; resize: vertical;
+  }
+  .q-field input:focus, .q-field textarea:focus { border-color: var(--red); }
+  .q-field input::placeholder, .q-field textarea::placeholder { color: rgba(237,235,230,0.28); }
+  .q-checks { display: flex; flex-direction: column; gap: 6px; }
+  .q-check {
+    display: flex; align-items: center; gap: 10px;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.83rem; color: var(--white);
+    cursor: pointer; padding: 9px 12px;
+    border: 0.5px solid rgba(237,235,230,0.1); border-radius: 2px;
+    transition: border-color .2s, background .2s;
+  }
+  .q-check:hover { border-color: rgba(249,117,53,0.35); background: rgba(249,117,53,0.04); }
+  .q-check input[type=checkbox] { width: 14px; height: 14px; accent-color: var(--red); cursor: pointer; flex-shrink: 0; }
+  .q-req { color: var(--red); }
+  .q-submit {
+    width: 100%; padding: 14px 20px; margin-top: 10px;
+    background: var(--red); color: #000;
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    letter-spacing: 0.08em; border: none;
+    border-radius: 2px; cursor: pointer;
+    transition: box-shadow .25s, transform .2s;
+  }
+  .q-submit:hover { box-shadow: 0 0 24px var(--red-glow); transform: translateY(-1px); }
+  @media (max-width: 768px) {
+    .q-box { padding: 28px 18px; }
+  }
+
   .hero-score-pill {
     margin-top: 64px;
     display: inline-flex;
@@ -2445,7 +2550,7 @@
     <li><a href="#work">Work</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="https://score.theprincekingsbrand.com">Brand Score</a></li>
-    <li><a href="https://wa.me/2348147065225" class="nav-cta">Start a Project</a></li>
+    <li><a href="#" class="nav-cta" onclick="openQuestionnaire('general','');return false;">Start a Project</a></li>
   </ul>
 
   <button class="theme-toggle" id="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme"></button>
@@ -2467,7 +2572,7 @@
   <a href="#work">Our Work</a>
   <a href="#about">About</a>
   <a href="https://score.theprincekingsbrand.com">Brand Scorecard</a>
-  <a href="https://wa.me/2348147065225" class="mob-cta">Start a Project &rarr;</a>
+  <a href="#" class="mob-cta" onclick="openQuestionnaire('general','');return false;">Start a Project &rarr;</a>
 </div>
 
 <!-- HERO -->
@@ -2498,7 +2603,7 @@
   </div>
 
   <div class="hero-btns">
-    <a href="https://wa.me/2348147065225" class="btn-primary">Start a Project &rarr;</a>
+    <a href="#" class="btn-primary" onclick="openQuestionnaire('general','');return false;">Start a Project &rarr;</a>
     <a href="#work" class="btn-outline">See Our Work</a>
   </div>
 
@@ -2685,6 +2790,71 @@
   </div>
 </section>
 
+<!-- QUESTIONNAIRE MODAL -->
+<div id="q-modal" class="q-modal" onclick="if(event.target===this)closeQuestionnaire()">
+  <div class="q-box">
+    <button class="q-close" onclick="closeQuestionnaire()">&#215;</button>
+
+    <!-- GENERAL FORM -->
+    <div id="q-general">
+      <span class="q-pill-label">Let's Connect</span>
+      <h3 class="q-title">Tell us about your brand</h3>
+      <p class="q-sub">A few quick details so we can hit the ground running when we speak.</p>
+      <div id="q-service-wrap"></div>
+      <div class="q-field">
+        <label>Brand Name <span class="q-req">*</span></label>
+        <input type="text" id="q-name" placeholder="e.g. Acme Co.">
+      </div>
+      <div class="q-field">
+        <label>What does your brand do?</label>
+        <textarea id="q-about" rows="3" placeholder="Tell us about your brand, your audience, and what you're building..."></textarea>
+      </div>
+      <div class="q-field">
+        <label>What's your goal for this project?</label>
+        <textarea id="q-goal" rows="2" placeholder="E.g. launch a new brand, refresh our look, grow social presence..."></textarea>
+      </div>
+      <button class="q-submit" onclick="submitQGeneral()">Send to WhatsApp &#8594;</button>
+    </div>
+
+    <!-- PRINT FORM -->
+    <div id="q-print" style="display:none;">
+      <span class="q-pill-label">Print Request</span>
+      <h3 class="q-title">Tell us about your print project</h3>
+      <p class="q-sub">Select what you need and we'll put together a custom quote for you.</p>
+      <div class="q-field">
+        <label>Brand Name <span class="q-req">*</span></label>
+        <input type="text" id="qp-name" placeholder="e.g. Acme Co.">
+      </div>
+      <div class="q-field">
+        <label>What does your brand do?</label>
+        <textarea id="qp-about" rows="2" placeholder="Brief description of your brand..."></textarea>
+      </div>
+      <div class="q-field">
+        <label>What would you like to print? <span class="q-req">*</span></label>
+        <div class="q-checks">
+          <label class="q-check"><input type="checkbox" name="qp-item" value="Round Neck T-Shirt"> Round Neck T-Shirt</label>
+          <label class="q-check"><input type="checkbox" name="qp-item" value="V-Neck T-Shirt"> V-Neck T-Shirt</label>
+          <label class="q-check"><input type="checkbox" name="qp-item" value="Polo Shirt"> Polo Shirt</label>
+          <label class="q-check"><input type="checkbox" name="qp-item" value="Tote Bag"> Tote Bag</label>
+          <label class="q-check"><input type="checkbox" name="qp-item" value="Business Card"> Business Card</label>
+          <label class="q-check"><input type="checkbox" name="qp-item" value="Book Cover"> Book Cover</label>
+          <label class="q-check"><input type="checkbox" name="qp-item" value="Product Packaging"> Product Packaging</label>
+          <label class="q-check"><input type="checkbox" name="qp-item" value="Other"> Other</label>
+        </div>
+      </div>
+      <div class="q-field">
+        <label>Quantity <span class="q-req">*</span></label>
+        <input type="text" id="qp-qty" placeholder="e.g. 50 pieces, 200 business cards...">
+      </div>
+      <div class="q-field">
+        <label>Any other details?</label>
+        <textarea id="qp-extra" rows="2" placeholder="Colours, sizes, special requirements..."></textarea>
+      </div>
+      <button class="q-submit" onclick="submitQPrint()">Send to WhatsApp &#8594;</button>
+    </div>
+  </div>
+</div>
+
 <!-- PROJECT MODAL -->
 <div id="proj-modal" class="proj-modal" onclick="closeProject(event)">
   <div class="modal-box">
@@ -2729,7 +2899,7 @@
 
       <div class="modal-deliverables" id="modal-deliverables"></div>
 
-      <a href="https://wa.me/2348147065225" class="btn-primary modal-btn">Start a Similar Project &rarr;</a>
+      <a href="#" class="btn-primary modal-btn" onclick="openQuestionnaire('general','Brand Identity Design');return false;">Start a Similar Project &rarr;</a>
     </div>
   </div>
 </div>
@@ -2746,7 +2916,7 @@
     </h2>
     <p class="sm-hero-sub">We build complete visual identity systems — from logo and colour palette to typography and brand guidelines — designed to position your brand at the top and keep it there.</p>
     <div class="sm-hero-ctas">
-      <a href="https://wa.me/2348147065225?text=I%20want%20a%20brand%20identity%20project." class="sm-cta-primary">Start a Project &rarr;</a>
+      <a href="#" class="sm-cta-primary" onclick="openQuestionnaire('general','Brand Identity Design');return false;">Start a Project &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
       <button class="btn-back-home" onclick="closeSvcBrand()">← Back to Home</button>
     </div>
@@ -2808,7 +2978,7 @@
           <li>Mini one-page scrollable website <span class="fl-feat-badge">Web</span></li>
           <li>2 revision rounds</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Foundation%20Brand%20Identity%20package." class="btn-secondary" style="text-align:center;">Get Started &rarr;</a>
+        <a href="#" class="btn-secondary" style="text-align:center;" onclick="openQuestionnaire('general','Brand Identity — Foundation');return false;">Get Started &rarr;</a>
       </div>
 
       <!-- STANDARD (Most Popular) -->
@@ -2829,7 +2999,7 @@
           <li>3–4 page website design &amp; development <span class="fl-feat-badge">Web</span></li>
           <li>3 revision rounds</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Standard%20Brand%20Identity%20package." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+        <a href="#" class="btn-primary" style="text-align:center;" onclick="openQuestionnaire('general','Brand Identity — Standard');return false;">Get Started &rarr;</a>
       </div>
 
       <!-- LEGACY -->
@@ -2849,7 +3019,7 @@
           <li>CMS setup — update your site without a developer</li>
           <li>30-day post-launch support</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Legacy%20Brand%20Identity%20package." class="btn-secondary" style="text-align:center;">Get Started &rarr;</a>
+        <a href="#" class="btn-secondary" style="text-align:center;" onclick="openQuestionnaire('general','Brand Identity — Legacy');return false;">Get Started &rarr;</a>
       </div>
 
     </div>
@@ -2859,7 +3029,7 @@
         <h4 class="fl-cq-head">Need something beyond the standard tiers?</h4>
         <p class="fl-cq-desc">Enterprise rebrands, multi-brand systems, or complex identity projects — we'll scope and price around your exact brief. No templates, no guesswork.</p>
       </div>
-      <a href="https://wa.me/2348147065225?text=I%27d%20like%20to%20request%20a%20custom%20brand%20identity%20quote." class="btn-primary fl-cq-btn">Request a Custom Quote &rarr;</a>
+      <a href="#" class="btn-primary fl-cq-btn" onclick="openQuestionnaire('general','Brand Identity — Custom');return false;">Request a Custom Quote &rarr;</a>
     </div>
   </div>
 
@@ -2896,7 +3066,7 @@
       <span class="zs-tag">Logo Systems</span><span class="zs-tag">Brand Guidelines</span><span class="zs-tag">Colour Palettes</span><span class="zs-tag">Typography</span><span class="zs-tag">Brand Applications</span><span class="zs-tag">Social Media Kits</span><span class="zs-tag">Stationery Suites</span><span class="zs-tag">Source Files</span>
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready to build a brand that leads?</h3>
-    <a href="https://wa.me/2348147065225?text=I%20want%20to%20start%20a%20brand%20identity%20project." class="btn-primary zs-reveal zs-d2">Start Your Brand Identity &rarr;</a>
+    <a href="#" class="btn-primary zs-reveal zs-d2" onclick="openQuestionnaire('general','Brand Identity Design');return false;">Start Your Brand Identity &rarr;</a>
     <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcBrand()">← Back to Home</button>
   </div>
 </div>
@@ -3018,7 +3188,7 @@
       <span class="zp-del-tag">Brand Document</span>
     </div>
     <h3 class="zp-del-head">Want a brand identity like this<br>for your business?</h3>
-    <a href="https://wa.me/2348147065225?text=I%20want%20a%20brand%20identity%20like%20ZOREVA%20for%20my%20business." class="btn-primary">Start a Similar Project &rarr;</a>
+    <a href="#" class="btn-primary" onclick="openQuestionnaire('general','Brand Identity Design');return false;">Start a Similar Project &rarr;</a>
   </div>
 </div>
 
@@ -3126,7 +3296,7 @@
       <span class="zp-del-tag">All Source Files</span>
     </div>
     <h3 class="zp-del-head">Want a brand identity like this<br>for your business?</h3>
-    <a href="https://wa.me/2348147065225?text=I%20want%20a%20brand%20identity%20like%20Asili%20for%20my%20business." class="btn-primary">Start a Similar Project &rarr;</a>
+    <a href="#" class="btn-primary" onclick="openQuestionnaire('general','Brand Identity Design');return false;">Start a Similar Project &rarr;</a>
   </div>
 </div>
 
@@ -3142,7 +3312,7 @@
     </h2>
     <p class="sm-hero-sub">Premium social media flyers, event graphics, and WhatsApp broadcast materials. Fast turnaround, no retainer needed — just results.</p>
     <div class="sm-hero-ctas">
-      <a href="https://wa.me/2348147065225?text=I%20want%20social%20media%20and%20flyer%20designs." class="sm-cta-primary" style="background:#FA9055;border-color:#FA9055">Order a Flyer &rarr;</a>
+      <a href="#" class="sm-cta-primary" style="background:#FA9055;border-color:#FA9055" onclick="openQuestionnaire('general','Social Media &amp; Flyer Design');return false;">Order a Flyer &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
       <button class="btn-back-home" onclick="closeSvcSocial()">← Back to Home</button>
     </div>
@@ -3214,7 +3384,7 @@
           <li>1 revision round per design</li>
           <li>48hr turnaround</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Essential%20Social%20Media%20Design%20Plan." class="btn-secondary" style="text-align:center;">Get Started &rarr;</a>
+        <a href="#" class="btn-secondary" style="text-align:center;" onclick="openQuestionnaire('general','Social Media Design — Essential');return false;">Get Started &rarr;</a>
       </div>
 
       <!-- TIER 2 - GROWTH (Most Popular) -->
@@ -3233,7 +3403,7 @@
           <li>1–2 revision rounds per design</li>
           <li>48hr turnaround</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Growth%20Social%20Media%20Design%20Plan." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+        <a href="#" class="btn-primary" style="text-align:center;" onclick="openQuestionnaire('general','Social Media Design — Growth');return false;">Get Started &rarr;</a>
       </div>
 
       <!-- TIER 3 - PREMIUM -->
@@ -3251,7 +3421,7 @@
           <li>Priority turnaround</li>
           <li>Bonus: highlight covers, caption suggestions &amp; posting time recommendations</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20the%20Premium%20Social%20Media%20Design%20Plan." class="btn-primary" style="text-align:center;">Get Started &rarr;</a>
+        <a href="#" class="btn-primary" style="text-align:center;" onclick="openQuestionnaire('general','Social Media Design — Premium');return false;">Get Started &rarr;</a>
       </div>
 
     </div>
@@ -3289,7 +3459,7 @@
       <span class="zs-tag">Event Flyers</span><span class="zs-tag">Product Promos</span><span class="zs-tag">Launch Campaigns</span><span class="zs-tag">Countdown Posts</span><span class="zs-tag">Holiday Specials</span><span class="zs-tag">Social Content Packs</span><span class="zs-tag">Food &amp; Hospitality</span><span class="zs-tag">Corporate Announcements</span>
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready to make your audience stop scrolling?</h3>
-    <a href="https://wa.me/2348147065225?text=I%20want%20flyer%20and%20social%20media%20designs." class="btn-primary zs-reveal zs-d2">Start a Project &rarr;</a>
+    <a href="#" class="btn-primary zs-reveal zs-d2" onclick="openQuestionnaire('general','Social Media &amp; Flyer Design');return false;">Start a Project &rarr;</a>
     <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcSocial()">← Back to Home</button>
   </div>
 </div>
@@ -3313,7 +3483,7 @@
     </h2>
     <p class="sm-hero-sub">From magazine covers to annual reports and brand books — editorial layouts designed to be picked up, read, and kept long after the deadline.</p>
     <div class="sm-hero-ctas">
-      <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="sm-cta-primary" style="background:#F97535;border-color:#F97535">Start a Publication &rarr;</a>
+      <a href="#" class="sm-cta-primary" style="background:#F97535;border-color:#F97535" onclick="openQuestionnaire('general','Magazine &amp; Publications Design');return false;">Start a Publication &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
       <button class="btn-back-home" onclick="closeSvcMagazine()">← Back to Home</button>
     </div>
@@ -3364,7 +3534,7 @@
           <li>Digital version included</li>
           <li>1 revision round</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20a%20Newsletter%20or%20Brochure%20design%20package." class="btn-secondary" style="text-align:center;">Get a Quote &rarr;</a>
+        <a href="#" class="btn-secondary" style="text-align:center;" onclick="openQuestionnaire('general','Magazine Design — Compact');return false;">Get a Quote &rarr;</a>
       </div>
 
       <!-- CORPORATE PUBLICATION (Most Popular) -->
@@ -3385,7 +3555,7 @@
           <li>Print-ready + digital PDF</li>
           <li>2 revision rounds</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20a%20Corporate%20Publication%20design%20package." class="btn-primary" style="text-align:center;">Get a Quote &rarr;</a>
+        <a href="#" class="btn-primary" style="text-align:center;" onclick="openQuestionnaire('general','Magazine Design — Corporate');return false;">Get a Quote &rarr;</a>
       </div>
 
       <!-- COMMERCIAL MAGAZINE -->
@@ -3404,11 +3574,11 @@
           <li>Ad page templates</li>
           <li>Issue retainer available</li>
         </ul>
-        <a href="https://wa.me/2348147065225?text=I%20want%20a%20Commercial%20Magazine%20design%20package." class="btn-secondary" style="text-align:center;">Get a Quote &rarr;</a>
+        <a href="#" class="btn-secondary" style="text-align:center;" onclick="openQuestionnaire('general','Magazine Design — Commercial');return false;">Get a Quote &rarr;</a>
       </div>
 
     </div>
-    <p class="sp-pricing-note zs-reveal">Prices are starting points. Final cost depends on page count, content complexity, and turnaround. <a href="https://wa.me/2348147065225" style="color:var(--red)">Send us your brief</a> for an exact quote.</p>
+    <p class="sp-pricing-note zs-reveal">Prices are starting points. Final cost depends on page count, content complexity, and turnaround. <a href="#" style="color:var(--red)" onclick="openQuestionnaire('general','Magazine &amp; Publications Design');return false;">Send us your brief</a> for an exact quote.</p>
   </div>
 
   <div class="sp-section">
@@ -3444,7 +3614,7 @@
       <span class="zs-tag">Magazine Covers</span><span class="zs-tag">Editorial Layouts</span><span class="zs-tag">Feature Spreads</span><span class="zs-tag">Annual Reports</span><span class="zs-tag">Brand Advertorials</span><span class="zs-tag">Table of Contents</span><span class="zs-tag">Digital Editions</span><span class="zs-tag">Publication Branding</span>
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready for a publication that people actually keep?</h3>
-    <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="btn-primary zs-reveal zs-d2">Start a Publication Project &rarr;</a>
+    <a href="#" class="btn-primary zs-reveal zs-d2" onclick="openQuestionnaire('general','Magazine &amp; Publications Design');return false;">Start a Publication Project &rarr;</a>
     <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcMagazine()">← Back to Home</button>
   </div>
 </div>
@@ -3461,7 +3631,7 @@
     </h2>
     <p class="sm-hero-sub">Packaging, branded merchandise, stationery, and print assets that carry your identity beyond the screen into the physical world.</p>
     <div class="sm-hero-ctas">
-      <a href="https://wa.me/2348147065225?text=I%20want%20print%20and%20packaging%20design." class="sm-cta-primary" style="background:#F97535;border-color:#F97535">Start a Print Project &rarr;</a>
+      <a href="#" class="sm-cta-primary" style="background:#F97535;border-color:#F97535" onclick="openQuestionnaire('print','');return false;">Start a Print Project &rarr;</a>
       <button class="btn-back-home" onclick="closeSvcPrint()">← Back to Home</button>
     </div>
   </div>
@@ -3504,7 +3674,7 @@
       <h4 class="fl-cq-head">Every print project is scoped to your brief.</h4>
       <p class="fl-cq-desc">Item count, complexity, and specifications vary — so pricing does too. Tell us what you need and we'll turn around a quote within 24 hours.</p>
     </div>
-    <a href="https://wa.me/2348147065225?text=I%20need%20a%20custom%20quote%20for%20a%20print%20design%20project." class="btn-primary" style="white-space:nowrap;">Get a Custom Quote &rarr;</a>
+    <a href="#" class="btn-primary" style="white-space:nowrap;" onclick="openQuestionnaire('print','');return false;">Get a Custom Quote &rarr;</a>
   </div>
 
   <div class="sp-section">
@@ -3539,7 +3709,7 @@
       <span class="zs-tag">T-Shirts &amp; Polos</span><span class="zs-tag">Business Cards</span><span class="zs-tag">Book Covers</span><span class="zs-tag">Tote Bags</span><span class="zs-tag">Product Packaging</span><span class="zs-tag">Headbands &amp; Accessories</span><span class="zs-tag">Stationery</span><span class="zs-tag">Magazine Layouts</span>
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready to put your brand on everything?</h3>
-    <a href="https://wa.me/2348147065225?text=I%20want%20premium%20print%20designs%20for%20my%20brand." class="btn-primary zs-reveal zs-d2">Start a Print Project &rarr;</a>
+    <a href="#" class="btn-primary zs-reveal zs-d2" onclick="openQuestionnaire('print','');return false;">Start a Print Project &rarr;</a>
     <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcPrint()">← Back to Home</button>
   </div>
 </div>
@@ -3618,7 +3788,7 @@
   <h2 class="cta-h2 reveal">Your brand has one chance<br>at a <em>first impression.</em></h2>
   <p class="cta-sub reveal">Let's make sure it commands the room, closes deals, and builds recognition that compounds.</p>
   <div class="cta-btns reveal">
-    <a href="https://wa.me/2348147065225" class="btn-primary">Start a Project &rarr;</a>
+    <a href="#" class="btn-primary" onclick="openQuestionnaire('general','');return false;">Start a Project &rarr;</a>
     <a href="https://score.theprincekingsbrand.com" class="btn-outline">Score My Brand First</a>
   </div>
 </section>
@@ -3802,6 +3972,62 @@
   // Each modal open pushes a history entry. The back button closes the modal
   // instead of leaving the site. _skipNextPopstate prevents double-close when
   // the user taps the × button (which calls history.back() itself).
+  // ── QUESTIONNAIRE ──
+  var _qService = '';
+  function openQuestionnaire(type, service) {
+    _qService = service || '';
+    var gen = document.getElementById('q-general');
+    var prt = document.getElementById('q-print');
+    if (type === 'print') {
+      gen.style.display = 'none'; prt.style.display = 'block';
+      document.getElementById('qp-name').value = '';
+      document.getElementById('qp-about').value = '';
+      document.getElementById('qp-qty').value = '';
+      document.getElementById('qp-extra').value = '';
+      document.querySelectorAll('[name="qp-item"]').forEach(function(c){ c.checked = false; });
+    } else {
+      prt.style.display = 'none'; gen.style.display = 'block';
+      var wrap = document.getElementById('q-service-wrap');
+      wrap.innerHTML = _qService ? '<div class="q-service-tag">' + _qService + '</div>' : '';
+      document.getElementById('q-name').value = '';
+      document.getElementById('q-about').value = '';
+      document.getElementById('q-goal').value = '';
+    }
+    document.getElementById('q-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeQuestionnaire() {
+    document.getElementById('q-modal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  function submitQGeneral() {
+    var name = document.getElementById('q-name').value.trim();
+    if (!name) { document.getElementById('q-name').focus(); return; }
+    var about = document.getElementById('q-about').value.trim();
+    var goal  = document.getElementById('q-goal').value.trim();
+    var msg = 'Hello Princekings Brand,\n\nBrand Name: ' + name + '\n';
+    if (_qService) msg += 'Service: ' + _qService + '\n';
+    if (about)     msg += 'About the Brand: ' + about + '\n';
+    if (goal)      msg += 'Project Goal: ' + goal + '\n';
+    closeQuestionnaire();
+    window.open('https://wa.me/2348147065225?text=' + encodeURIComponent(msg), '_blank');
+  }
+  function submitQPrint() {
+    var name = document.getElementById('qp-name').value.trim();
+    if (!name) { document.getElementById('qp-name').focus(); return; }
+    var items = Array.from(document.querySelectorAll('[name="qp-item"]:checked')).map(function(el){ return el.value; });
+    if (!items.length) { alert('Please select at least one item to print.'); return; }
+    var qty   = document.getElementById('qp-qty').value.trim();
+    if (!qty)  { document.getElementById('qp-qty').focus(); return; }
+    var about = document.getElementById('qp-about').value.trim();
+    var extra = document.getElementById('qp-extra').value.trim();
+    var msg = 'Hello Princekings Brand,\n\nBrand Name: ' + name + '\nService: Print & Packaging Design\nItems to Print: ' + items.join(', ') + '\nQuantity: ' + qty + '\n';
+    if (about) msg += 'About the Brand: ' + about + '\n';
+    if (extra) msg += 'Additional Details: ' + extra + '\n';
+    closeQuestionnaire();
+    window.open('https://wa.me/2348147065225?text=' + encodeURIComponent(msg), '_blank');
+  }
+
   let _modalStack = [];
   let _skipNextPopstate = false;
 
