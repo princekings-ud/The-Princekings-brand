@@ -3973,7 +3973,17 @@
   // instead of leaving the site. _skipNextPopstate prevents double-close when
   // the user taps the × button (which calls history.back() itself).
   // ── QUESTIONNAIRE ──
+  var _w3fKey   = 'YOUR_WEB3FORMS_ACCESS_KEY'; // replace after verifying at web3forms.com
   var _qService = '';
+
+  function _sendEnquiryEmail(subject, body) {
+    if (_w3fKey === 'YOUR_WEB3FORMS_ACCESS_KEY') return;
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ access_key: _w3fKey, subject: subject, from_name: 'Princekings Enquiry', message: body })
+    }).catch(function(){});
+  }
   function openQuestionnaire(type, service) {
     _qService = service || '';
     var gen = document.getElementById('q-general');
@@ -4010,6 +4020,7 @@
     if (about)     msg += 'About the Brand: ' + about + '\n';
     if (goal)      msg += 'Project Goal: ' + goal + '\n';
     closeQuestionnaire();
+    _sendEnquiryEmail('New Enquiry — ' + name + (_qService ? ' (' + _qService + ')' : ''), msg);
     window.open('https://wa.me/2348147065225?text=' + encodeURIComponent(msg), '_blank');
   }
   function submitQPrint() {
@@ -4025,6 +4036,7 @@
     if (about) msg += 'About the Brand: ' + about + '\n';
     if (extra) msg += 'Additional Details: ' + extra + '\n';
     closeQuestionnaire();
+    _sendEnquiryEmail('New Print Enquiry — ' + name, msg);
     window.open('https://wa.me/2348147065225?text=' + encodeURIComponent(msg), '_blank');
   }
 
