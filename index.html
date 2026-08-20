@@ -525,6 +525,21 @@
 
   .btn-outline:hover { border-color: var(--red); color: var(--red); }
 
+  .btn-back-home {
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Instrument Sans', sans-serif;
+    font-size: 0.78rem; font-weight: 500;
+    letter-spacing: 0.08em;
+    border: 1px solid rgba(237,235,230,0.15);
+    border-radius: 2px;
+    padding: 12px 22px;
+    cursor: pointer; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: border-color .25s, color .25s;
+  }
+  .btn-back-home:hover { border-color: var(--red); color: var(--red); }
+
   .hero-score-pill {
     margin-top: 64px;
     display: inline-flex;
@@ -2733,6 +2748,7 @@
     <div class="sm-hero-ctas">
       <a href="https://wa.me/2348147065225?text=I%20want%20a%20brand%20identity%20project." class="sm-cta-primary">Start a Project &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+      <button class="btn-back-home" onclick="closeSvcBrand()">← Back to Home</button>
     </div>
   </div>
 
@@ -2881,6 +2897,7 @@
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready to build a brand that leads?</h3>
     <a href="https://wa.me/2348147065225?text=I%20want%20to%20start%20a%20brand%20identity%20project." class="btn-primary zs-reveal zs-d2">Start Your Brand Identity &rarr;</a>
+    <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcBrand()">← Back to Home</button>
   </div>
 </div>
 
@@ -3127,6 +3144,7 @@
     <div class="sm-hero-ctas">
       <a href="https://wa.me/2348147065225?text=I%20want%20social%20media%20and%20flyer%20designs." class="sm-cta-primary" style="background:#FA9055;border-color:#FA9055">Order a Flyer &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+      <button class="btn-back-home" onclick="closeSvcSocial()">← Back to Home</button>
     </div>
   </div>
 
@@ -3272,6 +3290,7 @@
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready to make your audience stop scrolling?</h3>
     <a href="https://wa.me/2348147065225?text=I%20want%20flyer%20and%20social%20media%20designs." class="btn-primary zs-reveal zs-d2">Start a Project &rarr;</a>
+    <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcSocial()">← Back to Home</button>
   </div>
 </div>
 
@@ -3296,6 +3315,7 @@
     <div class="sm-hero-ctas">
       <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="sm-cta-primary" style="background:#F97535;border-color:#F97535">Start a Publication &rarr;</a>
       <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+      <button class="btn-back-home" onclick="closeSvcMagazine()">← Back to Home</button>
     </div>
   </div>
 
@@ -3425,6 +3445,7 @@
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready for a publication that people actually keep?</h3>
     <a href="https://wa.me/2348147065225?text=I%20want%20a%20magazine%20or%20publication%20design." class="btn-primary zs-reveal zs-d2">Start a Publication Project &rarr;</a>
+    <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcMagazine()">← Back to Home</button>
   </div>
 </div>
 
@@ -3441,7 +3462,7 @@
     <p class="sm-hero-sub">Packaging, branded merchandise, stationery, and print assets that carry your identity beyond the screen into the physical world.</p>
     <div class="sm-hero-ctas">
       <a href="https://wa.me/2348147065225?text=I%20want%20print%20and%20packaging%20design." class="sm-cta-primary" style="background:#F97535;border-color:#F97535">Start a Print Project &rarr;</a>
-      <button class="sm-cta-secondary" onclick="this.closest('.zoreva-modal').querySelector('.fl-pricing-section').scrollIntoView({behavior:'smooth',block:'start'})">See Pricing</button>
+      <button class="btn-back-home" onclick="closeSvcPrint()">← Back to Home</button>
     </div>
   </div>
 
@@ -3519,6 +3540,7 @@
     </div>
     <h3 class="zs-outro-head zs-reveal zs-d2">Ready to put your brand on everything?</h3>
     <a href="https://wa.me/2348147065225?text=I%20want%20premium%20print%20designs%20for%20my%20brand." class="btn-primary zs-reveal zs-d2">Start a Print Project &rarr;</a>
+    <button class="btn-back-home zs-reveal zs-d2" onclick="closeSvcPrint()">← Back to Home</button>
   </div>
 </div>
 
