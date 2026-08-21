@@ -2820,11 +2820,10 @@
 </section>
 
 <!-- COMING SOON TOAST -->
-<div id="cs-toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(12px);z-index:5000;background:var(--bg2,#111110);border:0.5px solid rgba(249,117,53,0.35);border-radius:3px;padding:13px 22px;display:flex;align-items:center;gap:12px;font-family:'Instrument Sans',sans-serif;font-size:0.82rem;color:var(--white,#EDEBE6);white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;box-shadow:0 8px 28px rgba(0,0,0,0.35);">
-  <span style="color:var(--red,#F97535);font-size:1rem;">⏳</span>
-  <span><strong>Coming soon</strong> — the scorecard is being built. Check back shortly.</span>
+<div id="cs-toast" style="position:fixed;bottom:32px;left:50%;transform:translateX(-50%) translateY(12px);z-index:5000;background:var(--bg2,#111110);border:0.5px solid rgba(249,117,53,0.35);border-radius:3px;padding:13px 22px;display:flex;align-items:center;gap:12px;font-family:'Instrument Sans',sans-serif;font-size:0.82rem;color:var(--white,#EDEBE6);opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;box-shadow:0 8px 28px rgba(0,0,0,0.35);max-width:calc(100vw - 40px);box-sizing:border-box;">
+  <span style="color:var(--red,#F97535);font-size:1rem;flex-shrink:0;">⏳</span>
+  <span><strong>Coming soon</strong> — the scorecard is being built.</span>
 </div>
-<style>#cs-toast.show{opacity:1;transform:translateX(-50%) translateY(0);pointer-events:auto;}</style>
 
 <!-- QUESTIONNAIRE MODAL -->
 <div id="q-modal" class="q-modal" onclick="if(event.target===this)closeQuestionnaire()">
@@ -4045,9 +4044,15 @@
   function showComingSoon() {
     var t = document.getElementById('cs-toast');
     if (!t) return;
-    t.classList.add('show');
     clearTimeout(t._tid);
-    t._tid = setTimeout(function(){ t.classList.remove('show'); }, 3200);
+    t.style.opacity = '1';
+    t.style.transform = 'translateX(-50%) translateY(0)';
+    t.style.pointerEvents = 'auto';
+    t._tid = setTimeout(function() {
+      t.style.opacity = '0';
+      t.style.transform = 'translateX(-50%) translateY(12px)';
+      t.style.pointerEvents = 'none';
+    }, 3200);
   }
   function closeQuestionnaire() {
     document.getElementById('q-modal').classList.remove('open');
