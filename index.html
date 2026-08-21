@@ -541,9 +541,37 @@
   .btn-back-home:hover { border-color: var(--red); color: var(--red); }
 
   /* ── QUESTIONNAIRE MODAL ── */
+  /* ── q-modal: theme tokens ── */
+  :root {
+    --q-overlay:      rgba(7,7,7,0.82);
+    --q-box-bg:       #111110;
+    --q-box-border:   rgba(237,235,230,0.12);
+    --q-input-bg:     rgba(237,235,230,0.05);
+    --q-input-border: rgba(237,235,230,0.15);
+    --q-input-color:  #EDEBE6;
+    --q-placeholder:  rgba(237,235,230,0.3);
+    --q-check-border: rgba(237,235,230,0.12);
+    --q-close-bg:     rgba(237,235,230,0.08);
+    --q-close-border: rgba(237,235,230,0.15);
+    --q-close-color:  #EDEBE6;
+  }
+  [data-theme="light"] {
+    --q-overlay:      rgba(20,20,18,0.6);
+    --q-box-bg:       #FFFFFF;
+    --q-box-border:   rgba(28,27,24,0.1);
+    --q-input-bg:     rgba(28,27,24,0.04);
+    --q-input-border: rgba(28,27,24,0.18);
+    --q-input-color:  #1C1B18;
+    --q-placeholder:  rgba(28,27,24,0.35);
+    --q-check-border: rgba(28,27,24,0.13);
+    --q-close-bg:     rgba(28,27,24,0.07);
+    --q-close-border: rgba(28,27,24,0.15);
+    --q-close-color:  #1C1B18;
+  }
+
   .q-modal {
     position: fixed; inset: 0; z-index: 3000;
-    background: rgba(7,7,7,0.85);
+    background: var(--q-overlay);
     backdrop-filter: blur(8px);
     display: flex; align-items: center; justify-content: center;
     padding: 20px;
@@ -552,8 +580,8 @@
   }
   .q-modal.open { opacity: 1; pointer-events: all; }
   .q-box {
-    background: #111;
-    border: 0.5px solid rgba(237,235,230,0.12);
+    background: var(--q-box-bg);
+    border: 0.5px solid var(--q-box-border);
     border-radius: 6px;
     width: 100%; max-width: 520px;
     max-height: 90vh; overflow-y: auto;
@@ -562,15 +590,15 @@
   }
   .q-close {
     position: absolute; top: 14px; right: 14px;
-    width: 34px; height: 34px;
-    background: rgba(237,235,230,0.06);
-    border: 0.5px solid rgba(237,235,230,0.12);
-    border-radius: 2px; color: var(--white);
-    font-size: 18px; cursor: pointer;
+    width: 36px; height: 36px;
+    background: var(--q-close-bg);
+    border: 0.5px solid var(--q-close-border);
+    border-radius: 3px; color: var(--q-close-color);
+    font-size: 20px; line-height: 1; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    transition: background .2s;
+    transition: background .2s, color .2s, border-color .2s;
   }
-  .q-close:hover { background: var(--red); }
+  .q-close:hover { background: var(--red); border-color: var(--red); color: #fff; }
   .q-pill-label {
     display: inline-block;
     background: rgba(249,117,53,0.12);
@@ -587,7 +615,8 @@
     color: var(--white); margin-bottom: 4px; line-height: 1.2;
   }
   .q-sub {
-    font-size: 0.8rem; color: var(--muted);
+    font-size: 0.8rem; color: var(--white);
+    opacity: 0.55;
     margin-bottom: 24px; line-height: 1.65;
   }
   .q-service-tag {
@@ -605,35 +634,35 @@
     font-family: 'Instrument Sans', sans-serif;
     font-size: 0.68rem; font-weight: 600;
     letter-spacing: 0.1em; text-transform: uppercase;
-    color: var(--muted); margin-bottom: 6px;
+    color: var(--white); opacity: 0.7; margin-bottom: 6px;
   }
   .q-field input, .q-field textarea {
     width: 100%; box-sizing: border-box;
-    background: rgba(237,235,230,0.04);
-    border: 0.5px solid rgba(237,235,230,0.14);
+    background: var(--q-input-bg);
+    border: 0.5px solid var(--q-input-border);
     border-radius: 2px;
-    color: var(--white);
+    color: var(--q-input-color);
     font-family: 'Instrument Sans', sans-serif;
     font-size: 0.85rem; padding: 11px 13px;
     transition: border-color .2s; outline: none; resize: vertical;
   }
   .q-field input:focus, .q-field textarea:focus { border-color: var(--red); }
-  .q-field input::placeholder, .q-field textarea::placeholder { color: rgba(237,235,230,0.28); }
+  .q-field input::placeholder, .q-field textarea::placeholder { color: var(--q-placeholder); }
   .q-checks { display: flex; flex-direction: column; gap: 6px; }
   .q-check {
     display: flex; align-items: center; gap: 10px;
     font-family: 'Instrument Sans', sans-serif;
     font-size: 0.83rem; color: var(--white);
     cursor: pointer; padding: 9px 12px;
-    border: 0.5px solid rgba(237,235,230,0.1); border-radius: 2px;
+    border: 0.5px solid var(--q-check-border); border-radius: 2px;
     transition: border-color .2s, background .2s;
   }
-  .q-check:hover { border-color: rgba(249,117,53,0.35); background: rgba(249,117,53,0.04); }
+  .q-check:hover { border-color: rgba(249,117,53,0.45); background: rgba(249,117,53,0.06); }
   .q-check input[type=checkbox] { width: 14px; height: 14px; accent-color: var(--red); cursor: pointer; flex-shrink: 0; }
   .q-req { color: var(--red); }
   .q-submit {
     width: 100%; padding: 14px 20px; margin-top: 10px;
-    background: var(--red); color: #000;
+    background: var(--red); color: #fff;
     font-family: 'Instrument Sans', sans-serif;
     font-size: 0.85rem; font-weight: 700;
     letter-spacing: 0.08em; border: none;
